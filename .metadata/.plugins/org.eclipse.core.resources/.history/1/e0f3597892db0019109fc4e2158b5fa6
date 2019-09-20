@@ -1,0 +1,6 @@
+package ie.mohammed.com;
+
+public class PowerImplementation implements Power {
+	
+
+}

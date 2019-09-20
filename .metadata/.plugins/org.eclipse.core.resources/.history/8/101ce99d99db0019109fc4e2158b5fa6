@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="ie.mohammed.com.PowerImplementation" id="hammer">
+		<constructor-arg name ="powerName" value="Hammer" />
+		<constructor-arg name ="powerDescription" value="Various powers said to be able to level mountains" />
+	</bean>
+
+	<bean class="ie.mohammed.com.PowerImplementation" id="strenght">
+		<property name ="powerName" value="strenght" />
+		<property name ="powerDescription" value="Immense, superhuman strenght" />
+	</bean>
+	
+	<bean class="ie.mohammed.com.PowerImplementation" id="lasso"
+		c:powerName="lasso"
+		c:powerDescription="Forces the person around whom it is wrapped to tell the truth"
+	</bean>
+ 
+ 
+
+</beans>

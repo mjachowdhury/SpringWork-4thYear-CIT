@@ -1,0 +1,12 @@
+<bean class ="ie.mohammed.com.PowerImplementation" id = "hammer">
+	<constructor-arg name = "powerName" value= "Hammer" />
+	<constructor-arg name ="powerDescription" value="Various powers said to be able to level mountains" />
+</bean>
+
+<!--
+<bean class ="ie.mohammed.com.PowerImplementation" id = "strength">
+	<property name = "powerName" value= "strenght" />
+	<property name ="powerDescription" value="Immense, superhuman strenght" />
+</bean>
+-->
+ 
