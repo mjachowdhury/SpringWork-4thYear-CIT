@@ -29,7 +29,7 @@ public class PowerImplementation implements Power {
 
 	@Override
 	public String toString() {
-		return "PowerImplementation [powerName=" + powerName + ", powerDescription=" + powerDescription + "]";
+		return "\n Power :" + powerName + "------>" + powerDescription;
 	}
 	
 	
