@@ -19,6 +19,10 @@
 	<bean class="ie.mohammed.com.PowerImplementation" id="lasso"
 		c:powerName="lasso"
 		c:powerDescription="Forces the person around whom it is wrapped to tell the truth" />
+		
+	<bean class="ie.mohammed.com.PowerImplementation" id="wounderWomen"
+		c:powerName="Wounder women"
+		c:powerDescription="Lasso" />	
 	
 	<bean class="ie.mohammed.com.PowerImplementation" id="ring"
 		p:powerName="ring"

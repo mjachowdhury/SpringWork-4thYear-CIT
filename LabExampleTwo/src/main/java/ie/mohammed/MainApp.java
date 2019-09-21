@@ -16,6 +16,8 @@ public class MainApp {
 		Hero HeroTwo = (Hero) context.getBean("HeroTwo");
 		System.out.println(HeroTwo);
 		
+		Hero wounderWomen = (Hero) context.getBean("WounderWomen");
+		System.out.println(wounderWomen);
 
 	}
 

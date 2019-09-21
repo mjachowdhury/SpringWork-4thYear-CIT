@@ -20,6 +20,9 @@ public class MainApp {
 		
 		Power ring = (Power) context.getBean("ring");
 		System.out.println(ring);
+		
+		Power wounderWomen = (Power) context.getBean("wounderWomen");
+		System.out.println(wounderWomen);
 	}
 
 }

@@ -13,5 +13,9 @@
 	 <bean class="ie.mohammed.com.ImplementationHero" id="HeroTwo"
 	 	c:heroName="hero two"
 	 	c:heroPower="hero two here" />
+	 	
+	 	<bean class="ie.mohammed.com.ImplementationHero" id="WounderWomen"
+	 	c:heroName="Wounder Women"
+	 	c:heroPower="Wounder women here" />
 
 </beans>
