@@ -15,6 +15,24 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
-
+# Maven Temporary files #
 */target/*
 /.metadata/
+
+# Eclipse files #
+**/.classpath
+**/.project
+**/.settings/
+blog/bin/
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+#IntelliJ files
+**/*.iml
+**/.idea
+**/.gradle
