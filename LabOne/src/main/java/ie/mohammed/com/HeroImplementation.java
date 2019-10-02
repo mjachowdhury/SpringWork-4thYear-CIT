@@ -12,17 +12,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ImplementationHero implements Hero{
+
+public class HeroImplementation implements Hero{
 	
 	public String heroName;
 	public Power heroPower;
-	
-	@Override
-	public String toString() {
-		return "ImplementationHero [heroName=" + heroName + ", heroPower=" + heroPower + "]";
-	}
-	
-	
 	
 
 }

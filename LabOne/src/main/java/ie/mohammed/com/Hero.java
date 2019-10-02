@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ie.mohammed.com;
 
 /**
