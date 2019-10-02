@@ -20,14 +20,18 @@
 		c:powerName="lasso"
 		c:powerDescription="Forces the person around whom it is wrapped to tell the truth" />
 		
-	<bean class="ie.mohammed.com.PowerImplementation" id="wounderWomen"
-		c:powerName="Wounder women"
-		c:powerDescription="Lasso" />	
-	
 	<bean class="ie.mohammed.com.PowerImplementation" id="ring"
-		p:powerName="ring"
-		p:powerDescription="grants the wearer incredible and incomprehensible powers and abilities by harnessing willpower" />
- 
+		p:powerName="Ring"
+		p:powerDescription="Grants the wearer incrediable and incomprensible powers and abilities by harnessing willpower" />
+			
+		
+	<bean class="ie.mohammed.com.ImplementationHero" id="wounderWomen"
+		c:powerName="Wounder women"
+		c:powerDescription="Lasso" />
+		
+	<bean class="ie.mohammed.com.PowerImplementation" id="suit"
+		c:powerName="Suit"
+		c:powerDescription="Files, fires lasers, talks with Irish accent" />		
  
 
 </beans>
