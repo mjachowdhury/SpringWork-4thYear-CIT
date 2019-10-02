@@ -2,6 +2,7 @@ package ie.mohammed;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import ie.mohammed.com.Franchise;
 import ie.mohammed.com.Hero;
 import ie.mohammed.com.Power;
 
@@ -44,6 +45,8 @@ public class MainApp {
 		Hero ironMan = (Hero) context.getBean("ironMan");
 		System.out.println(ironMan);
 
+		Franchise franchise = (Franchise) context.getBean("dc");
+		franchise.display();
 	}
 
 }
