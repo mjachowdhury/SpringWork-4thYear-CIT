@@ -10,6 +10,7 @@ public class MainApp {
 	public static void main(String[] args) {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		
 		Power hammer = (Power) context.getBean("hammer");
 		System.out.println(hammer);
 
@@ -27,15 +28,19 @@ public class MainApp {
 		Hero wounderWomen = (Hero) context.getBean("wonderWoman");
 		System.out.println(wounderWomen);
 		System.out.println();
+		
 		Hero thor = (Hero) context.getBean("thor");
 		System.out.println(thor);
 		System.out.println();
+		
 		Hero hulk = (Hero) context.getBean("hulk");
 		System.out.println(hulk);
 		System.out.println();
+		
 		Hero greenLantern = (Hero) context.getBean("greenLantern");
 		System.out.println(greenLantern);
 		System.out.println();
+		
 		Hero ironMan = (Hero) context.getBean("ironMan");
 		System.out.println(ironMan);
 

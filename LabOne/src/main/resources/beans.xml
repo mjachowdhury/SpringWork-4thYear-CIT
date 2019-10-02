@@ -5,21 +5,23 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+	<!-- constructor args based bean creation -->
 	<bean class="ie.mohammed.com.PowerImplementation" id="hammer">
 		<constructor-arg name ="powerName" value="Hammer" />
 		<constructor-arg name ="powerDescription" value="Various powers said to be able to level mountains" />
 	</bean>
-
+	
+	<!-- property setter based bean creation -->
 	<bean class="ie.mohammed.com.PowerImplementation" id="strength">
 		<property name ="powerName" value="strength" />
 		<property name ="powerDescription" value="Immense, superhuman strength" />
 	</bean>
 	
+	<!-- sort form constructor based bean creation -->
 	<bean class="ie.mohammed.com.PowerImplementation" id="lasso"
 		c:powerName="lasso"
 		c:powerDescription="Forces the person around whom it is wrapped to tell the truth" />
-		
+	<!-- sort form setter based bean creation -->
 	<bean class="ie.mohammed.com.PowerImplementation" id="ring"
 		p:powerName="Ring"
 		p:powerDescription="Grants the wearer incrediable and incomprensible powers and abilities by harnessing willpower" />
@@ -28,6 +30,7 @@
 		c:powerName="Suit"
 		c:powerDescription="Files, fires lasers, talks with Irish accent" />	
 	
+	<!-- DI examples -->
 	<bean class="ie.mohammed.com.HeroImplementation" id ="wonderWoman"
 		c:heroName="Wonder Woman"
 		c:heroPower-ref="lasso" />
@@ -47,26 +50,5 @@
 	<bean class="ie.mohammed.com.HeroImplementation" id ="ironMan"
 		c:heroName="Iron Man"
 		c:heroPower-ref="suit" />
-				
- <!--  
- 	
- 	<bean class="ie.mohammed.com.ImplementationHero" id="thor"
- 		c:heroName="Thor"
- 		c:heroPower-ref="hammer"/>
- 		
- 	<bean class="ie.mohammed.com.ImplementationHero" id="hulk"
- 		c:heroName="Hulk"
- 		c:heroPower-ref="strength"/>
- 		
- 	<bean class="ie.mohammed.com.ImplementationHero" id="greenLantern"
- 		c:heroName="Green Lantern"
- 		c:heroPower-ref="ring"/>
- 		
- 	<bean class="ie.mohammed.com.ImplementationHero" id="ironMan"
- 		c:heroName="Iron Man"
- 		c:heroPower-ref="suit"/> -->
- 	
- 	
- 	
-
+ 
 </beans>

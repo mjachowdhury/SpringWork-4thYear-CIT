@@ -17,7 +17,9 @@ local.properties
 *.launch
 # Maven Temporary files #
 */target/*
+*/.metadata/*
 /.metadata/
+/.metadata/.log
 
 # Eclipse files #
 **/.classpath
