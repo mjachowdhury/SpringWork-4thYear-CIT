@@ -47,6 +47,11 @@ public class MainApp {
 
 		Franchise franchise = (Franchise) context.getBean("dc");
 		franchise.display();
+		
+		System.out.println();
+		
+		Franchise avengers = (Franchise) context.getBean("marvel");
+		avengers.display();
 	}
 
 }

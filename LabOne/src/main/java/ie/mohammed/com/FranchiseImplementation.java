@@ -23,7 +23,13 @@ public class FranchiseImplementation implements Franchise {
 		System.out.println("==============\n");
 		franchiseHeros.forEach( n -> {
 			System.out.println(n);
-		} );		
+		} );	
+		
+		System.out.println("AVENGERS");
+		System.out.println("==============\n");
+		franchiseHeros.forEach( n -> {
+			System.out.println(n);
+		} );	
 	}
 
  

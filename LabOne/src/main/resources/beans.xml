@@ -65,14 +65,27 @@
 		c:heroName="Iron Man"
 		c:heroPower-ref="suit" />
 		
+	<!-- creating list of heros using List -->	
 	<util:list id="justiceLeague">
 		<ref bean="wonderWoman"></ref>
 		<ref bean="greenLantern"></ref>
+	</util:list>
+	
+	<!-- creating list of heros using List -->	
+	<util:list id="avengers">
+		<ref bean="ironMan"></ref>
+		<ref bean="hulk"></ref>
+		<ref bean="thor"></ref>
 	</util:list>
 	
 	<bean class="ie.mohammed.com.FranchiseImplementation"
 		id="dc"
 		c:franchiseName="Justice League"
 		c:franchiseHeros-ref="justiceLeague"/>
- 
+ 	
+ 	<bean class="ie.mohammed.com.FranchiseImplementation"
+ 		id="marvel"
+ 		c:franchiseName="Averager"
+ 		c:franchiseHeros-ref="avengers"
+ 	/>
 </beans>
