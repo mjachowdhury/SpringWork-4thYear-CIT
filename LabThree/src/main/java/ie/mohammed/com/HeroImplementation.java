@@ -15,11 +15,11 @@ import lombok.ToString;
 
 public class HeroImplementation implements Hero{
 	
+	public String heroName;
+	public Power heroPower;
+
 	public HeroImplementation(String heroName) {
 		this.heroName = heroName;
 	}
-	public String heroName;
-	public Power heroPower;
-	
 
 }
