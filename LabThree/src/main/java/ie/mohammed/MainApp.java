@@ -10,20 +10,28 @@ public class MainApp {
 	public static void main(String[] args) {
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beansByType.xml");
+		ClassPathXmlApplicationContext contextByName = new ClassPathXmlApplicationContext("beansByName.xml");
 		
-		Power hammer = (Power) context.getBean("hammer");
-		System.out.println(hammer);
 		
-		Power lasso = (Power) context.getBean("lasso");
-		System.out.println(lasso);
+		  System.out.println("Bean Autowiring by type\n"); Power hammer = (Power)
+		  context.getBean("hammer"); System.out.println(hammer);
+		  
+		  Hero thor = (Hero) context.getBean("thor"); System.out.println(thor);
+		  System.out.println();
+		  
+		  Hero hulk = (Hero) context.getBean("hulk"); System.out.println(hulk);
+		  System.out.println();
+		 
 		
-		Hero thor = (Hero) context.getBean("thor");
-		System.out.println(thor);
+		System.out.println("Beans Autowiring by name\n");
+		
+		Power hammerByName = (Power) contextByName.getBean("hammer");
+		System.out.println(hammerByName);
+		
+		Hero thorByName = (Hero) contextByName.getBean("thor");
+		System.out.println(thorByName);
 		System.out.println();
 		
-		Hero hulk = (Hero) context.getBean("hulk");
-		System.out.println(hulk);
-		System.out.println();
 	}
 
 }

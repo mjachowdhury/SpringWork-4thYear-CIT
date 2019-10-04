@@ -18,10 +18,9 @@
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-
-
-	<bean class="ie.mohammed.com.PowerImplementation" id="hammer"
-		c:powerName="Hammer"
+		
+		<bean class="ie.mohammed.com.PowerImplementation" id="hammer"
+		c:powerName="heroPower"
 		c:powerDescription="Various powers said to be able to level mountains" />
 		
 	
@@ -29,8 +28,6 @@
 	<bean class="ie.mohammed.com.HeroImplementation" id="thor" autowire="byType"
 		c:heroName="Thor"/>
 		
-	<bean class="ie.mohammed.com.HeroImplementation" id="hulk" autowire="byType"
-		c:heroName="Hulk" 
-		
-	/>	
+	
+
 </beans>
