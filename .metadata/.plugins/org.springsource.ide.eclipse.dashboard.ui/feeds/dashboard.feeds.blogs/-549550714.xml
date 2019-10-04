@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-02T18:37:18Z</updated>
+  <updated>2019-10-03T11:22:51Z</updated>
+  <entry>
+    <title>Spring Boot 2.2.0 RC1 has been released!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/03/spring-boot-2-2-0-rc1-has-been-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Madhura Bhave</name>
+    </author>
+    <id>tag:spring.io,2019-10-02:3825</id>
+    <updated>2019-10-03T11:22:51Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the release candidate for Spring Boot 2.2.0 is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release contains &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.0.RC1"&gt;130 issues and pull requests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;Spring Boot 2.2 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.RC1/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We plan to make Spring Boot 2.2 generally-available in mid-October. Now is a great time to try out Spring Boot 2.2 and provide feedback so that we can try and fix things before GA. If you want to get started with 2.2 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.RC1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring for RabbitMQ (Spring AMQP) 2.2 is now available</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/02/spring-for-rabbitmq-spring-amqp-2-2-is-now-available" />
@@ -66,7 +81,7 @@
       <name>Gary Russell</name>
     </author>
     <id>tag:spring.io,2019-10-02:3819</id>
-    <updated>2019-10-02T18:36:52Z</updated>
+    <updated>2019-10-02T18:36:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
 &lt;p&gt;We are pleased to announce the following releases are now available.&lt;/p&gt;
 &lt;/div&gt;
@@ -116,13 +131,13 @@
 &lt;p&gt;You can now specify a delay between processing the results of the previous &lt;code&gt;poll()&lt;/code&gt; and issuing the next &lt;code&gt;poll()&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;When using manual &lt;code&gt;AckMode&lt;/code&gt; s, you can now negagtively acknowlege a record and the container will perform the necessary seeks to replay the record.&lt;/p&gt;
+&lt;p&gt;When using manual &lt;code&gt;AckMode&lt;/code&gt; s, you can now negatively acknowledge a record and the container will perform the necessary seeks to replay the record.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Micrometer &lt;code&gt;Timer&lt;/code&gt; s are now supported to monitor listener performance.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The &lt;code&gt;SeekToCurrentErrorHandler&lt;/code&gt; can be configured to treat certain exceptions asd fatal, disabling retry; you can also now add a &lt;code&gt;BackOff&lt;/code&gt; between redelivery attempts for failed deliveries.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;SeekToCurrentErrorHandler&lt;/code&gt; can be configured to treat certain exceptions as fatal, disabling retry; you can also now add a &lt;code&gt;BackOff&lt;/code&gt; between redelivery attempts for failed deliveries.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The &lt;code&gt;RetryingDeserializer&lt;/code&gt; is provided to retry serialization in the event of, say, a network glitch accessing a schema registry.&lt;/p&gt;
@@ -356,6 +371,52 @@ A preview version is available on Maven Central as well:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.2 in now GA!</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/02/spring-batch-4-2-in-now-ga" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mahmoud Ben Hassine</name>
+    </author>
+    <id>tag:spring.io,2019-10-02:3823</id>
+    <updated>2019-10-02T10:03:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Batch team, I am pleased to announce the general availability of Spring Batch 4.2, which includes a number of new features and performance improvements!&lt;/p&gt;&lt;h2&gt;&lt;a href="#new-features" class="anchor" name="new-features"&gt;&lt;/a&gt;New Features&lt;/h2&gt;
+&lt;p&gt;Spring Batch 4.2 includes the following new features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#batch-metrics-with-micrometer"&gt;Batch Metrics with Micrometer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#support-for-apache-kafka"&gt;Support for Apache Kafka&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#support-for-apache-avro"&gt;Support for Apache Avro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;&lt;a href="#batch-metrics-with-micrometer" class="anchor" name="batch-metrics-with-micrometer"&gt;&lt;/a&gt;Batch Metrics with Micrometer&lt;/h4&gt;
+&lt;p&gt;Spring Batch has always provided users with various metrics through the job repository. However, the ability to consume these metrics and react to them in real time has been muted by the use of a database as the metrics store. This release introduces a new feature that lets you monitor your batch jobs by using a true metrics store through &lt;a href="https://micrometer.io/"&gt;Micrometer&lt;/a&gt;. By default, Spring Batch collects metrics (such as job duration, step duration, item read and write throughput, and others) and registers them in Micrometer’s global metrics registry under the &lt;code&gt;spring.batch&lt;/code&gt; prefix. These metrics can be sent to any monitoring system supported by Micrometer.&lt;/p&gt;&lt;h4&gt;&lt;a href="#support-for-apache-kafka" class="anchor" name="support-for-apache-kafka"&gt;&lt;/a&gt;Support for Apache Kafka&lt;/h4&gt;
+&lt;p&gt;Apache Kafka has quickly become a key data store in the modern enterprise. This release adds new &lt;code&gt;ItemReader&lt;/code&gt; and &lt;code&gt;ItemWriter&lt;/code&gt; implementations for Apache Kafka:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;KafkaItemReader&lt;/code&gt; can read messages from a single partition or multiple partitions of the same topic. This &lt;code&gt;ItemReader&lt;/code&gt; is stateful and supports restarting by beginning at the last known good offset.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;KafkaItemWriter&lt;/code&gt; uses a &lt;code&gt;KafkaTemplate&lt;/code&gt; from the Spring for Apache Kafka project to send messages to a given topic.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can find a comprehensive &lt;a href="https://www.youtube.com/watch?v=UJesCn731G4"&gt;Spring Tips&lt;/a&gt; installment about it (by Josh Long).&lt;/p&gt;&lt;h4&gt;&lt;a href="#support-for-apache-avro" class="anchor" name="support-for-apache-avro"&gt;&lt;/a&gt;Support for Apache Avro&lt;/h4&gt;
+&lt;p&gt;Apache Avro is a popular data serialization system and is widely used in today&amp;rsquo;s streaming and batch applications. This release adds support to read and write Avro data files.&lt;/p&gt;&lt;h2&gt;&lt;a href="#performance-improvements" class="anchor" name="performance-improvements"&gt;&lt;/a&gt;Performance Improvements&lt;/h2&gt;
+&lt;p&gt;This release comes with some major performance improvements that we described in detail in a &lt;a href="https://spring.io/blog/2019/09/17/spring-batch-4-2-0-rc1-is-released"&gt;previous post&lt;/a&gt;. Here is an excerpt of the major changes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Enhanced Step Partitioning&lt;/li&gt;
+  &lt;li&gt;Improved Job Stop&lt;/li&gt;
+  &lt;li&gt;Faster Writes with the &lt;code&gt;JpaItemWriter&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Optimized Bean Mapping with the &lt;code&gt;BeanWrapperFieldSetMapper&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#other-important-changes" class="anchor" name="other-important-changes"&gt;&lt;/a&gt;Other Important Changes&lt;/h2&gt;
+&lt;p&gt;We also made the following significant changes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#dependencies-update"&gt;Dependencies Update&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#updated-documentation"&gt;Updated Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#master-slave-terminology-replacement"&gt;Master/Slave Terminology Replacement&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h4&gt;&lt;a href="#dependencies-update" class="anchor" name="dependencies-update"&gt;&lt;/a&gt;Dependencies Update&lt;/h4&gt;
+&lt;p&gt;Spring Batch 4.2 is based on Spring Framework 5.2 and has been updated to use Spring Integration 5.2 and Spring Data 2.2.&lt;/p&gt;&lt;h4&gt;&lt;a href="#updated-documentation" class="anchor" name="updated-documentation"&gt;&lt;/a&gt;Updated Documentation&lt;/h4&gt;
+&lt;p&gt;The &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;reference documentation&lt;/a&gt; has been updated to match the same style as the other Spring projects.&lt;/p&gt;&lt;h4&gt;&lt;a href="#master-slave-terminology-replacement" class="anchor" name="master-slave-terminology-replacement"&gt;&lt;/a&gt;Master/Slave Terminology Replacement&lt;/h4&gt;
+&lt;p&gt;Words matter. The use of the words &amp;ldquo;master&amp;rdquo; and &amp;ldquo;slave&amp;rdquo; within our software can be hurtful to members of our community. Given our goal to be as inclusive as possible, we want to do our best to make that right. In this version, the &amp;ldquo;master&amp;rdquo;/&amp;ldquo;slave&amp;rdquo; terminology used in our APIs (i.e. &lt;code&gt;RemoteChunkingMasterStepBuilder&lt;/code&gt;) and the batch XML namespace (i.e. &lt;code&gt;remote-chunking-slave&lt;/code&gt; element) have been deprecated and replaced with equivalents that use &amp;ldquo;manager&amp;rdquo; and &amp;ldquo;worker&amp;rdquo; instead. In the next major version, we will remove the derivatives that use the &amp;ldquo;master&amp;rdquo; and &amp;ldquo;slave&amp;rdquo; nomenclature permanently.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s Next?&lt;/h2&gt;
+&lt;p&gt;We will be working on bug fix releases for all branches of the v4 line (v4.0, v4.1 and v4.2). Please note that v4.0.4 will be the last bug fix release for the 4.0 line, so we highly recommend users to migrate to the latest and greatest: v4.2!&lt;/p&gt;
+&lt;p&gt;Spring Batch 4.2 can be consumed by using Spring Boot 2.2.0.RC1. Please give it a try and share your feedback! Feel free to ping &lt;a href="https://www.twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt; or &lt;a href="https://www.twitter.com/b_e_n_a_s"&gt;@b_e_n_a_s&lt;/a&gt; on Twitter or to ask your question on &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://gitter.im/spring-batch/Lobby"&gt;Gitter&lt;/a&gt;. If you find any issue, please open a ticket on &lt;a href="https://jira.spring.io/projects/BATCH/"&gt;Jira&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-batch-at-springone-platform" class="anchor" name="spring-batch-at-springone-platform"&gt;&lt;/a&gt;Spring Batch at SpringOne Platform&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://springoneplatform.io"&gt;SpringOne Platform&lt;/a&gt; is around the corner and will be held in Austin next week! Michael Minella and I will have the pleasure to share with you some of the nice new features of Spring Batch v4.2 in our joint talk &lt;a href="https://springoneplatform.io/2019/sessions/batch-processing-in-2019"&gt;Batch Processing in 2019&lt;/a&gt;. We hope to see you there!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-batch/4.2.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -996,55 +1057,6 @@ class MySpringBootApacheGeodeClientCacheApplication { ... }&lt;/code&gt;&lt;/pre
   &lt;li&gt;The ingenious Toshiaki Maki has added support for 8-bit ASCII art to Spring Boot. &lt;a href="https://twitter.com/making/status/1175677366120505344"&gt;So, you&amp;rsquo;re upgrading, right?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Did you know that, in addition to the recently added Dark Mode on the &lt;a href="http://start.Spring.io"&gt;Spring Initializr&lt;/a&gt;, there&amp;rsquo;s also a way to &amp;ldquo;share&amp;rdquo; a configuration so that others can click the link and get the same configuration?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Nicolai Parlog on Java Modularity</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/19/a-bootiful-podcast-nicolai-parlog-on-java-modularity" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-09-19:3804</id>
-    <updated>2019-09-19T17:25:48Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, Josh Long (&lt;a href="http://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) talks to Manning&amp;rsquo;s &lt;em&gt;The Java Module System&lt;/em&gt; author Nicolai Parlog (&lt;a href="http://twitter.com/NipaFX"&gt;@nipafx&lt;/a&gt;) about Java modularity.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Nicolai Parlog on Twitter: &lt;a href="http://twitter.com/NipaFX"&gt;@nipfax&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;NIcolai&amp;rsquo;s &lt;a href="http://www.manning.com/books/the-java-module-system"&gt;new book, Manning&amp;rsquo;s &lt;em&gt;The Java Module System&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/683439446&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tools 4.4.0 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/09/19/spring-tools-4-4-0-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2019-09-19:3803</id>
-    <updated>2019-09-19T14:21:50Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 4.4.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
-&lt;p&gt;Highlights from this release include:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; major change: quick text search contributed to the Eclipse platform and ships to millions of Eclipse users now&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: updated to Eclipse 2019-09 release&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; improvement: various improvements to support the dark theme&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: deadlock during startuo fixed&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; improvement: updated to latest changes in Concourse YAML elements and attributes&lt;/li&gt;
-  &lt;li&gt;various additional bug fixes&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-09-19-440-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-09-19-440-release&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Spring Tools 4.4.1 is scheduled to be released in late October 2019.&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
