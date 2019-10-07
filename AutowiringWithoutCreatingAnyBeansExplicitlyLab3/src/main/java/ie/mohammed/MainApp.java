@@ -18,7 +18,6 @@ public class MainApp {
 		Hero two = (Hero) context.getBean("hulk");
 		System.out.println(two);
 		
-		System.out.println();
 		Hero three =(Hero) context.getBean("hammer");
 		System.out.println(three);
 		context.close();
