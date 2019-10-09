@@ -21,18 +21,18 @@ public class PowerDaoImp implements PowerDao {
 	JdbcTemplate jdbcTemplate;
 
 	public int getPowerCount() {
-		String sql = "SELECT * COUNT(*) FROM power";
+		String sql = "SELECT  COUNT (*) FROM power";
 		return jdbcTemplate.queryForObject(sql, Integer.class);
 	}
 
 	public int getStartingWithLetterCount(char letter) {
 		String pattern = letter + "%";
-		String sql = "SELECT COUNT(*) FROM power WHERE power.powerName LIKE ?";
+		String sql = "SELECT  COUNT (*) FROM power WHERE power.powerName LIKE ?";
 		return jdbcTemplate.queryForObject(sql, Integer.class, pattern);
 	}
 
 	public int getPowerByName(String powerName) {
-		String sql = "SELECT COUNT(*) FROM power WHERE power.powerName LIKE ?";
+		String sql = "SELECT  COUNT (*) FROM power WHERE power.powerName LIKE ?";
 		return jdbcTemplate.queryForObject(sql, Integer.class, powerName);
 	}
 
@@ -48,7 +48,7 @@ public class PowerDaoImp implements PowerDao {
 
 	// Insert a power
 	public void insertPower(String powerName) {
-		String sql = "INSERT IINTO power(powerName) VALUES (?)";
+		String sql = "INSERT INTO power(powerName) VALUES (?)";
 		jdbcTemplate.update(sql, powerName);
 
 	}
@@ -71,22 +71,21 @@ public class PowerDaoImp implements PowerDao {
 	public List<Power> findAll() {
 		String sql = "SELECT * FROM power";
 		List<Power> powers = jdbcTemplate.query(sql, new PowerRowMapper());
+		//return jdbcTemplate.query(sql, new PowerRowMapper());
+		
 		return powers;
 	}
 
-	public void generateReportOfPowers(String fileName) {
-		String sql = "SELECT * FROM power";
-		Writer writer;
-
-		try {
-			writer = new BufferedWriter(new FileWriter(fileName));
-			jdbcTemplate.query(sql, new ReportGenerator(writer));
-			writer.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
+	/*
+	 * public void generateReportOfPowers(String fileName) { String sql =
+	 * "SELECT * FROM power"; Writer writer;
+	 * 
+	 * try { writer = new BufferedWriter(new FileWriter(fileName));
+	 * jdbcTemplate.query(sql, new ReportGenerator(writer)); writer.close(); } catch
+	 * (IOException e) { e.printStackTrace(); }
+	 * 
+	 * }
+	 */
 
 	public int changePowerName(String oldName, String newName) {
 		return jdbcTemplate.update("UPDATE power SET powerName=? where powerName=?", new Object[] { newName, oldName });

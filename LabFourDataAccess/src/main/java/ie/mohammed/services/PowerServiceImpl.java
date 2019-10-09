@@ -9,7 +9,7 @@ import ie.mohammed.domain.Power;
 import ie.mohammed.domain.PowerDao;
 
 @Service
-public class PowerServiceImp implements PowerService {
+public class PowerServiceImpl implements PowerService {
 
 	@Autowired
 	PowerDao powerDao;
@@ -40,9 +40,10 @@ public class PowerServiceImp implements PowerService {
 		return powerDao.findById(powerId);
 	}
 
-	public void generateReport(String fileName) {
-		powerDao.generateReportOfPowers(fileName);
-	}
+	/*
+	 * public void generateReport(String fileName) {
+	 * powerDao.generateReportOfPowers(fileName); }
+	 */
 
 	/*
 	 * public void insertPower(String powerName) { }

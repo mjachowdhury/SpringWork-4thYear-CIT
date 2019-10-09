@@ -8,12 +8,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ie.mohammed.domain.Power;
 import ie.mohammed.services.PowerService;
+import ie.mohammed.services.PowerServiceImpl;
 
 public class MainApp {
 
 	public static void main(String[] args) {
 		 ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		 PowerService powerService = (PowerService) context.getBean("powerServiceImpl");
+		 PowerServiceImpl powerService = (PowerServiceImpl) context.getBean("powerServiceImpl");
 	
 		 System.out.println("There are " + powerService.CountThePowers() + "powers in the database");
 		 
@@ -25,7 +26,7 @@ public class MainApp {
 		 	
 		 System.out.println(powerService.CountThePowers());
 
-		 powerService.generateReport("powers.txt");
+		 //powerService.generateReport("powers.txt");
 	}
 
 }

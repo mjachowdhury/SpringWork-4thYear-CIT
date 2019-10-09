@@ -10,7 +10,7 @@ public interface PowerDao {
 	List<Power> findAll();
 	Power findById(int powerId);
 	boolean isIdInTable(int id);
-	void generateReportOfPowers(String fileName);
+	//void generateReportOfPowers(String fileName);
 	void insertPower(String powerName);
 	void addAPower(String powerName, String powerDescription);
 	int changePowerName(String oldName, String newName);

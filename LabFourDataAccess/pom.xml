@@ -40,9 +40,25 @@
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
 		    <version>1.4.199</version>
+		    <optional>true</optional>
 		</dependency>
 				
 						
+		<!--Testing  -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>5.2.0.RELEASE</version>
+		    <scope>test</scope>
+		</dependency>
+				<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>5.5.2</version>
+		    <scope>test</scope>
+		</dependency>
 		
 		
 			

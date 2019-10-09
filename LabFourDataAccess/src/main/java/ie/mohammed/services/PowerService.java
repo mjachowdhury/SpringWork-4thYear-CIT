@@ -12,7 +12,7 @@ public interface PowerService {
 	List<Power> findAllPowers();
 	Power findPower(int powerId);
 	
-	void generateReport(String fileName);
+	//void generateReport(String fileName);
 	//void insertPower(String powerName);
 	void savePower(String powerName);
 	
