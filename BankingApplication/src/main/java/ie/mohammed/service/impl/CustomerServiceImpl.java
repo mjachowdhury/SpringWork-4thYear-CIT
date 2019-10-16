@@ -19,41 +19,42 @@ import ie.mohammed.service.CustomerService;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-	
+
 	@Autowired
 	CustomerDao customerDao;
-	
-	public int getCustomerCount() {
-		// TODO Auto-generated method stub
-		return 0;
+
+	public int CountTotalCustomer() {
+		return customerDao.getCustomerCount();
 	}
 
-	public int getCustomerByName(String lastName) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int CustomerByName(String lastName) {
+		return customerDao.getCustomerByName(lastName);
 	}
 
 	public List<Customer> findAllCustomer() {
-		// TODO Auto-generated method stub
-		return null;
+		return customerDao.findAll();
 	}
 
 	public Customer findById(int customerId) {
-		// TODO Auto-generated method stub
-		return null;
+		return customerDao.findById(customerId);
 	}
 
 	public void saveACustomer(String firstName, String lastName, String address, String city, String contactNumber,
 			String email) {
-		// TODO Auto-generated method stub
-		
+		if (customerDao.getCustomerByName(lastName) == 0) {
+			customerDao.insertCustomer(firstName, lastName, address, city, contactNumber, email);
+		}
 	}
 
-	public int changeCustomerName(String oldFisrtName, String newFirstName, String oldAddress, String newAddress,
+	public int changeCustomerName(String oldFisrtName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,
 			String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail,
 			String newEmail) {
-		// TODO Auto-generated method stub
+		if(customerDao.getCustomerByName(oldLastName) == 1) {
+			return customerDao.changeCustomerName(oldFisrtName, newFirstName,oldLastName, newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail, newEmail);
+		}
 		return 0;
 	}
+
+	 
 
 }

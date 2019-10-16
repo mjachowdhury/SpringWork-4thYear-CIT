@@ -63,11 +63,11 @@ public class CustomerDaoImpl implements CustomerDao {
 		
 	}
 
-	public int changeCustomerName(String oldFisrtName, String newFirstName, String oldAddress, String newAddress, String oldCity, String newCity, String oldContactNumber,
+	public int changeCustomerName(String oldFisrtName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity, String newCity, String oldContactNumber,
 			String newContactNumber, String oldEmail, String newEmail) {
 		return jdbcTemplate.update("UPDATE customer SET firstName=? lastName=? address=? city=? contactNumber=? email=? "
 												+ "	where firstName=? lastName=? address=? city=? contactNumber=? email=?", 
-													new Object[] { newFirstName, oldFisrtName, newAddress, oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail });
+													new Object[] { newFirstName, oldFisrtName,oldLastName,newLastName, newAddress, oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail });
 		
 	}
 
