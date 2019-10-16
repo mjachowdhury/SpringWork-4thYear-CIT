@@ -1,12 +1,18 @@
-/**
- * 
- */
 package ie.mohammed.service;
 
-/**
- * @author Mohammed
- *
- */
-public class CustomerService {
+import java.util.List;
+
+import ie.mohammed.model.Customer;
+
+public interface CustomerService {
+	int getCustomerCount();
+	int getCustomerByName(String lastName);
+	List<Customer> findAllCustomer();
+	Customer findById(int customerId);
+	
+	//void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
+	void saveACustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
+	int changeCustomerName(String oldFisrtName, String newFirstName, String oldAddress, String newAddress,String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail);
+
 
 }
