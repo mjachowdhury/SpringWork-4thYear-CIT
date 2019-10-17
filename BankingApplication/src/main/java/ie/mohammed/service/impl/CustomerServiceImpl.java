@@ -39,9 +39,9 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.findById(customerId);
 	}
 
-	public void saveACustomer(String firstName, String lastName) {
+	public void saveACustomer(String firstName, String lastName, String address, String city, String contactNumber, String email) {
 		if (customerDao.getCustomerByName(lastName) == 0) {
-			customerDao.insertCustomer(firstName, lastName);
+			customerDao.insertCustomer(firstName, lastName, address, city, contactNumber, email);
 		}
 	}
 

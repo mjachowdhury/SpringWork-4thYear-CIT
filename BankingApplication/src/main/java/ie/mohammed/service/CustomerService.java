@@ -11,7 +11,7 @@ public interface CustomerService {
 	Customer findById(int customerId);
 	
 	//void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
-	void saveACustomer(String firstName, String lastName);
+	void saveACustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
 	int changeCustomerName(String oldFisrtName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail);
 
 
