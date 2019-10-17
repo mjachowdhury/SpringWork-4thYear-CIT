@@ -10,8 +10,13 @@ import ie.mohammed.model.Account;
 public class AccountRowMapper implements RowMapper<Account>	{
 
 	public Account mapRow(ResultSet rs, int rowNum) throws SQLException {
+		
+		Account account = new Account();
+		account.setAccountNumber(rs.getInt("accountNumber"));
+		account.setBalance(rs.getDouble("balance"));
 		 
-		return null;
+		
+		return account;
 	}
 
 }

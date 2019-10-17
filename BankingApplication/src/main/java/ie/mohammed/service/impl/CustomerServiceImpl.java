@@ -45,13 +45,18 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
-	public int changeCustomerName(String oldFisrtName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,
+	public int changeCustomerName(String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,
 			String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail,
 			String newEmail) {
 		if(customerDao.getCustomerByName(oldLastName) == 1) {
-			return customerDao.changeCustomerName(oldFisrtName, newFirstName,oldLastName, newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail, newEmail);
+			return customerDao.changeCustomerName(oldFirstName, newFirstName,oldLastName, newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail, newEmail);
 		}
 		return 0;
+	}
+
+	public void createACustomer(Customer c) {
+		 customerDao.addACustomer(c);
+		
 	}
 
 	 

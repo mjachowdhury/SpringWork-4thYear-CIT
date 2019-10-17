@@ -19,6 +19,7 @@ public interface CustomerDao {
 	
 	void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
 	void addACustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
-	int changeCustomerName(String oldFisrtName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail);
+	int changeCustomerName(String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail);
+	void addACustomer(Customer c);
 
 }
