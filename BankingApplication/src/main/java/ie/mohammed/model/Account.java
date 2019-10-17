@@ -13,15 +13,20 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Account {
-
+	
+	private int accountId;
 	private int accountNumber;
-	private double balance = 0;
+	private double amount = 0;
 	
 	@Autowired
 	private Customer customer;
+	
 	@Override
 	public String toString() {
-		return "Account [accountNumber=" + accountNumber + ", balance=" + balance + "]";
+		return "/n"+
+				"Account ID : " + accountId +"/n"+
+				"Account Number : " + accountNumber+ "/n"+ 
+				"Account Balance : " + amount + "/n";
 	}
 	
 	 

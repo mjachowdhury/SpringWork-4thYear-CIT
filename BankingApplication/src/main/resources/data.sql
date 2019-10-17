@@ -9,3 +9,10 @@ INSERT INTO employee(employeeId, firstName, lastName, password) VALUES
 (1, 'Mohammed', 'Alom', '123456'),
 (2, 'Opi', 'Alom', '654321'),
 (3, 'Yahia', 'Alom', '987654');
+
+
+
+INSERT INTO account(accountId, accountNumber, amount) VALUES
+(1,  '555555', '1000'),
+(2, '666666', '2000'),
+(3, '777777', '3000');

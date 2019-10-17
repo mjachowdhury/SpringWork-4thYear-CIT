@@ -27,6 +27,10 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.findByAccountNumber(accountNumber);
 	}
 
+	public Account findByAccountID(int accountId) {
+		return accountDao.findByAccountID(accountId);
+	}
+
 	public void saveAnAccount(int accountNumber, double balance) {
 		  
 		
@@ -57,4 +61,5 @@ public class AccountServiceImpl implements AccountService {
 		
 	}
 
+	
 }

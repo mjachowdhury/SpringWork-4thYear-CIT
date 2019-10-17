@@ -9,6 +9,7 @@ public interface AccountService {
 	int totalNumberOfAccount();
 	List<Account> findAllAccount();
 	Account findByAccountNumber(int accountNumber);
+	Account findByAccountID(int accountId);
 	
 	void saveAnAccount(int accountNumber, double balance);
 	void transferMoney();

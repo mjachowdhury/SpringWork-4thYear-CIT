@@ -9,6 +9,7 @@ public interface AccountDao {
 	int getAccountCount();
 	List<Account> findAll();
 	Account findByAccountNumber(int accountNumber);
+	Account findByAccountID(int accountId);
 	
 	void createAnAccount(int accountNumber, double balance);
 	void transferMoney();
