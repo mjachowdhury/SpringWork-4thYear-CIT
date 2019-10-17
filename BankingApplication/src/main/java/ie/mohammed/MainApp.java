@@ -1,11 +1,13 @@
 package ie.mohammed;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ie.mohammed.model.Employee;
 import ie.mohammed.model.Customer;
+//import ie.mohammed.domain.Power;
 import ie.mohammed.model.Account;
 import ie.mohammed.service.impl.AccountServiceImpl;
 import ie.mohammed.service.impl.CustomerServiceImpl;
@@ -20,16 +22,29 @@ public class MainApp {
 		EmployeeServiceImpl employeeService = (EmployeeServiceImpl) context.getBean("employeeServiceImpl");
 		AccountServiceImpl accountService = (AccountServiceImpl) context.getBean("accountServiceImpl");
 
-		System.out.println("There are " + customerService.CountTotalCustomer());
-		System.out.println("There are " + customerService.findAllCustomer());
-
-		System.out.println("There are " + employeeService.totalEmployeesCount());
-		System.out.println("Total Employee Details\n" + employeeService.totalEmployees());
-		
-		System.out.println("There are " + accountService.totalNumberOfAccount());
-		System.out.println("There are \n");
+		System.out.println("There are " + customerService.CountTotalCustomer()+" total number of customers");
+		System.out.println("Customer Details\n");
+		List<Customer> customers = customerService.findAllCustomer();
+	 	for(Customer customer: customers)
+	 			System.out.println(customer);
+	 	
+		System.out.println("There are " + employeeService.totalEmployeesCount() + " total number of employees.");
+		System.out.println("Employee Details\n");
+		List<Employee> employee = employeeService.totalEmployees();
+	 	for(Employee emp: employee)
+	 			System.out.println(emp);
+	 	
+		System.out.println("There are " + accountService.totalNumberOfAccount() + "total number of accounts");
+		System.out.println("Customer Details\n");
+		List<Account> account = accountService.findAllAccount();
+	 	for(Account acc: account)
+	 			System.out.println(acc);
+	 	
+		System.out.println("Account Details are- \n");
 		accountService.displayAccountDetails();
 
+		
+		
 		/*
 		 * do {
 		 * 
@@ -201,4 +216,50 @@ public class MainApp {
 
 	}
 
+	public static void mainMenu(){
+		System.out.println("");
+		System.out.println("======================================");
+		System.out.println("|     Please select and option:      |");
+		System.out.println("======================================");
+		System.out.println("| Options:                           |");
+		System.out.println("|        [1] Employee                   |");
+		System.out.println("|        [2] Account Holder          |");
+		System.out.println("|        [3] Exit                    |");
+		System.out.println("======================================");
+	}
+	public static void adminMenu(){
+		System.out.println("");
+        System.out.println("===============================================");
+        System.out.println("|     Please select and option:               |");
+        System.out.println("===============================================");
+        System.out.println("| Options:                                    |");
+        System.out.println("|        [1] Create new Employee Account         |");
+        System.out.println("|        [2] Create new Customer              |");
+        System.out.println("|        [3] Set up an Account for a customer |");
+        System.out.println("|        [4] Update Customer Details          |");
+        System.out.println("|        [5] Update Customer Account details  |");
+        System.out.println("|        [6] Check Customer balance           |");
+        System.out.println("|        [7] Print transaction details        |");
+        System.out.println("|        [8] Add interest                     |");
+        System.out.println("|        [9] Show menu                        |");
+        System.out.println("|        [10] Logout                          |");
+        System.out.println("===============================================");
+	}
+	
+	public static void customerMenu(){
+		System.out.println("========================================");
+		System.out.println("|     Please select and option:        |");
+		System.out.println("========================================");
+		System.out.println("| Options:                             |");
+		System.out.println("|        [1] Check balence             |");
+		System.out.println("|        [2] Deposit                   |");
+		System.out.println("|        [3] Withdraw                  |");
+		System.out.println("|        [4] Print transaction History |");
+		System.out.println("|        [5] Change password           |");
+		System.out.println("|        [6] Change account            |");
+		System.out.println("|        [7] Show menu                 |");
+		System.out.println("|        [8] Logout                    |");
+		System.out.println("========================================");
+	}
+	
 }

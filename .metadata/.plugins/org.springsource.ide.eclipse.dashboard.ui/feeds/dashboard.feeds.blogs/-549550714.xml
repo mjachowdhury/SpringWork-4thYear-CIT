@@ -5,7 +5,45 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-10-17T14:47:00Z</updated>
+  <updated>2019-10-17T20:54:40Z</updated>
+  <entry>
+    <title>Spring Security OAuth 2.3.7, 2.2.6, 2.1.6, 2.0.19 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/10/17/spring-security-oauth-2-3-7-2-2-6-2-1-6-2-0-19-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Joe Grandja</name>
+    </author>
+    <id>tag:spring.io,2019-10-17:3839</id>
+    <updated>2019-10-17T20:54:40Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;I&amp;#8217;m pleased to announce the releases of Spring Security OAuth 2.3.7, 2.2.6, 2.1.6 and 2.0.19. These maintenance releases primarily deliver bug fixes and minor enhancements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes, please refer to:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/50?closed=1"&gt;2.3.7 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/51?closed=1"&gt;2.2.6 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/52?closed=1"&gt;2.1.6 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-security-oauth/milestone/53?closed=1"&gt;2.0.19 changelog&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security-oauth/"&gt;Project Page&lt;/a&gt; |
+&lt;a href="https://github.com/spring-projects/spring-security-oauth/"&gt;GitHub&lt;/a&gt; |
+&lt;a href="http://projects.spring.io/spring-security-oauth/docs/Home.html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-security-oauth2"&gt;Help&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Stream - functional and reactive</title>
     <link rel="alternate" href="https://spring.io/blog/2019/10/17/spring-cloud-stream-functional-and-reactive" />
@@ -1486,93 +1524,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration 5.2 GA Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/10/02/spring-integration-5-2-ga-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2019-10-02:3818</id>
-    <updated>2019-10-02T12:03:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of Spring Integration team I&amp;#8217;m excited to announce that Spring Integration &lt;code&gt;5.2.0.RELEASE&lt;/code&gt; is available.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt; and Maven Central:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.2.0.RELEASE"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="whats-new-in-this-generation"&gt;&lt;a class="anchor" href="#whats-new-in-this-generation"&gt;&lt;/a&gt;What&amp;#8217;s New in this generation?&lt;/h3&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;RSocket Support - an &lt;code&gt;RSocketInboundGateway&lt;/code&gt; and &lt;code&gt;RSocketOutboundGateway&lt;/code&gt; are implemented for Reactive Streams support in the RSocket protocol.
-See &lt;code&gt;spring-integration-rsocket&lt;/code&gt; module.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;FluxAggregatorMessageHandler&lt;/code&gt; to produces window or buffer results based on the Project Reactor &lt;code&gt;Flux&lt;/code&gt; grouping and windowing functionality.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;RateLimiterRequestHandlerAdvice&lt;/code&gt; and &lt;code&gt;CacheRequestHandlerAdvice&lt;/code&gt; are available for AOP aspects around &lt;code&gt;MessageHandler.handleMessage()&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;JSR223 implementation for Kotlin Scripts has been added into &lt;code&gt;spring-integration-scripting&lt;/code&gt; module.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The FTP and SFTP modules now provide an event listener for certain Apache Mina FTP/SFTP server events.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Simple Apache Avro transformers are now provided.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Many other improvements throughout the project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See &lt;code&gt;What&amp;#8217;s New?&lt;/code&gt; in the &lt;a href="https://docs.spring.io/spring-integration/docs/current/reference/html/whats-new.html#whats-new"&gt;Reference Manual&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.1-to-5.2-Migration-Guide"&gt;Migration Guide&lt;/a&gt; for more information and possible breaking changes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="in-addition"&gt;&lt;a class="anchor" href="#in-addition"&gt;&lt;/a&gt;In Addition&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The maintenance &lt;code&gt;5.1.8.RELEASE&lt;/code&gt; version has been released as well including some improvements and bug fixes.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The &lt;code&gt;spring-integration-kafka:3.2.0.RELEASE&lt;/code&gt; is available, too, and it is based on Spring Integration &lt;code&gt;5.2&lt;/code&gt; and Spring for Apache Kafka &lt;code&gt;2.3&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also we would like to share with you that we have just started an extension project for Spring Integration Kotlin DSL.
-A preview version is available on Maven Central as well:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-kotlin-dsl:0.0.1.RELEASE"&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/master/spring-integration-kotlin-dsl"&gt;GitHub Project Page&lt;/a&gt; for more information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Grab it while it is still hot and you are welcome for any feedback.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See you all next week at &lt;a href="https://springoneplatform.io/"&gt;Spring One Platform&lt;/a&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>

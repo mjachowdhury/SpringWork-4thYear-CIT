@@ -23,10 +23,10 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		return "/n"+
-				"Account ID : " + accountId +"/n"+
-				"Account Number : " + accountNumber+ "/n"+ 
-				"Account Balance : " + amount + "/n";
+		return "\n"+
+				"Account ID : " + accountId +"\n"+
+				"Account Number : " + accountNumber+ "\n"+ 
+				"Account Balance : " + amount + "\n";
 	}
 	
 	 
