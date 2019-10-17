@@ -48,10 +48,9 @@ public class CustomerDaoImpl implements CustomerDao {
 		return customer;
 	}
 
-	public void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber,
-			String email) {
-		String sql = "INSERT INTO customer(firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?)";
-		jdbcTemplate.update(sql, firstName,lastName,address,city,contactNumber,email);
+	public void insertCustomer(String firstName, String lastName) {
+		String sql = "INSERT INTO customer(firstName,lastName) VALUES (?,?)";
+		jdbcTemplate.update(sql, firstName,lastName);
 		
 	}
 
