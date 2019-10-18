@@ -10,8 +10,12 @@ public interface EmployeeDao {
 	List<Employee> getAllEmployee();
 	
 	int getEmployeeCount();
-	int getEmployeeByName(String lastName);
+	String getEmployeeByName(String lastName);
+	int getEmployeeById(int id);
+	
 	Employee findById(int employeeId);
+	Employee findByPassword(String employeePassword);
+	
 	void insertANewEmployee(String firstName, String lastName, String password);
 	void addANewEmployee(String firstName, String lastName, String password);
 

@@ -23,19 +23,27 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeDao.getEmployeeCount();
 	}
 
-	public int findEmployeeByName(String lastName) {
+	public String findEmployeeByName(String lastName) {
 		return employeeDao.getEmployeeByName(lastName);
+	}
+
+
+	public int getEmployeeById(int id) {
+		return employeeDao.getEmployeeById(id);
 	}
 
 	public Employee findById(int employeeId) {
 		return employeeDao.findById(employeeId);
 	}
+	
+	public Employee findByPassword(String employeePassword) { 
+		return employeeDao.findByPassword(employeePassword);
+	}
 
 	public void saveANewEmployee(String firstName, String lastName, String password) {
-		 if(employeeDao.getEmployeeByName(lastName) == 0) {
+		 if(employeeDao.getEmployeeByName(lastName) == null) {
 			 employeeDao.insertANewEmployee(firstName, lastName, password);
 		 }
 		
-	}
-
+	}	
 }

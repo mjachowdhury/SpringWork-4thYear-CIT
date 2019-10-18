@@ -22,50 +22,143 @@ public class MainApp {
 		EmployeeServiceImpl employeeService = (EmployeeServiceImpl) context.getBean("employeeServiceImpl");
 		AccountServiceImpl accountService = (AccountServiceImpl) context.getBean("accountServiceImpl");
 
-		System.out.println("There are " + customerService.CountTotalCustomer()+" total number of customers");
-		System.out.println("Customer Details\n");
-		List<Customer> customers = customerService.findAllCustomer();
-	 	for(Customer customer: customers)
-	 			System.out.println(customer);
-	 	
-		System.out.println("There are " + employeeService.totalEmployeesCount() + " total number of employees.");
-		System.out.println("Employee Details\n");
-		List<Employee> employee = employeeService.totalEmployees();
-	 	for(Employee emp: employee)
-	 			System.out.println(emp);
-	 	
-		System.out.println("There are " + accountService.totalNumberOfAccount() + "total number of accounts");
-		System.out.println("Customer Details\n");
-		List<Account> account = accountService.findAllAccount();
-	 	for(Account acc: account)
-	 			System.out.println(acc);
-	 	
-		System.out.println("Account Details are- \n");
-		accountService.displayAccountDetails();
-
-		mainMenu();
-		adminMenu();
-		customerMenu();
-		
-		
 		/*
-		 * do {
+		 * System.out.println("There are " +
+		 * customerService.CountTotalCustomer()+" total number of customers");
+		 * System.out.println("Customer Details\n"); List<Customer> customers =
+		 * customerService.findAllCustomer(); for(Customer customer: customers)
+		 * System.out.println(customer);
 		 * 
-		 * System.out.println("Enter Employee ID:"); employeeId = in.nextInt();
-		 * System.out.println("Enter Password: "); pass = in.nextLine(); for (Employee
-		 * emp : employeeService.totalEmployees()) {
+		 * System.out.println("There are " + employeeService.totalEmployeesCount() +
+		 * " total number of employees."); System.out.println("Employee Details\n");
+		 * List<Employee> employee = employeeService.totalEmployees(); for(Employee emp:
+		 * employee) System.out.println(emp);
 		 * 
-		 * if (emp.getEmployeeId() == employeeId) {
+		 * System.out.println("There are " + accountService.totalNumberOfAccount() +
+		 * "total number of accounts"); System.out.println("Customer Details\n");
+		 * List<Account> account = accountService.findAllAccount(); for(Account acc:
+		 * account) System.out.println(acc);
 		 * 
-		 * if (employeeId == emp.getEmployeeId() && pass.contains(emp.getPassword())) {
-		 * user = true; } }
+		 * System.out.println("Account Details are- \n");
+		 * accountService.displayAccountDetails();
+		 * 
+		 * mainMenu(); adminMenu(); customerMenu();
+		 */
+
+		Scanner scanner = new Scanner(System.in);
+		boolean user = false;
+		boolean accountRedo = false;
+		int choice;
+		String employeeLastName;
+		int employeeId;
+
+		/*
+		 * Employee emp = new Employee(); System.out.println("Enter employee id : ");
+		 * employeeId = scanner.nextInt(); System.out.println();
+		 * System.out.println("Enter password : "); password = scanner.nextLine();
+		 * 
+		 * if(employeeId == emp.getEmployeeId() && password.equals(emp.getPassword())) {
+		 * while(true) { System.out.println("\n-------------------");
+		 * System.out.println("BANK    OF     JAVA");
+		 * System.out.println("-------------------\n");
+		 * System.out.println("1. Register account."); System.out.println("2. Login.");
+		 * System.out.println("3. Update accounts."); System.out.println("4. Exit.");
+		 * System.out.print("\nEnter your choice : "); choice = scanner.nextInt();
+		 * scanner.nextLine(); } }
+		 */
+
+		while (true) {
+			System.out.println("\n-------------------");
+			System.out.println("BANK    OF     SPRING");
+			System.out.println("-------------------\n");
+			//System.out.println("1. Register account.");
+			System.out.println("1. Login.");
+			//System.out.println("3. Update accounts.");
+			System.out.println("2. Exit.");
+			System.out.print("\nEnter your choice : ");
+			choice = scanner.nextInt();
+			scanner.nextLine();
+
+			switch (choice) {
+			case 1:
+				System.out.println("Enter first name:");
+				String firstName = scanner.nextLine();
+				System.out.println("Enter last name:");
+				String lastName = scanner.nextLine();
+				System.out.println("Enter address :");
+				String address = scanner.nextLine();
+				System.out.println("Enter city name:");
+				String city = scanner.nextLine();
+				System.out.println("Enter contact number :");
+				String contactNumber = scanner.nextLine();
+				System.out.println("Enter email :");
+				String email = scanner.nextLine();
+
+				customerService.saveACustomer(firstName, lastName, address, city, contactNumber, email);
+
+				break;
+			case 2:
+				
+				System.out.println("Enter employee id : ");
+				employeeId = scanner.nextInt();
+				scanner.nextLine();
+				System.out.println("Enter last name : ");
+				employeeLastName = scanner.nextLine();
+				Employee emp = employeeService.findById(employeeId);
+				if (emp==null)
+					System.out.println("ERROR - ??????????????????/");
+				else if (emp.getLastName().equals(employeeLastName)) {
+					while (true) {
+						System.out.println("\n-------------------");
+						System.out.println("W  E  L  C  O  M  E");
+						System.out.println("-------------------\n");
+						System.out.println("1. Deposit.");
+						System.out.println("2. Transfer.");
+						System.out.println("3. Last 5 transactions.");
+						System.out.println("4. User information.");
+						System.out.println("5. Log out.");
+						System.out.print("\nEnter your choice : ");
+						choice = scanner.nextInt();
+						scanner.nextLine();
+
+						switch (choice) {
+						case 1:
+
+							break;
+
+						default:
+							System.out.println("Wrong choice!");
+						}
+					}
+				} else {
+					System.out.println("Wrong choice!");
+				}
+
+			default:
+				System.out.println("Wrong choice!");
+			}
+		}
+
+		/*
+		 * do { System.out.println("Enter Employee ID:"); employeeId =
+		 * scanner.nextInt(); for(Employee emp : employeeService.totalEmployees()) {
+		 * if(employeeId == emp.getEmployeeId()) {
+		 * System.out.println("Enter the password: "); password = scanner.nextLine();
+		 * for(Employee em : employeeService.totalEmployees()) {
+		 * if(password.equals(em.getPassword())) { user = true; } break; } } break; }
+		 * }while(!user);
+		 */
+
+		/*
+		 * System.out.println("Enter Password: "); password = scanner.nextLine(); for
+		 * (Employee emp : employeeService.totalEmployees()) { if (employeeId ==
+		 * emp.getEmployeeId() && password.equals(emp.getPassword())) { user = true; } }
 		 * 
 		 * } while (!user);
 		 */
 
 		/*
-		 * String password; int employeeId; Scanner scanner = new Scanner(System.in);
-		 * boolean user = false; boolean accountRedo = false;
+		 * 
 		 * 
 		 * System.out.println("Enter employeeID : "); employeeId = scanner.nextInt();
 		 * scanner.nextLine(); System.out.println("Enter password : "); password =
@@ -219,7 +312,7 @@ public class MainApp {
 
 	}
 
-	public static void mainMenu(){
+	public static void mainMenu() {
 		System.out.println("");
 		System.out.println("======================================");
 		System.out.println("|     Please select and option:      |");
@@ -230,26 +323,27 @@ public class MainApp {
 		System.out.println("|        [3] Exit                    |");
 		System.out.println("======================================");
 	}
-	public static void adminMenu(){
+
+	public static void adminMenu() {
 		System.out.println("");
-        System.out.println("===============================================");
-        System.out.println("|     Please select and option:               |");
-        System.out.println("===============================================");
-        System.out.println("| Options:                                    |");
-        System.out.println("|        [1] Create new Employee Account         |");
-        System.out.println("|        [2] Create new Customer              |");
-        System.out.println("|        [3] Set up an Account for a customer |");
-        System.out.println("|        [4] Update Customer Details          |");
-        System.out.println("|        [5] Update Customer Account details  |");
-        System.out.println("|        [6] Check Customer balance           |");
-        System.out.println("|        [7] Print transaction details        |");
-        System.out.println("|        [8] Add interest                     |");
-        System.out.println("|        [9] Show menu                        |");
-        System.out.println("|        [10] Logout                          |");
-        System.out.println("===============================================");
+		System.out.println("===============================================");
+		System.out.println("|     Please select and option:               |");
+		System.out.println("===============================================");
+		System.out.println("| Options:                                    |");
+		System.out.println("|        [1] Create new Employee Account         |");
+		System.out.println("|        [2] Create new Customer              |");
+		System.out.println("|        [3] Set up an Account for a customer |");
+		System.out.println("|        [4] Update Customer Details          |");
+		System.out.println("|        [5] Update Customer Account details  |");
+		System.out.println("|        [6] Check Customer balance           |");
+		System.out.println("|        [7] Print transaction details        |");
+		System.out.println("|        [8] Add interest                     |");
+		System.out.println("|        [9] Show menu                        |");
+		System.out.println("|        [10] Logout                          |");
+		System.out.println("===============================================");
 	}
-	
-	public static void customerMenu(){
+
+	public static void customerMenu() {
 		System.out.println("========================================");
 		System.out.println("|     Please select and option:        |");
 		System.out.println("========================================");
@@ -264,5 +358,5 @@ public class MainApp {
 		System.out.println("|        [8] Logout                    |");
 		System.out.println("========================================");
 	}
-	
+
 }
