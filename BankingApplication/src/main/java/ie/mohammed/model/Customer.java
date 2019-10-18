@@ -3,6 +3,9 @@
  */
 package ie.mohammed.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +29,19 @@ public class Customer {
 	private String city;
 	private String contactNumber;
 	private String email;
+	
+	private String savingAccount;
+	
+	private List<Account> accounts = new ArrayList<Account>();
+	
+	public void setSavingAccounts(String SA) {
+		Account tempSavingAcc = new Account(SA);
+		tempSavingAcc.setCustomer(this);
+		accounts.add(tempSavingAcc);
+		this.savingAccount = SA;
+	}
+	
+	 
 	@Override
 	public String toString() {
 		return "\n"+

@@ -35,9 +35,15 @@ public class CustomerDaoImpl implements CustomerDao {
 	
 	}
 
-	public List<Customer> findAll() {
+	public List<Customer> findAllCustomer() {
 		String sql = "SELECT * FROM customer";
 		List<Customer> customers = jdbcTemplate.query(sql, new CustomerRowMapper());
+		for(Customer c : customers) {
+			if(c.getAccounts().size() > 0 )
+			{
+				c.setSavingAccount(c.getAccounts().get(0).getAccountNumber());
+			}
+		}
 		return customers;
 		
 	}
@@ -70,7 +76,7 @@ public class CustomerDaoImpl implements CustomerDao {
 		
 	}
 
-	public void addACustomer(Customer c) {
+	public void createCustomer(Customer c) {
 		 
 	}
 

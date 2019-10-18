@@ -7,6 +7,7 @@ import ie.mohammed.model.Employee;
 public interface EmployeeService {
 	
 	List<Employee> totalEmployees();
+	
 	int totalEmployeesCount();
 	int findEmployeeByName(String lastName);
 	Employee findById(int employeeId);

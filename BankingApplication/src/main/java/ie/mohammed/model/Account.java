@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Account {
 	
 	private int accountId;
-	private int accountNumber;
+	private String accountNumber;
 	private double amount = 0;
 	
 	@Autowired
@@ -27,6 +27,10 @@ public class Account {
 				"Account ID : " + accountId +"\n"+
 				"Account Number : " + accountNumber+ "\n"+ 
 				"Account Balance : " + amount + "\n";
+	}
+
+	public Account(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 	
 	 

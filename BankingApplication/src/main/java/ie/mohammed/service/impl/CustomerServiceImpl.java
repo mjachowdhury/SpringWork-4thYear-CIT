@@ -32,7 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public List<Customer> findAllCustomer() {
-		return customerDao.findAll();
+		return customerDao.findAllCustomer();
 	}
 
 	public Customer findById(int customerId) {
@@ -55,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void createACustomer(Customer c) {
-		 customerDao.addACustomer(c);
+		 customerDao.createCustomer(c);
 		
 	}
 

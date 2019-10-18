@@ -21,7 +21,7 @@ CREATE TABLE employee(
 
 CREATE TABLE account( 
 	accountId int (11) NOT NULL AUTO_INCREMENT,
-	accountNumber int (30) NOT NULL,
+	accountNumber varchar (30) NOT NULL,
 	amount double (30) NOT NULL,
 	PRIMARY KEY (accountId)
 );

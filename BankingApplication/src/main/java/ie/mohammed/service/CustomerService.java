@@ -6,13 +6,14 @@ import ie.mohammed.model.Customer;
 
 public interface CustomerService {
 	int CountTotalCustomer();
-	int CustomerByName(String lastName);
-	List<Customer> findAllCustomer();
+	int CustomerByName(String lastName);	
 	Customer findById(int customerId);
 	
 	//void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
 	void saveACustomer(String firstName, String lastName, String address, String city, String contactNumber, String email);
 	int changeCustomerName(String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail);
+	
 	void createACustomer(Customer c);
+	List<Customer> findAllCustomer();
 
 }

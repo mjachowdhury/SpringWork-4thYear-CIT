@@ -14,13 +14,21 @@ public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	AccountDao accountDao;
-	
-	public int totalNumberOfAccount() {
-		 return accountDao.getAccountCount();
-	}
 
 	public List<Account> findAllAccount() {
-		return accountDao.findAll();
+		return accountDao.findAllAccount();
+	}
+
+	public void depositMoney(int accountNumber, double amount) {
+		accountDao.depositMoney(accountNumber, amount);
+	}
+
+	public void withdrawMoney(int accountNumber, double amount) {
+		accountDao.withdrawMoney(accountNumber, amount);
+	}
+
+	public int totalNumberOfAccount() {
+		return accountDao.getAccountCount();
 	}
 
 	public Account findByAccountNumber(int accountNumber) {
@@ -32,34 +40,22 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public void saveAnAccount(int accountNumber, double balance) {
-		  
-		
+
 	}
 
 	public void transferMoney() {
 		// TODO Auto-generated method stub
-		
-	}
 
-	public void depositMoney(int accountNumber, double amount) {
-		 accountDao.depositMoney(accountNumber, amount);
-		
-	}
-
-	public void withdrawMoney(int accountNumber, double amount) {
-		 accountDao.withdrawMoney(accountNumber, amount);
-		
 	}
 
 	public void closeAnAccount() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void displayAccountDetails() {
-		 accountDao.displayAccountDetails();
-		
+		accountDao.displayAccountDetails();
+
 	}
 
-	
 }

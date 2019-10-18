@@ -8,6 +8,7 @@ import ie.mohammed.model.Employee;
 public interface EmployeeDao {
 	
 	List<Employee> getAllEmployee();
+	
 	int getEmployeeCount();
 	int getEmployeeByName(String lastName);
 	Employee findById(int employeeId);

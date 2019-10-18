@@ -43,6 +43,9 @@ public class MainApp {
 		System.out.println("Account Details are- \n");
 		accountService.displayAccountDetails();
 
+		mainMenu();
+		adminMenu();
+		customerMenu();
 		
 		
 		/*

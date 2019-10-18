@@ -13,7 +13,7 @@ public class AccountRowMapper implements RowMapper<Account>	{
 		
 		Account account = new Account();
 		account.setAccountId(rs.getInt("accountId"));
-		account.setAccountNumber(rs.getInt("accountNumber"));
+		account.setAccountNumber(rs.getString("accountNumber"));
 		account.setAmount(rs.getDouble("amount"));		
 		return account;
 	}
