@@ -91,16 +91,169 @@ public class MainApp {
 				if (emp.getLastName().equals(pwd)) 
 				{
 					System.out.println("Valid Login");
+					
 					System.out.println();
 					System.out.println("Hello, " + emp.getFirstName() + " " + emp.getLastName());
 					
 					adminMenu();
+					
+					boolean ext = true;
+					do 
+					{
+						int userOption = 0;
+						while (userOption < 1 || userOption > 10)
+						{
+							userOption = inputValidation.getIntegerInput("Option: ");
+						}
+						
+						switch(userOption)
+						{
+						case 1: //Create Bank Employee account
+							String firstName = null;
+		        	 		String lastName = null;
+		        	 		String password = null;
+		        	 		
+	        	 			while(firstName == null){
+	        	 				firstName = InputValidation.getStringInput("Please enter the first name: ");
+	        	 			}
+	        	 			while(lastName == null){
+	        	 				lastName = InputValidation.getStringInput("Please enter the last name: ");
+	        	 			}
+	        	 			while(password == null){
+	        	 				password = InputValidation.getPasswordInput("Please enter a password: ");
+	        	 			}
+	        	 			
+	        	 			employeeService.saveANewEmployee(firstName, lastName, password);
+	        	 			break;
+						case 10: //login out of the admin account
+							mainMenu();//print the main menu
+							
+							ext = false;
+							break;
+						default:
+							System.out.println("Invalid Selection");
+							break;
+						}
+					}while(ext);
+				}//end of if 
+				else {
+					System.out.println("Invalid");
 				}
-			}
 				
-		}while(loginOption !=4);
+			break;
+			case 2://Account holder
+				
+				System.out.println("");
+				while (user < 1){
+	        		user = inputValidation.getIntegerInput("Customer  ID:  ");
+	 	        }
+				while(pwd == null){
+					pwd = InputValidation.getPasswordInput("Last Name: ");
+	 			}
+				
+				System.out.println("");
+				
+				Customer cus = customerService.findById(user);
+				if (cus==null)
+					System.out.println("ERROR - ??????????????????/");
+				if (cus.getLastName().equals(pwd)) 
+				{
+					System.out.println("Valid Login");
+					
+					System.out.println();
+					System.out.println("Hello, " + cus.getFirstName() + " " + cus.getLastName());
+				
+					int accountNumber = 0;
+					
+					Account acc = accountService.findByAccountID(user);
+					
+					/*if(acc.getAccountId() > 0 && acc.getCustomer().getCustomerId()==user)
+					{
+						System.out.println(accountService.findByAccountNumber(user));*/
+						
+						customerMenu();//custoemr menu
+						
+						boolean ext =  true;
+						
+						do
+						{
+							int userOption = 0;
+				        	 while (userOption < 1 || userOption > 8)
+				        	 {
+				        		 userOption = inputValidation.getIntegerInput("Option: ");
+					 	     }//end of while
+				        	 
+				        	 switch (userOption){
+							/*
+							 * case 1: //Check balance bankAcc.printBalance(accountNumber); break; case 2:
+							 * //Deposit double deposit = -1;
+							 * 
+							 * System.out.println("How much would you like to Deposit: "); while(deposit <
+							 * 0){ deposit = valid.getDoubleInput("Amount: "); }
+							 * bankAcc.deposit(accountNumber, deposit); bankAcc.printBalance(accountNumber);
+							 * break; case 3: //Withdraw double withdraw = -1;
+							 * System.out.println("How much would you like to withdraw: "); while (withdraw
+							 * < 0){ withdraw = valid.getDoubleInput("Amount: "); }//Make an override class
+							 * if(typeOfAccount == 1){ //Current Savings currentAcc.withdraw(accountNumber,
+							 * withdraw); bankAcc.printBalance(accountNumber); }if(typeOfAccount == 2){
+							 * //Savings Account savingAcc.withdraw(accountNumber, withdraw);
+							 * bankAcc.printBalance(accountNumber); } break; case 4: //Print transaction
+							 * history bankAcc.transactions(accountNumber); break; case 5: //Change password
+							 * String password = null; while(password == null){
+							 * System.out.println("Waht would u like to change it to."); password =
+							 * inputValidation.getPasswordInput("Password: "); }
+							 * 
+							 * update.updateCustomerPassword(password, user); break; case 6: //Change
+							 * account accountNumber = bankAcc.accountChoice(user);
+							 * System.out.println(accountNumber); typeOfAccount =
+							 * get.getTypeOfAccount(accountNumber); break;
+							 */
+				        	 	case 7: //Show menu
+				        	 		customerMenu();
+				        	 		break;
+				        	 	case 8: //Login out
+				        	 		mainMenu(); //Prints the main menu
+				        			
+				        	 		ext = false;
+				        	 		break;
+				        	 	default:
+							    	System.err.println("Invalid selection");
+							    	break; 
+				        	 } 
+						}while(ext);//end of customer do
+						
+					}//end of if
+				
+				/*
+				 * else{ System.out.
+				 * println("Sorry, to use this part of the system you need an account assiosated with you."
+				 * ); System.out.println("Please conact a bank manager for more assistance.");
+				 * mainMenu(); //Prints the main menu }//end of else }//end of if
+				 */				else{
+			         System.err.println("Invalid");
+				}
+		break;
+			case 3:
+		    	String response = "";
+		    	while(!response.toLowerCase().equals("n") && !response.toLowerCase().equals("y")){
+		    		response = InputValidation.getPasswordInput("Are you sure you want to exit? (Y/N)");
+		    	}
+		    	
+            	if(response.toLowerCase().equals("n")){
+            		System.out.println("Thanks for staying :)");
+            	}	
+		    	if(response.toLowerCase().equals("y")){
+            		System.exit(0);
+            	}			    		
+		    	break;
+		    default:
+		    	System.err.println("Invalid selection");
+		    	break; 
+			}//end of first switch
+				
+		}while(loginOption !=4);//end of first do loop
 		
-		
+//===========================================		
 
 		while (true) {
 			System.out.println("\n-------------------");

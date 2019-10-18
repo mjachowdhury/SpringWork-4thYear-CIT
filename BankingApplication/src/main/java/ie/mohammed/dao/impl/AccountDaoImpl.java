@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ie.mohammed.dao.AccountDao;
 import ie.mohammed.model.Account;
+import ie.mohammed.model.Customer;
 import ie.mohammed.model.rowMappers.AccountRowMapper;
 
 @Repository
@@ -13,7 +14,8 @@ public class AccountDaoImpl implements AccountDao {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
-
+	Customer customer;
+	
 	public List<Account> findAllAccount() {
 		String sql = "SELECT * FROM account";
 		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
@@ -46,13 +48,13 @@ public class AccountDaoImpl implements AccountDao {
 	}
 
 	public Account findByAccountNumber(int accountNumber) {
-		String sql = "SELECT * FROM account WHERE accouontNumber=?";
+		String sql = "SELECT * FROM account WHERE accountNumber=?";
 		Account account = jdbcTemplate.queryForObject(sql, new AccountRowMapper(), accountNumber);
 		return account;
 	}
 
 	public Account findByAccountID(int accountId) {
-		String sql = "SELECT * FROM account WHERE accouontId=?";
+		String sql = "SELECT * FROM account WHERE accountId=?";
 		Account account = jdbcTemplate.queryForObject(sql, new AccountRowMapper(), accountId);
 		return account;
 	}
