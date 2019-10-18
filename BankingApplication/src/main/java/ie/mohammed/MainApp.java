@@ -6,6 +6,7 @@ import java.util.Scanner;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import ie.mohammed.model.Employee;
+import ie.mohammed.model.InputValidation;
 import ie.mohammed.model.Customer;
 //import ie.mohammed.domain.Power;
 import ie.mohammed.model.Account;
@@ -22,6 +23,7 @@ public class MainApp {
 		EmployeeServiceImpl employeeService = (EmployeeServiceImpl) context.getBean("employeeServiceImpl");
 		AccountServiceImpl accountService = (AccountServiceImpl) context.getBean("accountServiceImpl");
 
+		InputValidation inputValidation = new InputValidation();
 		/*
 		 * System.out.println("There are " +
 		 * customerService.CountTotalCustomer()+" total number of customers");
@@ -46,26 +48,59 @@ public class MainApp {
 		 */
 
 		Scanner scanner = new Scanner(System.in);
-		boolean user = false;
+		//boolean user = false;
 		boolean accountRedo = false;
 		int choice;
 		String employeeLastName;
 		int employeeId;
-
-		/*
-		 * Employee emp = new Employee(); System.out.println("Enter employee id : ");
-		 * employeeId = scanner.nextInt(); System.out.println();
-		 * System.out.println("Enter password : "); password = scanner.nextLine();
-		 * 
-		 * if(employeeId == emp.getEmployeeId() && password.equals(emp.getPassword())) {
-		 * while(true) { System.out.println("\n-------------------");
-		 * System.out.println("BANK    OF     JAVA");
-		 * System.out.println("-------------------\n");
-		 * System.out.println("1. Register account."); System.out.println("2. Login.");
-		 * System.out.println("3. Update accounts."); System.out.println("4. Exit.");
-		 * System.out.print("\nEnter your choice : "); choice = scanner.nextInt();
-		 * scanner.nextLine(); } }
-		 */
+		
+		int user;
+		int loginOption;
+		String pwd;
+		
+		mainMenu();
+		do 
+		{
+			loginOption = 0;
+			user = 0;
+			pwd = null;
+			
+			while (loginOption < 1 || loginOption > 3)
+			{
+				loginOption = inputValidation.getIntegerInput("Option: ");	
+				
+			}
+			
+			switch(loginOption) 
+			{
+			case 1: // Admin choice
+				System.out.println();
+				while(user < 1)
+				{
+					user = inputValidation.getIntegerInput("Employee ID: ");
+				}
+				while(pwd == null)
+				{
+					pwd = InputValidation.getPasswordInput("Last Name: ");
+				}
+				System.out.println("");
+				
+				Employee emp = employeeService.findById(user);
+				if (emp==null)
+					System.out.println("ERROR - ??????????????????/");
+				if (emp.getLastName().equals(pwd)) 
+				{
+					System.out.println("Valid Login");
+					System.out.println();
+					System.out.println("Hello, " + emp.getFirstName() + " " + emp.getLastName());
+					
+					adminMenu();
+				}
+			}
+				
+		}while(loginOption !=4);
+		
+		
 
 		while (true) {
 			System.out.println("\n-------------------");
@@ -79,25 +114,9 @@ public class MainApp {
 			choice = scanner.nextInt();
 			scanner.nextLine();
 
-			switch (choice) {
+			switch (choice) 
+			{
 			case 1:
-				System.out.println("Enter first name:");
-				String firstName = scanner.nextLine();
-				System.out.println("Enter last name:");
-				String lastName = scanner.nextLine();
-				System.out.println("Enter address :");
-				String address = scanner.nextLine();
-				System.out.println("Enter city name:");
-				String city = scanner.nextLine();
-				System.out.println("Enter contact number :");
-				String contactNumber = scanner.nextLine();
-				System.out.println("Enter email :");
-				String email = scanner.nextLine();
-
-				customerService.saveACustomer(firstName, lastName, address, city, contactNumber, email);
-
-				break;
-			case 2:
 				
 				System.out.println("Enter employee id : ");
 				employeeId = scanner.nextInt();
@@ -107,22 +126,40 @@ public class MainApp {
 				Employee emp = employeeService.findById(employeeId);
 				if (emp==null)
 					System.out.println("ERROR - ??????????????????/");
-				else if (emp.getLastName().equals(employeeLastName)) {
-					while (true) {
+				else if (emp.getLastName().equals(employeeLastName)) 
+				{
+					while (true) 
+					{
 						System.out.println("\n-------------------");
 						System.out.println("W  E  L  C  O  M  E");
 						System.out.println("-------------------\n");
-						System.out.println("1. Deposit.");
-						System.out.println("2. Transfer.");
-						System.out.println("3. Last 5 transactions.");
-						System.out.println("4. User information.");
-						System.out.println("5. Log out.");
+						System.out.println("1. Register and Create and account.");
+						System.out.println("2. Deposit.");
+						System.out.println("3. Transfer.");
+						System.out.println("4. Last 5 transactions.");
+						System.out.println("5. User information.");
+						System.out.println("6. Log out.");
 						System.out.print("\nEnter your choice : ");
 						choice = scanner.nextInt();
 						scanner.nextLine();
 
-						switch (choice) {
+						switch (choice) 
+						{
 						case 1:
+							System.out.println("Enter first name:");
+							String firstName = scanner.nextLine();
+							System.out.println("Enter last name:");
+							String lastName = scanner.nextLine();
+							System.out.println("Enter address :");
+							String address = scanner.nextLine();
+							System.out.println("Enter city name:");
+							String city = scanner.nextLine();
+							System.out.println("Enter contact number :");
+							String contactNumber = scanner.nextLine();
+							System.out.println("Enter email :");
+							String email = scanner.nextLine();
+
+							customerService.saveACustomer(firstName, lastName, address, city, contactNumber, email);
 
 							break;
 
@@ -130,12 +167,30 @@ public class MainApp {
 							System.out.println("Wrong choice!");
 						}
 					}
-				} else {
+				} else 
+				{
 					System.out.println("Wrong choice!");
 				}
-
-			default:
-				System.out.println("Wrong choice!");
+			case 2:
+				/*
+				 * System.out.println("\nThank you for choosing Bank Of Java."); System.exit(1);
+				 * break; default: System.out.println("Wrong choice !");
+				 */
+				String response = "";
+		    	while(!response.toLowerCase().equals("n") && !response.toLowerCase().equals("y")){
+		    		response = InputValidation.getPasswordInput("Are you sure you want to exit? (Y/N)");
+		    	}
+		    	
+            	if(response.toLowerCase().equals("n")){
+            		System.out.println("Thanks for staying :)");
+            	}	
+		    	if(response.toLowerCase().equals("y")){
+            		System.exit(0);
+            	}			    		
+		    	break;
+		    default:
+		    	System.err.println("Invalid selection");
+		    	break; 
 			}
 		}
 
