@@ -39,8 +39,8 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.findByAccountID(accountId);
 	}
 
-	public void saveAnAccount(int accountNumber, double balance) {
-
+	public void saveAnAccount(int accountNumber, double amount, double overDraft) {
+		accountDao.createAnAccount(accountNumber, amount, overDraft);
 	}
 
 	public void transferMoney() {
@@ -56,6 +56,10 @@ public class AccountServiceImpl implements AccountService {
 	public void displayAccountDetails() {
 		accountDao.displayAccountDetails();
 
+	}
+
+	public void displayAccountDetails(int accountNumber) {
+		accountDao.displayAccountDetails(accountNumber);
 	}
 
 }

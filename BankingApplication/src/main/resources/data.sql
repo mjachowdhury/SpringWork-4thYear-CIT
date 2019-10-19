@@ -1,7 +1,7 @@
-INSERT INTO customer(customerId, firstName, lastName, address, city, contactNumber, email) VALUES
-(1, 'Mohammed', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
-(2, 'Opi', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
-(3, 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie');
+INSERT INTO customer(customerId, title, firstName, lastName, address, city, contactNumber, email) VALUES
+(1, 'Mr', 'Mohammed', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
+(2, 'Mrs', 'Opi', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
+(3, 'Miss', 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie');
 
 
 
@@ -12,7 +12,7 @@ INSERT INTO employee(employeeId, firstName, lastName, password) VALUES
 
 
 
-INSERT INTO account(accountId, accountNumber, amount) VALUES
-(1,  '555555', '1000'),
-(2, '666666', '2000'),
-(3, '777777', '3000');
+INSERT INTO account(accountId, accountNumber, amount, overDraft) VALUES
+(1,  '555555', '1000', '1000'),
+(2, '666666', '2000', '1000'),
+(3, '777777', '3000', '0');

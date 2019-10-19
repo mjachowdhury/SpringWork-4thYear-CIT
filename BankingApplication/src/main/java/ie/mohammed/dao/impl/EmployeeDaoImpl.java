@@ -56,7 +56,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	public void addANewEmployee(String firstName, String lastName, String password) {
-		String sql = "INSERT INTO employee(firstName,lastName,password) VALUES (?,?,?)";
+		String sql = "INSERT INTO employee(firstName,lastName,password) VALUES (?,?,? )";
 		jdbcTemplate.update(sql, new Object[] { firstName, lastName, password });
 
 	}

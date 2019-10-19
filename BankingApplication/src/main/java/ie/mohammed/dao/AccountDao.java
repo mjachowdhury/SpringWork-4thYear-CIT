@@ -13,9 +13,9 @@ public interface AccountDao {
 	int getAccountCount();	
 	Account findByAccountNumber(int accountNumber);
 	Account findByAccountID(int accountId);	
-	void createAnAccount(int accountNumber, double balance);
+	void createAnAccount(int accountNumber, double amount, double overDraft);
 	void transferMoney();	
 	void closeAnAccount();
 	void displayAccountDetails();
-	
+	void displayAccountDetails(int accountNumber);
 }

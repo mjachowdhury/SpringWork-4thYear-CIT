@@ -17,6 +17,7 @@ public class Account {
 	private int accountId;
 	private String accountNumber;
 	private double amount = 0;
+	private double overDraft = 0;
 	
 	@Autowired
 	private Customer customer;
@@ -26,7 +27,8 @@ public class Account {
 		return "\n"+
 				"Account ID : " + accountId +"\n"+
 				"Account Number : " + accountNumber+ "\n"+ 
-				"Account Balance : " + amount + "\n";
+				"Account Balance : " + amount + "\n"+
+				"Over Draft : " + overDraft + "\n";
 	}
 
 	public Account(String accountNumber) {

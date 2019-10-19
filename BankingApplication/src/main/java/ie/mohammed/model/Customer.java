@@ -23,6 +23,7 @@ import lombok.Setter;
 
 public class Customer {
 	private int customerId; 
+	private String title;
 	private String firstName;
 	private String lastName;
 	private String address;
@@ -46,6 +47,7 @@ public class Customer {
 	public String toString() {
 		return "\n"+
 				"Customer ID : " + customerId + "\n"+
+				"Title :" + "\n" +
 				"First Name : " + firstName + "\n"+
 				"Last Name : " + lastName + "\n" +
 				"Address : " + address + "\n"+

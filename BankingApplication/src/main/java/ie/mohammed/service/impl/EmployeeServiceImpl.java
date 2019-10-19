@@ -41,9 +41,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	public void saveANewEmployee(String firstName, String lastName, String password) {
-		 if(employeeDao.getEmployeeByName(lastName) == null) {
+		// if(employeeDao.getEmployeeByName(lastName) == null) {
 			 employeeDao.insertANewEmployee(firstName, lastName, password);
-		 }
+		 //}
 		
 	}	
 }

@@ -14,8 +14,9 @@ public interface AccountService {
 	Account findByAccountNumber(int accountNumber);
 	Account findByAccountID(int accountId);
 	int totalNumberOfAccount();
-	void saveAnAccount(int accountNumber, double balance);
+	void saveAnAccount(int accountNumber, double amount,double overDraft);
 	void transferMoney();	
 	void closeAnAccount();
 	void displayAccountDetails();
+	void displayAccountDetails(int accountNumber);
 }

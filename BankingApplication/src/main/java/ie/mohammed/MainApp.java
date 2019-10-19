@@ -77,7 +77,7 @@ public class MainApp {
 				System.out.println();
 				while(user < 1)
 				{
-					user = inputValidation.getIntegerInput("Employee ID: ");
+					user = inputValidation.getIntegerInput("Bank Employee/Admin ID: ");
 				}
 				while(pwd == null)
 				{
@@ -125,6 +125,90 @@ public class MainApp {
 	        	 			
 	        	 			employeeService.saveANewEmployee(firstName, lastName, password);
 	        	 			break;
+	        	 			
+						case 2: //Create Customer account
+		        	 		String title = null;
+		        	 			int titleNum = 0; //Used to select the user title
+		        	 		String firstNameC = null;
+		        	 		String lastNameC = null;
+		        	 		String address = null;
+		        	 		String city = null;
+		        	 		String contactNumber = null;
+		        	 		String email = null;
+
+	        	 			System.out.println("[1] Mr");
+		        	 		System.out.println("[2] Mrs");
+		        	 		System.out.println("[3] Ms");
+		        	 		System.out.println("[4] Miss");				        	 		
+		        	 		
+		        	 		while (titleNum < 1 || titleNum > 4){
+		        	 			titleNum = inputValidation.getIntegerInput("Title: ");
+				 	        }
+		        	 		
+		        	 		if(titleNum == 1){
+		        	 			title = "Mr";
+		        	 		}
+		        	 		if(titleNum == 2){
+		        	 			title = "Mrs";
+		        	 		}
+		        	 		if(titleNum == 3){
+		        	 			title = "Ms";
+		        	 		}
+		        	 		if(titleNum == 4){
+		        	 			title = "Miss";
+		        	 		}
+		        	 		
+		        	 		while(firstNameC == null){
+		        	 			firstNameC = InputValidation.getStringInput("Please enter the customers first name: ");
+	        	 			}
+		        	 		while(lastNameC == null){
+		        	 			lastNameC = InputValidation.getStringInput("Please enter the customers last name: ");
+	        	 			}
+		        	 		while(address == null){
+		        	 			address = InputValidation.getPasswordInput("Please enter a Address: ");
+	        	 			}
+		        	 		while(city == null){
+		        	 			city = InputValidation.getPasswordInput("Please enter a City: ");
+	        	 			}
+		        	 		while(contactNumber == null){
+		        	 			contactNumber = InputValidation.getPasswordInput("Please enter a Contact Number: ");
+	        	 			}
+		        	 		while(email == null){
+		        	 			email = InputValidation.getPasswordInput("Please enter a Email: ");
+	        	 			}
+		        	 		customerService.saveACustomer(title, firstNameC, lastNameC, address, city, contactNumber, email);
+		        	 		         	 		
+		        	 		break;
+		        	 	
+						case 3: // setting up a customer account
+							//int customerID =0;
+							int accountNumber = 0;
+							double overDraft = -1;
+							double amount = -1;
+							
+							while (accountNumber < 1){
+								accountNumber = inputValidation.getIntegerInput("Account Number: ");
+				 	        }
+							while (amount < 0){
+								amount = inputValidation.getDoubleInput("Please set the default balance on the account: ");
+				 	        }
+							while (overDraft < 0){
+								overDraft = inputValidation.getDoubleInput("How much of an overdraft is this account going to have? ");
+				 	        }
+							
+							accountService.saveAnAccount(accountNumber, amount, overDraft);
+							break;
+						
+						case 6://check customer balance
+							int accountNumberCheckBalance = 0;
+							System.out.println("Please enter the customer account number: ");
+							while (accountNumberCheckBalance < 1){
+		        	 			accountNumberCheckBalance = inputValidation.getIntegerInput("Account number: ");
+				 	        } 
+							accountService.displayAccountDetails(accountNumberCheckBalance);
+						
+							break;
+							
 						case 10: //login out of the admin account
 							mainMenu();//print the main menu
 							
@@ -299,6 +383,8 @@ public class MainApp {
 						switch (choice) 
 						{
 						case 1:
+							System.out.println("Enter Title:");
+							String title = scanner.nextLine();
 							System.out.println("Enter first name:");
 							String firstName = scanner.nextLine();
 							System.out.println("Enter last name:");
@@ -312,7 +398,7 @@ public class MainApp {
 							System.out.println("Enter email :");
 							String email = scanner.nextLine();
 
-							customerService.saveACustomer(firstName, lastName, address, city, contactNumber, email);
+							customerService.saveACustomer(title,firstName, lastName, address, city, contactNumber, email);
 
 							break;
 
@@ -526,7 +612,7 @@ public class MainApp {
 		System.out.println("|     Please select and option:      |");
 		System.out.println("======================================");
 		System.out.println("| Options:                           |");
-		System.out.println("|        [1] Employee                   |");
+		System.out.println("|        [1] Bank Employee              |");
 		System.out.println("|        [2] Account Holder          |");
 		System.out.println("|        [3] Exit                    |");
 		System.out.println("======================================");

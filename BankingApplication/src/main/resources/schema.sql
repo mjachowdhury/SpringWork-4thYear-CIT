@@ -1,5 +1,6 @@
 CREATE TABLE customer ( 
 	customerId int (11) NOT NULL AUTO_INCREMENT,
+	title varchar (10) NOT NULL,
 	firstName varchar (30) NOT NULL,
 	lastName varchar (30) NOT NULL,
 	address varchar (30) NOT NULL,
@@ -23,6 +24,7 @@ CREATE TABLE account(
 	accountId int (11) NOT NULL AUTO_INCREMENT,
 	accountNumber varchar (30) NOT NULL,
 	amount double (30) NOT NULL,
+	overDraft double (30) NOT NULL,
 	PRIMARY KEY (accountId)
 );
 

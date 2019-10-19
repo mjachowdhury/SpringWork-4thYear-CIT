@@ -54,25 +54,25 @@ public class CustomerDaoImpl implements CustomerDao {
 		return customer;
 	}
 
-	public void insertCustomer(String firstName, String lastName, String address, String city, String contactNumber, String email) {
-		String sql = "INSERT INTO customer(firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,? )";
-		jdbcTemplate.update(sql, firstName,lastName,address,city,contactNumber,email);
+	public void insertCustomer(String title,String firstName, String lastName, String address, String city, String contactNumber, String email) {
+		String sql = "INSERT INTO customer(title, firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,? )";
+		jdbcTemplate.update(sql, title,firstName,lastName,address,city,contactNumber,email);
 		
 	}
 
-	public void addACustomer(String firstName, String lastName, String address, String city, String contactNumber,
+	public void addACustomer(String title, String firstName, String lastName, String address, String city, String contactNumber,
 			String email) {
-		String sql = "INSERT INTO customer(firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?)";
-		jdbcTemplate.update(sql, new Object[] { firstName,lastName,address,city,contactNumber,email });
+		String sql = "INSERT INTO customer(title,firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, new Object[] { title,firstName,lastName,address,city,contactNumber,email });
 
 		
 	}
 
-	public int changeCustomerName(String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity, String newCity, String oldContactNumber,
+	public int changeCustomerName(String oldTitle, String newTitle, String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity, String newCity, String oldContactNumber,
 			String newContactNumber, String oldEmail, String newEmail) {
-		return jdbcTemplate.update("UPDATE customer SET firstName=? lastName=? address=? city=? contactNumber=? email=? "
-												+ "	where firstName=? lastName=? address=? city=? contactNumber=? email=?", 
-													new Object[] { newFirstName, oldFirstName,oldLastName,newLastName, newAddress, oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail });
+		return jdbcTemplate.update("UPDATE customer SET title=? firstName=? lastName=? address=? city=? contactNumber=? email=? "
+												+ "	where title=? firstName=? lastName=? address=? city=? contactNumber=? email=?", 
+													new Object[] {newTitle, oldTitle, newFirstName, oldFirstName,oldLastName,newLastName, newAddress, oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail });
 		
 	}
 
@@ -80,4 +80,5 @@ public class CustomerDaoImpl implements CustomerDao {
 		 
 	}
 
+	 
 }

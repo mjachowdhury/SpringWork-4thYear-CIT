@@ -59,9 +59,24 @@ public class AccountDaoImpl implements AccountDao {
 		return account;
 	}
 
-	public void createAnAccount(int accountNumber, double balance) {
-		String sql = "INSERT INTO account(accountNumber,balance) VALUES (?,? )";
-		jdbcTemplate.update(sql, accountNumber, balance);
+	public void displayAccountDetails() {
+		String sql = "SELECT * FROM account";
+		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
+		for (Account account : accounts) {
+			System.out.println("Account Number : " + account.getAccountNumber() + "Balance : " + account.getAmount());
+		}
+	}
+
+	public void displayAccountDetails(int accountNumber) {
+		String sql = "SELECT * FROM account WHERE accountNumber=?";
+		List<Account> account = jdbcTemplate.query(sql, new AccountRowMapper(), accountNumber);
+		for (Account acc : account) {
+			System.out.println("Account ID: "+acc.getAccountId()+ "Account Number :  " + acc.getAccountNumber() + "Balance : " + acc.getAmount()+ "Over Draft :" + acc.getOverDraft());
+		}
+	}
+	public void createAnAccount(int accountNumber, double amount, double overDraft) {
+		String sql = "INSERT INTO account(accountNumber,amount, overDraft) VALUES (?,?,? )";
+		jdbcTemplate.update(sql, accountNumber, amount, overDraft);
 
 	}
 
@@ -77,11 +92,5 @@ public class AccountDaoImpl implements AccountDao {
 
 	}
 
-	public void displayAccountDetails() {
-		String sql = "SELECT * FROM account";
-		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
-		for (Account account : accounts) {
-			System.out.println("Account Number : " + account.getAccountNumber() + "Balance : " + account.getAmount());
-		}
-	}
+	
 }
