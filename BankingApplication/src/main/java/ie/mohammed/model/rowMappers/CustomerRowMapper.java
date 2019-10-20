@@ -14,11 +14,11 @@ import ie.mohammed.model.Customer;
  * @author Mohammed
  *
  */
-public class CustomerRowMapper implements RowMapper<Customer>{
+public class CustomerRowMapper implements RowMapper<Customer> {
 
 	public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
-		
-		Customer  customer = new Customer();
+
+		Customer customer = new Customer();
 		customer.setCustomerId(rs.getInt("customerId"));
 		customer.setFirstName(rs.getString("title"));
 		customer.setFirstName(rs.getString("firstName"));

@@ -34,9 +34,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 
 	public int getEmployeeById(int id) {
 		String sql = "SELECT employeeId FROM employee WHERE employee.employeeId LIKE ?";
-		return jdbcTemplate.queryForObject(sql, Integer.class, id); 
+		return jdbcTemplate.queryForObject(sql, Integer.class, id);
 	}
-	
+
 	public Employee findById(int employeeId) {
 		String sql = "SELECT * FROM employee WHERE employeeId=?";
 		Employee employee = jdbcTemplate.queryForObject(sql, new EmployeeRowMapper(), employeeId);

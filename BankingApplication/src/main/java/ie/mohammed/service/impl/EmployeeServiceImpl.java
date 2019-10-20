@@ -10,11 +10,11 @@ import ie.mohammed.model.Employee;
 import ie.mohammed.service.EmployeeService;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	EmployeeDao employeeDao;
-	
+
 	public List<Employee> totalEmployees() {
 		return employeeDao.getAllEmployee();
 	}
@@ -27,7 +27,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeDao.getEmployeeByName(lastName);
 	}
 
-
 	public int getEmployeeById(int id) {
 		return employeeDao.getEmployeeById(id);
 	}
@@ -35,15 +34,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public Employee findById(int employeeId) {
 		return employeeDao.findById(employeeId);
 	}
-	
-	public Employee findByPassword(String employeePassword) { 
+
+	public Employee findByPassword(String employeePassword) {
 		return employeeDao.findByPassword(employeePassword);
 	}
 
 	public void saveANewEmployee(String firstName, String lastName, String password) {
 		// if(employeeDao.getEmployeeByName(lastName) == null) {
-			 employeeDao.insertANewEmployee(firstName, lastName, password);
-		 //}
-		
-	}	
+		employeeDao.insertANewEmployee(firstName, lastName, password);
+		// }
+
+	}
 }

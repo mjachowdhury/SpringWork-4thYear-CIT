@@ -12,19 +12,15 @@ import lombok.Setter;
 
 public class Employee {
 
-	private int employeeId; 
+	private int employeeId;
 	private String firstName;
 	private String lastName;
 	private String password;
-	
+
 	@Override
 	public String toString() {
-		return "\n"+ 
-				"Employee ID :" + employeeId + "\n"+ 
-				"First Name :" + firstName + "\n"+ 
-				"Last Name :" + lastName + "\n"+ 
-				"Password :" + password + "\n";
+		return "\n" + "Employee ID :" + employeeId + "\n" + "First Name :" + firstName + "\n" + "Last Name :" + lastName
+				+ "\n" + "Password :" + password + "\n";
 	}
-	
-	
+
 }

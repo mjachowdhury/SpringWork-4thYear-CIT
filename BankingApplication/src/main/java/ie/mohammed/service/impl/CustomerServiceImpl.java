@@ -39,26 +39,27 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.findById(customerId);
 	}
 
-	public void saveACustomer(String title, String firstName, String lastName, String address, String city, String contactNumber, String email) {
+	public void saveACustomer(String title, String firstName, String lastName, String address, String city,
+			String contactNumber, String email) {
 		if (customerDao.getCustomerByName(lastName) == 0) {
 			customerDao.insertCustomer(title, firstName, lastName, address, city, contactNumber, email);
 		}
 	}
 
-	public int changeCustomerName(String oldTitle,String newTitle,String oldFirstName, String newFirstName,String oldLastName, String newLastName, String oldAddress, String newAddress,
-			String oldCity, String newCity, String oldContactNumber, String newContactNumber, String oldEmail,
-			String newEmail) {
-		if(customerDao.getCustomerByName(oldLastName) == 1) {
-			return customerDao.changeCustomerName(oldTitle, newTitle, oldFirstName, newFirstName,oldLastName, newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail, newEmail);
+	public int changeCustomerName(String oldTitle, String newTitle, String oldFirstName, String newFirstName,
+			String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity,
+			String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail) {
+		if (customerDao.getCustomerByName(oldLastName) == 1) {
+			return customerDao.changeCustomerName(oldTitle, newTitle, oldFirstName, newFirstName, oldLastName,
+					newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail,
+					newEmail);
 		}
 		return 0;
 	}
 
 	public void createACustomer(Customer c) {
-		 customerDao.createCustomer(c);
-		
-	}
+		customerDao.createCustomer(c);
 
-	 
+	}
 
 }
