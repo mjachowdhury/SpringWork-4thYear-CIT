@@ -7,6 +7,8 @@ import ie.mohammed.model.Account;
 public interface AccountDao {
 	
 	void depositMoney(int accountNumber, double amount);
+	public void depositMoneyById(int Id, double amount);
+	
 	void withdrawMoney(int accountNumber, double amount);
 	List<Account> findAllAccount();
 	
@@ -18,4 +20,5 @@ public interface AccountDao {
 	void closeAnAccount();
 	void displayAccountDetails();
 	void displayAccountDetails(int accountNumber);
+	public void displayAccountDetailsById(int accountId);
 }

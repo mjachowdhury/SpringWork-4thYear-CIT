@@ -24,29 +24,7 @@ public class MainApp {
 		AccountServiceImpl accountService = (AccountServiceImpl) context.getBean("accountServiceImpl");
 
 		InputValidation inputValidation = new InputValidation();
-		/*
-		 * System.out.println("There are " +
-		 * customerService.CountTotalCustomer()+" total number of customers");
-		 * System.out.println("Customer Details\n"); List<Customer> customers =
-		 * customerService.findAllCustomer(); for(Customer customer: customers)
-		 * System.out.println(customer);
-		 * 
-		 * System.out.println("There are " + employeeService.totalEmployeesCount() +
-		 * " total number of employees."); System.out.println("Employee Details\n");
-		 * List<Employee> employee = employeeService.totalEmployees(); for(Employee emp:
-		 * employee) System.out.println(emp);
-		 * 
-		 * System.out.println("There are " + accountService.totalNumberOfAccount() +
-		 * "total number of accounts"); System.out.println("Customer Details\n");
-		 * List<Account> account = accountService.findAllAccount(); for(Account acc:
-		 * account) System.out.println(acc);
-		 * 
-		 * System.out.println("Account Details are- \n");
-		 * accountService.displayAccountDetails();
-		 * 
-		 * mainMenu(); adminMenu(); customerMenu();
-		 */
-
+		
 		Scanner scanner = new Scanner(System.in);
 		//boolean user = false;
 		boolean accountRedo = false;
@@ -56,14 +34,14 @@ public class MainApp {
 		
 		int user;
 		int loginOption;
-		String pwd;
+		String userLastName;
 		
 		mainMenu();
 		do 
 		{
 			loginOption = 0;
 			user = 0;
-			pwd = null;
+			userLastName = null;
 			
 			while (loginOption < 1 || loginOption > 3)
 			{
@@ -79,16 +57,16 @@ public class MainApp {
 				{
 					user = inputValidation.getIntegerInput("Bank Employee/Admin ID: ");
 				}
-				while(pwd == null)
+				while(userLastName == null)
 				{
-					pwd = InputValidation.getPasswordInput("Last Name: ");
+					userLastName = InputValidation.getPasswordInput("Last Name: ");
 				}
 				System.out.println("");
 				
 				Employee emp = employeeService.findById(user);
 				if (emp==null)
 					System.out.println("ERROR - ??????????????????/");
-				if (emp.getLastName().equals(pwd)) 
+				if (emp.getLastName().equals(userLastName)) 
 				{
 					System.out.println("Valid Login");
 					
@@ -101,7 +79,7 @@ public class MainApp {
 					do 
 					{
 						int userOption = 0;
-						while (userOption < 1 || userOption > 10)
+						while (userOption < 1 || userOption > 9)
 						{
 							userOption = inputValidation.getIntegerInput("Option: ");
 						}
@@ -126,9 +104,9 @@ public class MainApp {
 	        	 			employeeService.saveANewEmployee(firstName, lastName, password);
 	        	 			break;
 	        	 			
-						case 2: //Create Customer account
+						case 2: //Create Customer account/register with the bank
 		        	 		String title = null;
-		        	 			int titleNum = 0; //Used to select the user title
+		        	 		int titleNum = 0; //Used to select the user title
 		        	 		String firstNameC = null;
 		        	 		String lastNameC = null;
 		        	 		String address = null;
@@ -198,8 +176,29 @@ public class MainApp {
 							
 							accountService.saveAnAccount(accountNumber, amount, overDraft);
 							break;
-						
-						case 6://check customer balance
+							
+						case 4: //to see list of bank employee
+							//employeeService.
+							System.out.println("Employee Details\n");
+							List<Employee> employee = employeeService.totalEmployees();
+							for (Employee empl : employee)
+								System.out.println(empl);
+							break;
+						case 5: //to see list of customer
+							//customerService
+							System.out.println("Customer Details\n");
+							List<Customer> customer = customerService.findAllCustomer();
+							for (Customer cum : customer)
+								System.out.println(cum);
+							break;
+						case 6: //to see all customer account details
+							//accountService.displayAccountDetails();
+							System.out.println("Customer Details\n");
+							List<Account> account = accountService.findAllAccount();
+							for (Account acc : account)
+								System.out.println(acc);
+							break;
+						case 7://check customer balance
 							int accountNumberCheckBalance = 0;
 							System.out.println("Please enter the customer account number: ");
 							while (accountNumberCheckBalance < 1){
@@ -208,8 +207,11 @@ public class MainApp {
 							accountService.displayAccountDetails(accountNumberCheckBalance);
 						
 							break;
+						case 8: //show menu
+							adminMenu();
+							break;
 							
-						case 10: //login out of the admin account
+						case 9: //login out of the admin account
 							mainMenu();//print the main menu
 							
 							ext = false;
@@ -231,8 +233,8 @@ public class MainApp {
 				while (user < 1){
 	        		user = inputValidation.getIntegerInput("Customer  ID:  ");
 	 	        }
-				while(pwd == null){
-					pwd = InputValidation.getPasswordInput("Last Name: ");
+				while(userLastName == null){
+					userLastName = InputValidation.getPasswordInput("Last Name: ");
 	 			}
 				
 				System.out.println("");
@@ -240,58 +242,87 @@ public class MainApp {
 				Customer cus = customerService.findById(user);
 				if (cus==null)
 					System.out.println("ERROR - ??????????????????/");
-				if (cus.getLastName().equals(pwd)) 
+				if (cus.getLastName().equals(userLastName)) 
 				{
 					System.out.println("Valid Login");
 					
 					System.out.println();
 					System.out.println("Hello, " + cus.getFirstName() + " " + cus.getLastName());
-				
-					int accountNumber = 0;
-					
-					Account acc = accountService.findByAccountID(user);
-					
-					/*if(acc.getAccountId() > 0 && acc.getCustomer().getCustomerId()==user)
-					{
-						System.out.println(accountService.findByAccountNumber(user));*/
 						
 						customerMenu();//custoemr menu
 						
 						boolean ext =  true;
 						
+						
+						
 						do
 						{
 							int userOption = 0;
-				        	 while (userOption < 1 || userOption > 8)
+				        	 while (userOption < 1 || userOption > 7)
 				        	 {
 				        		 userOption = inputValidation.getIntegerInput("Option: ");
 					 	     }//end of while
 				        	 
-				        	 switch (userOption){
+				        	 switch (userOption)
+				        	 {
+				        	 case 1: //check balance
+				        		
+				        		 System.out.println("Enter the account ID : ");
+				        		 Account account = accountService.findByAccountID(user);
+				        		 while(user < 0) {
+				        			 user = inputValidation.getIntegerInput("Account ID : ");				        			
+				        		 }
+				        		 if(user == account.getAccountId()) {
+				        			 accountService.displayAccountDetailsById(user);
+				        		 }
+				        		
+				        		 break;
+				        		 
+				        	 case 2 : //deposit
+				        		 double amount = 0;
+				        		 System.out.println("Enter the account ID : ");
+				        		 Account accountId = accountService.findByAccountID(user);
+				        		 while(user < 0) {
+				        			 user = inputValidation.getIntegerInput("Account ID : ");				        			
+				        		 }
+				        		 if(user == accountId.getAccountId()) {
+				        			 //accountService.displayAccountDetailsById(user);
+				        			 System.out.println("How much would like to Depost: ");
+										while (amount < 0) {
+											amount = inputValidation.getDoubleInput("Amount : ");
+										}
+										accountService.depositMoneyById(user, amount);
+				        		 }
+							
 							/*
-							 * case 1: //Check balance bankAcc.printBalance(accountNumber); break; case 2:
-							 * //Deposit double deposit = -1;
+							 * int accountNumber = 0; double amount = 0;
 							 * 
-							 * System.out.println("How much would you like to Deposit: "); while(deposit <
-							 * 0){ deposit = valid.getDoubleInput("Amount: "); }
-							 * bankAcc.deposit(accountNumber, deposit); bankAcc.printBalance(accountNumber);
-							 * break; case 3: //Withdraw double withdraw = -1;
-							 * System.out.println("How much would you like to withdraw: "); while (withdraw
-							 * < 0){ withdraw = valid.getDoubleInput("Amount: "); }//Make an override class
-							 * if(typeOfAccount == 1){ //Current Savings currentAcc.withdraw(accountNumber,
-							 * withdraw); bankAcc.printBalance(accountNumber); }if(typeOfAccount == 2){
-							 * //Savings Account savingAcc.withdraw(accountNumber, withdraw);
-							 * bankAcc.printBalance(accountNumber); } break; case 4: //Print transaction
-							 * history bankAcc.transactions(accountNumber); break; case 5: //Change password
-							 * String password = null; while(password == null){
-							 * System.out.println("Waht would u like to change it to."); password =
-							 * inputValidation.getPasswordInput("Password: "); }
-							 * 
-							 * update.updateCustomerPassword(password, user); break; case 6: //Change
-							 * account accountNumber = bankAcc.accountChoice(user);
-							 * System.out.println(accountNumber); typeOfAccount =
-							 * get.getTypeOfAccount(accountNumber); break;
+							 * System.out.println("Enter the account number : "); Account accountNum =
+							 * accountService.findByAccountNumber(accountNumber); while (accountNumber < 0)
+							 * { accountNumber = inputValidation.getIntegerInput("Account Number : "); } if
+							 * (accountNumber == accountNum.getAccountNumber()) {
+							 * System.out.println("How much would like to Depost: "); while (amount < 0) {
+							 * amount = inputValidation.getDoubleInput("Amount : "); }
+							 * accountService.depositMoney(accountNumber, amount);
+							 * accountService.displayAccountDetails(accountNumber); }
 							 */
+							 
+				        		 
+				        		 break;
+				        		 
+				        	 case 3: //withdraw
+				        		
+							/*
+							 * System.out.println("Enter the account number : "); while(accountNumber < 0) {
+							 * accountNumber = inputValidation.getIntegerInput("Account Number : "); }
+							 * 
+							 * System.out.println("How much would like to Withdraw: "); while(amount < 0) {
+							 * amount = inputValidation.getDoubleInput("Amount : "); }
+							 * accountService.depositMoney(accountNumber, amount);
+							 * accountService.displayAccountDetails(accountNumber);
+							 */
+				        		 break;
+				         
 				        	 	case 7: //Show menu
 				        	 		customerMenu();
 				        	 		break;
@@ -303,17 +334,20 @@ public class MainApp {
 				        	 	default:
 							    	System.err.println("Invalid selection");
 							    	break; 
-				        	 } 
+				        	 } //end of switch
 						}while(ext);//end of customer do
 						
 					}//end of if
 				
-				/*
-				 * else{ System.out.
-				 * println("Sorry, to use this part of the system you need an account assiosated with you."
-				 * ); System.out.println("Please conact a bank manager for more assistance.");
-				 * mainMenu(); //Prints the main menu }//end of else }//end of if
-				 */				else{
+				
+						/*
+						 * else{ System.out.
+						 * println("Sorry, to use this part of the system you need an account assiosated with you."
+						 * ); System.out.println("Please conact a bank manager for more assistance.");
+						 * mainMenu(); //Prints the main menu
+						 */				  //}//end of else 
+				//}//end of if
+				 	else{
 			         System.err.println("Invalid");
 				}
 		break;
@@ -627,13 +661,12 @@ public class MainApp {
 		System.out.println("|        [1] Create new Employee Account         |");
 		System.out.println("|        [2] Create new Customer              |");
 		System.out.println("|        [3] Set up an Account for a customer |");
-		System.out.println("|        [4] Update Customer Details          |");
-		System.out.println("|        [5] Update Customer Account details  |");
-		System.out.println("|        [6] Check Customer balance           |");
+		System.out.println("|        [4] Details of Employee              |");
+		System.out.println("|        [5] Details of Customer              |");
+		System.out.println("|        [6] Details of Account               |");
 		System.out.println("|        [7] Print transaction details        |");
-		System.out.println("|        [8] Add interest                     |");
-		System.out.println("|        [9] Show menu                        |");
-		System.out.println("|        [10] Logout                          |");
+		System.out.println("|        [8] Show menu                        |");
+		System.out.println("|        [9] Logout                           |");
 		System.out.println("===============================================");
 	}
 
@@ -646,11 +679,33 @@ public class MainApp {
 		System.out.println("|        [2] Deposit                   |");
 		System.out.println("|        [3] Withdraw                  |");
 		System.out.println("|        [4] Print transaction History |");
-		System.out.println("|        [5] Change password           |");
-		System.out.println("|        [6] Change account            |");
-		System.out.println("|        [7] Show menu                 |");
-		System.out.println("|        [8] Logout                    |");
+		System.out.println("|        [5] Close account             |");
+		System.out.println("|        [6] Show menu                 |");
+		System.out.println("|        [7] Logout                    |");
 		System.out.println("========================================");
 	}
 
 }
+
+/*
+ * System.out.println("There are " +
+ * customerService.CountTotalCustomer()+" total number of customers");
+ * System.out.println("Customer Details\n"); List<Customer> customers =
+ * customerService.findAllCustomer(); for(Customer customer: customers)
+ * System.out.println(customer);
+ * 
+ * System.out.println("There are " + employeeService.totalEmployeesCount() +
+ * " total number of employees."); System.out.println("Employee Details\n");
+ * List<Employee> employee = employeeService.totalEmployees(); for(Employee emp:
+ * employee) System.out.println(emp);
+ * 
+ * System.out.println("There are " + accountService.totalNumberOfAccount() +
+ * "total number of accounts"); System.out.println("Customer Details\n");
+ * List<Account> account = accountService.findAllAccount(); for(Account acc:
+ * account) System.out.println(acc);
+ * 
+ * System.out.println("Account Details are- \n");
+ * accountService.displayAccountDetails();
+ * 
+ * mainMenu(); adminMenu(); customerMenu();
+ */

@@ -22,9 +22,31 @@ public class AccountDaoImpl implements AccountDao {
 		return accounts;
 	}
 	
+	/*
+	 * public void insertCustomer(String title,String firstName, String lastName,
+	 * String address, String city, String contactNumber, String email) { String sql
+	 * =
+	 * "INSERT INTO customer(title, firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,? )"
+	 * ; jdbcTemplate.update(sql,
+	 * title,firstName,lastName,address,city,contactNumber,email);
+	 * 
+	 * }
+	 * 
+	 * public void addACustomer(String title, String firstName, String lastName,
+	 * String address, String city, String contactNumber, String email) { String sql
+	 * =
+	 * "INSERT INTO customer(title,firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,?)"
+	 * ; jdbcTemplate.update(sql, new Object[] {
+	 * title,firstName,lastName,address,city,contactNumber,email });
+	 * 
+	 * 
+	 * }
+	 */
+	
+	
 	public void depositMoney(int accountNumber, double amount) {
 		double newBalance = 0;
-		String sql = "SELECT * FROM account WHERE accountNumber='" + accountNumber + "'";
+		String sql = "SELECT * FROM account WHERE accountNumber=?";
 		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
 		for (Account acc : accounts) {
 			newBalance = acc.getAmount() + amount;
@@ -32,9 +54,24 @@ public class AccountDaoImpl implements AccountDao {
 		jdbcTemplate.update(sql, accountNumber, newBalance);
 	}
 
+	public void depositMoneyById(int Id, double amount) {
+		//String sql = "INSERT INTO account(accountId, amount) VALUES (?,?)";
+		//jdbcTemplate.update(sql, Id, amount);
+		
+		double newBalance = 0;
+		String sql = "SELECT * FROM account WHERE accountId='" + Id + "'";
+		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
+		for (Account acc : accounts) {
+			newBalance = acc.getAmount() + amount;
+		}
+		jdbcTemplate.update(sql, Id, newBalance);
+		 
+	}
+	
+	
 	public void withdrawMoney(int accountNumber, double amount) {
 		double newBalance = 0;
-		String sql = "SELECT * FROM account WHERE accountNumber='" + accountNumber + "'";
+		String sql = "SELECT * FROM account WHERE accountNumber=?" + accountNumber + "'";
 		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
 		for (Account acc : accounts) {
 			newBalance = acc.getAmount() - amount;
@@ -71,7 +108,15 @@ public class AccountDaoImpl implements AccountDao {
 		String sql = "SELECT * FROM account WHERE accountNumber=?";
 		List<Account> account = jdbcTemplate.query(sql, new AccountRowMapper(), accountNumber);
 		for (Account acc : account) {
-			System.out.println("Account ID: "+acc.getAccountId()+ "Account Number :  " + acc.getAccountNumber() + "Balance : " + acc.getAmount()+ "Over Draft :" + acc.getOverDraft());
+			System.out.println("Account Number: "+acc.getAccountNumber()+ "Account ID :  " + acc.getAccountId() + "Balance : " + acc.getAmount()+ "Over Draft :" + acc.getOverDraft());
+		}
+	}
+	
+	public void displayAccountDetailsById(int accountId) {
+		String sql = "SELECT * FROM account WHERE accountId=?";
+		List<Account> account = jdbcTemplate.query(sql, new AccountRowMapper(), accountId);
+		for (Account acc : account) {
+			System.out.println("Account Number: "+acc.getAccountNumber()+ "Account ID :  " + acc.getAccountId() + "Balance : " + acc.getAmount()+ "Over Draft :" + acc.getOverDraft());
 		}
 	}
 	public void createAnAccount(int accountNumber, double amount, double overDraft) {

@@ -31,11 +31,11 @@ public class Customer {
 	private String contactNumber;
 	private String email;
 	
-	private String savingAccount;
+	private int savingAccount;
 	
 	private List<Account> accounts = new ArrayList<Account>();
 	
-	public void setSavingAccounts(String SA) {
+	public void setSavingAccounts(int SA) {
 		Account tempSavingAcc = new Account(SA);
 		tempSavingAcc.setCustomer(this);
 		accounts.add(tempSavingAcc);

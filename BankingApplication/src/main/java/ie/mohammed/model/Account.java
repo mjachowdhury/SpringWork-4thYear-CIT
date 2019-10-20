@@ -14,8 +14,8 @@ import lombok.Setter;
 
 public class Account {
 	
+	private int accountNumber;
 	private int accountId;
-	private String accountNumber;
 	private double amount = 0;
 	private double overDraft = 0;
 	
@@ -25,13 +25,13 @@ public class Account {
 	@Override
 	public String toString() {
 		return "\n"+
-				"Account ID : " + accountId +"\n"+
-				"Account Number : " + accountNumber+ "\n"+ 
+				"Account ID : " + accountId + "\n"+ 
+				"Account Number : " + accountNumber +"\n"+				
 				"Account Balance : " + amount + "\n"+
 				"Over Draft : " + overDraft + "\n";
 	}
 
-	public Account(String accountNumber) {
+	public Account(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	
