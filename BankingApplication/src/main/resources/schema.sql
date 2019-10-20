@@ -21,11 +21,12 @@ CREATE TABLE employee(
 
 
 CREATE TABLE account( 
-	accountId int (11) NOT NULL AUTO_INCREMENT,
+	accountId int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	customerId int (11) NOT NULL,
 	accountNumber int (11) NOT NULL,
 	amount double (30) NOT NULL,
 	overDraft double (30) NOT NULL,
-	PRIMARY KEY (accountId)
+	FOREIGN KEY (customerId) REFERENCES customer(customerId)
 );
 
 CREATE UNIQUE INDEX accountUniqueIndex ON account(accountNumber );

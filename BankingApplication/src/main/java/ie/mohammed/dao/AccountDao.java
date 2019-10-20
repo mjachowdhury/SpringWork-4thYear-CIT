@@ -11,6 +11,7 @@ public interface AccountDao {
 	
 	void withdrawMoney(int accountNumber, double amount);
 	List<Account> findAllAccount();
+	List<Account> findAccountWithCustomer(int customerId);
 	
 	int getAccountCount();	
 	Account findByAccountNumber(int accountNumber);

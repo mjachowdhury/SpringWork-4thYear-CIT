@@ -47,7 +47,7 @@ public class Customer {
 	public String toString() {
 		return "\n"+
 				"Customer ID : " + customerId + "\n"+
-				"Title :" + "\n" +
+				"Title :" + title + "\n" +
 				"First Name : " + firstName + "\n"+
 				"Last Name : " + lastName + "\n" +
 				"Address : " + address + "\n"+

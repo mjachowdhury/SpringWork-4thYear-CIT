@@ -123,5 +123,11 @@ public class AccountDaoImpl implements AccountDao {
 		}
 	}
 
+	public List<Account> findAccountWithCustomer(int customerId) {
+		String sql = "SELECT * FROM account JOIN customer ON account.accountId=customer.customerId AND customer.customerId=?";
+		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), customerId);
+		return accounts;
+	}
+
 	
 }

@@ -8,6 +8,7 @@ public interface AccountService {
 
 	
 	List<Account> findAllAccount();
+	List<Account> findAccountWithCustomer(int customerId);
 	void depositMoney(int accountNumber, double amount);
 	public void depositMoneyById(int Id,int accountNumber, double amount);
 	public boolean accountExists(int accountNumber);

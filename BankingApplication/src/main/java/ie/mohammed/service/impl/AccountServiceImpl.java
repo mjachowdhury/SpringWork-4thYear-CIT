@@ -76,5 +76,10 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.accountExists(accountNumber);
 	}
 
+	public List<Account> findAccountWithCustomer(int customerId) {
+		 
+		return accountDao.findAccountWithCustomer(customerId);
+	}
+
 	
 }

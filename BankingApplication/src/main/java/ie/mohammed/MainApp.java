@@ -32,7 +32,7 @@ public class MainApp {
 		String employeeLastName;
 		int employeeId;
 
-		int user;
+		int user;	
 		int loginOption;
 		String userLastName;
 
@@ -192,7 +192,13 @@ public class MainApp {
 							for (Account acc : account)
 								System.out.println(acc);
 							break;
-						case 7:// check customer balance
+						case 7://list of account associate with customer
+							List<Account> accountWithCustomer = accountService.findAccountWithCustomer(user);
+							for(Account acc: accountWithCustomer)
+								System.out.println(acc);
+							//accountService.findAccountWithCustomer(user);
+							break;
+						case 8:// check customer balance
 							int accountNumberCheckBalance = 0;
 							System.out.println("Please enter the customer account number: ");
 							while (accountNumberCheckBalance < 1) {
@@ -201,11 +207,11 @@ public class MainApp {
 							accountService.displayAccountDetails(accountNumberCheckBalance);
 
 							break;
-						case 8: // show menu
+						case 9: // show menu
 							adminMenu();
 							break;
 
-						case 9: // login out of the admin account
+						case 10: // login out of the admin account
 							mainMenu();// print the main menu
 
 							ext = false;
@@ -357,20 +363,21 @@ public class MainApp {
 
 	public static void adminMenu() {
 		System.out.println("");
-		System.out.println("===============================================");
-		System.out.println("|     Please select and option:               |");
-		System.out.println("===============================================");
-		System.out.println("| Options:                                    |");
-		System.out.println("|        [1] Create new Employee Account         |");
-		System.out.println("|        [2] Create new Customer              |");
-		System.out.println("|        [3] Set up an Account for a customer |");
-		System.out.println("|        [4] Details of Employee              |");
-		System.out.println("|        [5] Details of Customer              |");
-		System.out.println("|        [6] Details of Account               |");
-		System.out.println("|        [7] Print transaction details        |");
-		System.out.println("|        [8] Show menu                        |");
-		System.out.println("|        [9] Logout                           |");
-		System.out.println("===============================================");
+		System.out.println("=========================================================");
+		System.out.println("|     Please select and option:               			 |");
+		System.out.println("=========================================================");
+		System.out.println("| Options:                                    			 |");
+		System.out.println("|        [1] Create new Employee Account                   |");
+		System.out.println("|        [2] Create new Customer              			 |");
+		System.out.println("|        [3] Set up an Account for a customer 			 |");
+		System.out.println("|        [4] Details of Employee           	   		     |");
+		System.out.println("|        [5] Details of Customer             			 |");
+		System.out.println("|        [6] Details of Account              			 |");
+		System.out.println("|        [7] List of Account Associate with Customer   	 |");
+		System.out.println("|        [8] Print transaction details        			 |");
+		System.out.println("|        [9] Show menu                        			 |");
+		System.out.println("|        [10] Logout                           			 |");
+		System.out.println("=========================================================");
 	}
 
 	public static void customerMenu() {
