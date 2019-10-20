@@ -269,48 +269,27 @@ public class MainApp {
 						case 2: // deposit
 							double amount = 0;
 							int accountNumber = 0;
-							/*
-							 * Account account1 = accountService.findByAccountID(user); if (user ==
-							 * account1.getAccountId()) {
-							 * 
-							 * while (accountNumber < 0) { accountNumber =
-							 * inputValidation.getIntegerInput("Account Number : "); } if
-							 * (account1.getAccountNumber() == accountNumber) {
-							 * System.out.println("How much would like to Depost: "); while (amount < 0) {
-							 * amount = inputValidation.getDoubleInput("Amount : "); }
-							 * accountService.depositMoneyById(user, accountNumber, amount); } }
-							 */
-
-							Account accountId = accountService.findByAccountID(user);
-
-							// System.out.println("Enter the account number : ");
-
-							while (accountNumber < 0) {
-								accountNumber = inputValidation.getIntegerInput("Account Number : ");
-							}
-
-							if (user == accountId.getAccountId() && accountNumber == accountId.getAccountNumber()) {
-								// accountService.displayAccountDetailsById(user);
-								System.out.println("How much would like to Depost: ");
-								while (amount < 0) {
-									amount = inputValidation.getDoubleInput("Amount : ");
-								}
-								accountService.depositMoneyById(user, accountNumber, amount);
-							}
+							System.out.println("Enter account number:");
+							accountNumber = scanner.nextInt();
+							System.out.println("Enter amount: ");
+							amount = scanner.nextDouble();
+							//System.out.println("Enter overDraft:");
+							accountService.depositMoney(accountNumber, amount);
+							 
 
 							break;
 
 						case 3: // withdraw
-
-							/*
-							 * System.out.println("Enter the account number : "); while(accountNumber < 0) {
-							 * accountNumber = inputValidation.getIntegerInput("Account Number : "); }
-							 * 
-							 * System.out.println("How much would like to Withdraw: "); while(amount < 0) {
-							 * amount = inputValidation.getDoubleInput("Amount : "); }
-							 * accountService.depositMoney(accountNumber, amount);
-							 * accountService.displayAccountDetails(accountNumber);
-							 */
+							double amountSubstract = 0;
+							int accountNum = 0;
+							System.out.println("Enter account number:");
+							accountNum = scanner.nextInt();
+							System.out.println("Enter amount: ");
+							amountSubstract = scanner.nextDouble();
+							//System.out.println("Enter overDraft:");
+							accountService.depositMoney(accountNum, amountSubstract);
+							 
+ 
 							break;
 						case 5:// close and account
 							accountService.closeAnAccount(user);

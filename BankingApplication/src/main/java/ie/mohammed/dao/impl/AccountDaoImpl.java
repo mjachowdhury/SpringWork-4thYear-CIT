@@ -23,42 +23,15 @@ public class AccountDaoImpl implements AccountDao {
 		return accounts;
 	}
 	
-	/*
-	 * public void insertCustomer(String title,String firstName, String lastName,
-	 * String address, String city, String contactNumber, String email) { String sql
-	 * =
-	 * "INSERT INTO customer(title, firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,? )"
-	 * ; jdbcTemplate.update(sql,
-	 * title,firstName,lastName,address,city,contactNumber,email);
-	 * 
-	 * }
-	 * 
-	 * public void addACustomer(String title, String firstName, String lastName,
-	 * String address, String city, String contactNumber, String email) { String sql
-	 * =
-	 * "INSERT INTO customer(title,firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,?)"
-	 * ; jdbcTemplate.update(sql, new Object[] {
-	 * title,firstName,lastName,address,city,contactNumber,email });
-	 * 
-	 * 
-	 * }
-	 */
-	
-	
 	public void depositMoney(int accountNumber, double amount) {
-		double newBalance = 0;
-		String sql = "SELECT * FROM account WHERE accountNumber=?";
-		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
-		for (Account acc : accounts) {
-			newBalance = acc.getAmount() + amount;
-		}
-		jdbcTemplate.update(sql, accountNumber, newBalance);
+		
+		String sql = "UPDATE account SET amount=amount+? WHERE accountNumber =?";
+		jdbcTemplate.update(sql, amount,accountNumber );
+		return;
 	}
 
 	public void depositMoneyById(int Id, int accountNumber, double amount) {
-		//String sql = "INSERT INTO account(accountId, amount) VALUES (?,?)";
-		//jdbcTemplate.update(sql, Id, amount);
-		
+ 
 		String balance = "INSERT INTO account(accountId,accountNumber, amount) VALUES (?,?,? )";
 		jdbcTemplate.update(balance, new Object[] {Id, accountNumber, amount});
 		/*
@@ -72,13 +45,10 @@ public class AccountDaoImpl implements AccountDao {
 	
 	
 	public void withdrawMoney(int accountNumber, double amount) {
-		double newBalance = 0;
-		String sql = "SELECT * FROM account WHERE accountNumber=?" + accountNumber + "'";
-		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
-		for (Account acc : accounts) {
-			newBalance = acc.getAmount() - amount;
-		}
-		jdbcTemplate.update(sql, accountNumber, newBalance);
+
+		String sql = "UPDATE account SET amount=amount-? WHERE accountNumber =?";
+		jdbcTemplate.update(sql, amount,accountNumber );
+		return;
 	}
 	
 	public int getAccountCount() {
