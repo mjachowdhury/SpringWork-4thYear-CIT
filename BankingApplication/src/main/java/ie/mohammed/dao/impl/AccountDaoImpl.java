@@ -2,6 +2,7 @@ package ie.mohammed.dao.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ie.mohammed.dao.AccountDao;
@@ -54,17 +55,18 @@ public class AccountDaoImpl implements AccountDao {
 		jdbcTemplate.update(sql, accountNumber, newBalance);
 	}
 
-	public void depositMoneyById(int Id, double amount) {
+	public void depositMoneyById(int Id, int accountNumber, double amount) {
 		//String sql = "INSERT INTO account(accountId, amount) VALUES (?,?)";
 		//jdbcTemplate.update(sql, Id, amount);
 		
-		double newBalance = 0;
-		String sql = "SELECT * FROM account WHERE accountId='" + Id + "'";
-		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());
-		for (Account acc : accounts) {
-			newBalance = acc.getAmount() + amount;
-		}
-		jdbcTemplate.update(sql, Id, newBalance);
+		String balance = "INSERT INTO account(accountId,accountNumber, amount) VALUES (?,?,? )";
+		jdbcTemplate.update(balance, new Object[] {Id, accountNumber, amount});
+		/*
+		 * double newBalance = 0; String sql = "SELECT * FROM account WHERE accountId='"
+		 * + Id + "'"; List<Account> accounts = jdbcTemplate.query(sql, new
+		 * AccountRowMapper()); for (Account acc : accounts) { newBalance =
+		 * acc.getAmount() + amount; } jdbcTemplate.update(sql, Id, newBalance);
+		 */
 		 
 	}
 	
@@ -132,9 +134,23 @@ public class AccountDaoImpl implements AccountDao {
 
 	
 
-	public void closeAnAccount() {
-		// TODO Auto-generated method stub
+	public void closeAnAccount(int accountId) {
+		 String sql = "DELETE FROM account where accountId=?";
+		 try {
+				jdbcTemplate.update(sql, accountId);				 
+			}catch(EmptyResultDataAccessException e){
+			 e.printStackTrace();
+			}
+	}
 
+	public boolean accountExists(int accountNumber) {
+		String sql = "SELECT * FROM account WHERE accountNumber=?";
+		try {
+			jdbcTemplate.queryForObject(sql, new Object[] {accountNumber}, Integer.class);
+			return true;
+		}catch(EmptyResultDataAccessException e){
+			return false;
+		}
 	}
 
 	

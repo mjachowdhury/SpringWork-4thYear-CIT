@@ -23,8 +23,8 @@ public class AccountServiceImpl implements AccountService {
 		accountDao.depositMoney(accountNumber, amount);
 	}
 	
-	public void depositMoneyById(int Id, double amount) {
-		accountDao.depositMoneyById(Id, amount);
+	public void depositMoneyById(int Id, int accountNumber, double amount) {
+		accountDao.depositMoneyById(Id, accountNumber, amount);
 		
 	}
 
@@ -54,9 +54,8 @@ public class AccountServiceImpl implements AccountService {
 
 	}
 
-	public void closeAnAccount() {
-		// TODO Auto-generated method stub
-
+	public void closeAnAccount(int accountId) {
+		accountDao.closeAnAccount(accountId);
 	}
 
 	public void displayAccountDetails() {
@@ -71,6 +70,10 @@ public class AccountServiceImpl implements AccountService {
 	public void displayAccountDetailsById(int accountId) {
 		 accountDao.displayAccountDetailsById(accountId);
 		
+	}
+
+	public boolean accountExists(int accountNumber) {	 
+		return accountDao.accountExists(accountNumber);
 	}
 
 	
