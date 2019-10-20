@@ -72,7 +72,7 @@ public class MainApp {
 					boolean ext = true;
 					do {
 						int userOption = 0;
-						while (userOption < 1 || userOption > 9) {
+						while (userOption < 1 || userOption > 11) {
 							userOption = inputValidation.getIntegerInput("Option: ");
 						}
 
@@ -151,13 +151,16 @@ public class MainApp {
 							break;
 
 						case 3: // setting up a customer account
-							// int customerID =0;
+							 int customerId =0;
 							int accountNumber = 0;
 							double overDraft = -1;
 							double amount = -1;
 
 							while (accountNumber < 1) {
 								accountNumber = inputValidation.getIntegerInput("Account Number: ");
+							}
+							while (customerId < 1) {
+								customerId = inputValidation.getIntegerInput("Customer Id: ");
 							}
 							while (amount < 0) {
 								amount = inputValidation
@@ -168,7 +171,7 @@ public class MainApp {
 										.getDoubleInput("How much of an overdraft is this account going to have? ");
 							}
 
-							accountService.saveAnAccount(accountNumber, amount, overDraft);
+							accountService.saveAnAccount(accountNumber,customerId, amount, overDraft);
 							break;
 
 						case 4: // to see list of bank employee
@@ -198,7 +201,19 @@ public class MainApp {
 								System.out.println(acc);
 							//accountService.findAccountWithCustomer(user);
 							break;
-						case 8:// check customer balance
+						case 8://account with more than 10000 euro
+							double amounts = 10000;
+							List<Account> accountMoreThan10K = accountService.findAccountsGreaterThan10000(amounts);
+							for(Account acc: accountMoreThan10K)
+								System.out.println(acc);
+							/*
+							 * { if(acc.getAmount() >= amounts) {
+							 * System.out.println(accountService.findAccountsGreaterThan10000(amounts));
+							 * System.out.println(amounts); } }
+							 */
+							
+							break;
+						case 9:// check customer balance
 							int accountNumberCheckBalance = 0;
 							System.out.println("Please enter the customer account number: ");
 							while (accountNumberCheckBalance < 1) {
@@ -207,11 +222,11 @@ public class MainApp {
 							accountService.displayAccountDetails(accountNumberCheckBalance);
 
 							break;
-						case 9: // show menu
+						case 10: // show menu
 							adminMenu();
 							break;
 
-						case 10: // login out of the admin account
+						case 11: // login out of the admin account
 							mainMenu();// print the main menu
 
 							ext = false;
@@ -374,9 +389,10 @@ public class MainApp {
 		System.out.println("|        [5] Details of Customer             			 |");
 		System.out.println("|        [6] Details of Account              			 |");
 		System.out.println("|        [7] List of Account Associate with Customer   	 |");
-		System.out.println("|        [8] Print transaction details        			 |");
-		System.out.println("|        [9] Show menu                        			 |");
-		System.out.println("|        [10] Logout                           			 |");
+		System.out.println("|        [8] Accounts with greater than 10000 euros      |");
+		System.out.println("|        [9] Print transaction details        			 |");
+		System.out.println("|        [10] Show menu                        			 |");
+		System.out.println("|        [11] Logout                           			 |");
 		System.out.println("=========================================================");
 	}
 

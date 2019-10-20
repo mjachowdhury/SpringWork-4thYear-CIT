@@ -45,8 +45,8 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.findByAccountID(customerId);
 	}
 
-	public void saveAnAccount(int accountNumber, double amount, double overDraft) {
-		accountDao.createAnAccount(accountNumber, amount, overDraft);
+	public void saveAnAccount(int accountNumber, int customerId, double amount, double overDraft) {
+		accountDao.createAnAccount(accountNumber,customerId, amount, overDraft);
 	}
 
 	public void transferMoney() {
@@ -79,6 +79,12 @@ public class AccountServiceImpl implements AccountService {
 	public List<Account> findAccountWithCustomer(int customerId) {
 		 
 		return accountDao.findAccountWithCustomer(customerId);
+	}
+
+	@Override
+	public List<Account> findAccountsGreaterThan10000(double amount) {
+		 
+		return accountDao.findAccountsGreaterThan10000(amount);
 	}
 
 	

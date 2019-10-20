@@ -9,6 +9,7 @@ public interface AccountService {
 	
 	List<Account> findAllAccount();
 	List<Account> findAccountWithCustomer(int customerId);
+	List<Account> findAccountsGreaterThan10000(double amount);
 	void depositMoney(int accountNumber, double amount);
 	public void depositMoneyById(int Id,int accountNumber, double amount);
 	public boolean accountExists(int accountNumber);
@@ -18,7 +19,7 @@ public interface AccountService {
 	Account findByAccountNumber(int accountNumber);
 	Account findByAccountID(int accountId);
 	int totalNumberOfAccount();
-	void saveAnAccount(int accountNumber, double amount,double overDraft);
+	void saveAnAccount(int accountNumber,int customerId, double amount,double overDraft);
 	void transferMoney();	
 	void closeAnAccount(int accountId);
 	void displayAccountDetails();

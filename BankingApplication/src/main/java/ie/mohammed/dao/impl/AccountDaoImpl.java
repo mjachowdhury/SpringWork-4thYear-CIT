@@ -91,9 +91,9 @@ public class AccountDaoImpl implements AccountDao {
 			System.out.println("Account Number: "+acc.getAccountNumber()+ "Account ID :  " + acc.getAccountId() + "Balance : " + acc.getAmount()+ "Over Draft :" + acc.getOverDraft());
 		}
 	}
-	public void createAnAccount(int accountNumber, double amount, double overDraft) {
-		String sql = "INSERT INTO account(accountNumber,amount, overDraft) VALUES (?,?,? )";
-		jdbcTemplate.update(sql, accountNumber, amount, overDraft);
+	public void createAnAccount(int accountNumber,int customerId, double amount, double overDraft) {
+		String sql = "INSERT INTO account(accountNumber,customerId, amount, overDraft) VALUES (?,?,?,? )";
+		jdbcTemplate.update(sql, accountNumber,customerId, amount, overDraft);
 
 	}
 
@@ -127,6 +127,13 @@ public class AccountDaoImpl implements AccountDao {
 		String sql = "SELECT * FROM account JOIN customer ON account.accountId=customer.customerId AND customer.customerId=?";
 		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), customerId);
 		return accounts;
+	}
+
+	@Override
+	public List<Account> findAccountsGreaterThan10000(double amount) {
+		String sql = "SELECT MAX(amount) FROM account WHERE amount=?";
+		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), amount);
+		return accounts; 
 	}
 
 	

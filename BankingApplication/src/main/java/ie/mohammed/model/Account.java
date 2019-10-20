@@ -16,6 +16,7 @@ public class Account {
 	
 	private int accountNumber;
 	private int accountId;
+	private int customerId;
 	private double amount = 0;
 	private double overDraft = 0;
 	
@@ -25,7 +26,8 @@ public class Account {
 	@Override
 	public String toString() {
 		return "\n"+
-				"Account ID : " + accountId + "\n"+ 
+				"Account ID : " + accountId + "\n"+
+				"Customer ID : " + customerId + "\n"+ 
 				"Account Number : " + accountNumber +"\n"+				
 				"Account Balance : " + amount + "\n"+
 				"Over Draft : " + overDraft + "\n";
@@ -34,9 +36,4 @@ public class Account {
 	public Account(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	
-	 
-	
-	
-	
-}
+  }
