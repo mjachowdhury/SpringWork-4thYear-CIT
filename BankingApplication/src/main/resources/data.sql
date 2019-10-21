@@ -15,6 +15,6 @@ INSERT INTO employee(firstName, lastName, password) VALUES
 
 INSERT INTO account(customerId, accountNumber, amount, overDraft) VALUES
 (1, 555555, '1000', '1000'),
-(2, 666666, '2000', '1000'),
+(2, 666666, '20000', '1000'),
 (3, 777777, '3000', '0'),
 (4, 88888, '15000', '0');

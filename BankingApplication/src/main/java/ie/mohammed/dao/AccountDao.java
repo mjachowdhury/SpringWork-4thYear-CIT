@@ -19,7 +19,7 @@ public interface AccountDao {
 
 	List<Account> findAccountWithCustomer(int customerId);
 
-	List<Account> findAccountsGreaterThan10000(double amount);
+	List<Account> findAccountsGreaterThan10000();
 
 	int getAccountCount();
 
@@ -40,4 +40,6 @@ public interface AccountDao {
 	public void displayAccountDetailsById(int accountId);
 
 	public boolean accountExists(int accountNumber);
+	
+	public double totalAmonut();
 }

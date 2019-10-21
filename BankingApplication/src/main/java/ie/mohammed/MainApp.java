@@ -72,7 +72,7 @@ public class MainApp {
 					boolean ext = true;
 					do {
 						int userOption = 0;
-						while (userOption < 1 || userOption > 11) {
+						while (userOption < 1 || userOption > 12) {
 							userOption = inputValidation.getIntegerInput("Option: ");
 						}
 
@@ -201,18 +201,12 @@ public class MainApp {
 								System.out.println(acc);
 							//accountService.findAccountWithCustomer(user);
 							break;
-						case 8://account with more than 10000 euro
-							double amounts = 10000;
-							List<Account> accountMoreThan10K = accountService.findAccountsGreaterThan10000(amounts);
-							for(Account acc: accountMoreThan10K)
-								System.out.println(acc);
-							/*
-							 * { if(acc.getAmount() >= amounts) {
-							 * System.out.println(accountService.findAccountsGreaterThan10000(amounts));
-							 * System.out.println(amounts); } }
-							 */
 							
+						case 8://account with more than 10000 euro
+							 
+							System.out.println(accountService.findAccountsGreaterThan10000());
 							break;
+							
 						case 9:// check customer balance
 							int accountNumberCheckBalance = 0;
 							System.out.println("Please enter the customer account number: ");
@@ -222,11 +216,15 @@ public class MainApp {
 							accountService.displayAccountDetails(accountNumberCheckBalance);
 
 							break;
-						case 10: // show menu
+						case 10://show total amount
+							System.out.println(accountService.totalAmonut());
+							break;
+							
+						case 11: // show menu
 							adminMenu();
 							break;
 
-						case 11: // login out of the admin account
+						case 12: // login out of the admin account
 							mainMenu();// print the main menu
 
 							ext = false;
@@ -378,22 +376,23 @@ public class MainApp {
 
 	public static void adminMenu() {
 		System.out.println("");
-		System.out.println("=========================================================");
-		System.out.println("|     Please select and option:               			 |");
-		System.out.println("=========================================================");
-		System.out.println("| Options:                                    			 |");
-		System.out.println("|        [1] Create new Employee Account                   |");
-		System.out.println("|        [2] Create new Customer              			 |");
-		System.out.println("|        [3] Set up an Account for a customer 			 |");
-		System.out.println("|        [4] Details of Employee           	   		     |");
-		System.out.println("|        [5] Details of Customer             			 |");
-		System.out.println("|        [6] Details of Account              			 |");
-		System.out.println("|        [7] List of Account Associate with Customer   	 |");
-		System.out.println("|        [8] Accounts with greater than 10000 euros      |");
-		System.out.println("|        [9] Print transaction details        			 |");
-		System.out.println("|        [10] Show menu                        			 |");
-		System.out.println("|        [11] Logout                           			 |");
-		System.out.println("=========================================================");
+		System.out.println("=================================================================");
+		System.out.println("|     Please select and option:               					 |");
+		System.out.println("=================================================================");
+		System.out.println("| Options:                                    					 |");
+		System.out.println("|        [1] Create new Employee Account              		     |");
+		System.out.println("|        [2] Create new Customer              					 |");
+		System.out.println("|        [3] Set up an Account for a customer 					 |");
+		System.out.println("|        [4] Details of Employee           	   		    		 |");
+		System.out.println("|        [5] Details of Customer             					 |");
+		System.out.println("|        [6] Details of Account              					 |");
+		System.out.println("|        [7] List of Account Associate with Customer   		   	 |");
+		System.out.println("|        [8] Accounts with greater than 10000 euros 			 |");
+		System.out.println("|        [9] Print transaction details        			 		 |");
+		System.out.println("|        [10] Show Total amount		        	 				 |");
+		System.out.println("|        [11] Show menu                        			 		 |");
+		System.out.println("|        [12] Logout                           			 		 |");
+		System.out.println("=================================================================");
 	}
 
 	public static void customerMenu() {

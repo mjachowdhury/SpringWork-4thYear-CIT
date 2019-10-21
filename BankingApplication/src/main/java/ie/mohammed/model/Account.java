@@ -17,8 +17,8 @@ public class Account {
 	private int accountNumber;
 	private int accountId;
 	private int customerId;
-	private double amount = 0;
-	private double overDraft = 0;
+	private double amount;
+	private double overDraft;
 
 	@Autowired
 	private Customer customer;

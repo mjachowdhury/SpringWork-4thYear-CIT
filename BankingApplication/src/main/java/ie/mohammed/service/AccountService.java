@@ -10,7 +10,7 @@ public interface AccountService {
 
 	List<Account> findAccountWithCustomer(int customerId);
 
-	List<Account> findAccountsGreaterThan10000(double amount);
+	List<Account> findAccountsGreaterThan10000();
 
 	void depositMoney(int accountNumber, double amount);
 
@@ -37,4 +37,6 @@ public interface AccountService {
 	void displayAccountDetails(int accountNumber);
 
 	public void displayAccountDetailsById(int accountId);
+	
+	public double totalAmonut();
 }

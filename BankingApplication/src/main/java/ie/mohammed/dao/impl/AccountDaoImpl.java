@@ -129,30 +129,17 @@ public class AccountDaoImpl implements AccountDao {
 		return accounts;
 	}
 
-	@Override
-	public List<Account> findAccountsGreaterThan10000(double amount) {
-		String sql = "SELECT amount from account WHERE accountId = ANY (SELECT accountId FROM amount WHERE amount > 10000 )";
-
-		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper(), amount);
+	
+	public List<Account> findAccountsGreaterThan10000() {
+		String sql = "SELECT * FROM account GROUP BY accountId  HAVING min(amount) > 10000 ";	
+		List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper());	
 		return accounts;
 	}
-
-	/*
-	 * public Account totalAmonut() { String sql =
-	 * "SELECT sum(amount) FROM account "; return jdbcTemplate.queryForObject(sql,
-	 * new AccountRowMapper(),Double.class);
-	 * 
-	 * List<Account> accounts = jdbcTemplate.query(sql, new AccountRowMapper()); for
-	 * (Account account : accounts) { System.out.println("Balance : " +
-	 * account.getAmount()); }
-	 * 
-	 * //double totalAmount = jdbcTemplate.queryForObject(sql, new Object[]
-	 * {amount}, Double.class); }
-	 */
-
+ 
 	public double totalAmonut() {
 		String sql = "SELECT sum(amount) FROM account ";
-		return jdbcTemplate.queryForObject(sql,Double.class);
+		double totalMoney = jdbcTemplate.queryForObject(sql,Double.class);
+		return totalMoney;
 		 
 	}
 }

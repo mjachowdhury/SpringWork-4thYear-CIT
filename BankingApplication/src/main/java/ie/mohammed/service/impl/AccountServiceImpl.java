@@ -80,10 +80,14 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.findAccountWithCustomer(customerId);
 	}
 
-	@Override
-	public List<Account> findAccountsGreaterThan10000(double amount) {
+	public List<Account> findAccountsGreaterThan10000() {
 
-		return accountDao.findAccountsGreaterThan10000(amount);
+		return accountDao.findAccountsGreaterThan10000();
+	}
+
+	public double totalAmonut() {
+
+		return accountDao.totalAmonut();
 	}
 
 }
