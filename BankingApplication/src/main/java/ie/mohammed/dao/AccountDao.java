@@ -42,4 +42,8 @@ public interface AccountDao {
 	public boolean accountExists(int accountNumber);
 	
 	public double totalAmonut();
+
+	void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount);
+
+	void addAPersonToAccount(int custId, int accountId);
 }

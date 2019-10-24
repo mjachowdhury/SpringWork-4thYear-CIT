@@ -267,7 +267,7 @@ public class MainApp {
 
 					do {
 						int userOption = 0;
-						while (userOption < 1 || userOption > 7) {
+						while (userOption < 1 || userOption > 8) {
 							userOption = inputValidation.getIntegerInput("Option: ");
 						} // end of while
 
@@ -310,6 +310,18 @@ public class MainApp {
 							 
  
 							break;
+						
+						case 4:
+							System.out.println("Enter the account ID :");
+							int ownAccountID = scanner.nextInt();
+							System.out.println("Enter the transfer Account ID :");
+							int transferAccountId = scanner.nextInt();
+							System.out.println("Enter the amount");
+							double totalAmount = scanner.nextDouble();
+							accountService.TranferMoneyToAnotherAccount(ownAccountID, transferAccountId, totalAmount);
+							
+							break;
+							
 						case 5:// close and account
 							accountService.closeAnAccount(user);
 						case 6: // Show menu
@@ -403,10 +415,11 @@ public class MainApp {
 		System.out.println("|        [1] Check balence             |");
 		System.out.println("|        [2] Deposit                   |");
 		System.out.println("|        [3] Withdraw                  |");
-		System.out.println("|        [4] Print transaction History |");
-		System.out.println("|        [5] Close account             |");
-		System.out.println("|        [6] Show menu                 |");
-		System.out.println("|        [7] Logout                    |");
+		System.out.println("|		 [4] Transfer Money To Another Account |");
+		System.out.println("|        [5] Print transaction History |");
+		System.out.println("|        [6] Close account             |");
+		System.out.println("|        [7] Show menu                 |");
+		System.out.println("|        [8] Logout                    |");
 		System.out.println("========================================");
 	}
 

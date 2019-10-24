@@ -142,4 +142,18 @@ public class AccountDaoImpl implements AccountDao {
 		return totalMoney;
 		 
 	}
+	 
+	public void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount) {
+	    String ownAccount = "UPDATE account SET amount= amount - ? WHERE accountId=?";
+	    jdbcTemplate.update(ownAccount, new Object[] {amount, accountId}); 	
+		
+		String transferAccount = "UPDATE account SET amount= amount + ? WHERE accountId=?";
+		jdbcTemplate.update(transferAccount, new Object[] { amount, transferAccountId });		
+	}
+	 
+	public  void addAPersonToAccount(int custId, int accountId) {
+		 String sql = "INSERT INTO account (custId, accountId) VALUES (?, ?)";
+			jdbcTemplate.update(sql, new Object[] {custId, accountId});
+	}
+ 
 }

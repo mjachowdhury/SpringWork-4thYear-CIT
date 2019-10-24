@@ -39,4 +39,6 @@ public interface AccountService {
 	public void displayAccountDetailsById(int accountId);
 	
 	public double totalAmonut();
+	
+	void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount);
 }

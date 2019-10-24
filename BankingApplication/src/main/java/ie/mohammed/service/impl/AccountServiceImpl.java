@@ -90,4 +90,10 @@ public class AccountServiceImpl implements AccountService {
 		return accountDao.totalAmonut();
 	}
 
+	@Override
+	public void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount) {
+		 accountDao.TranferMoneyToAnotherAccount(accountId, transferAccountId, amount);
+		
+	}
+
 }

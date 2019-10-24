@@ -17,7 +17,9 @@ public class TestQueries {
 
 	@Autowired
 	CustomerDao customerDao;
+	@Autowired
 	EmployeeDao employeeDao;
+	@Autowired
 	AccountDao accountDao;
 	
 	@Test
@@ -29,7 +31,7 @@ public class TestQueries {
 	@Test
 	public void testCountingTotalCustomer() {
 		int count = customerDao.getCustomerCount();
-		Assert.assertEquals(3, count);
+		Assert.assertEquals(4, count);
 	}
 	
 	@Test
@@ -45,13 +47,7 @@ public class TestQueries {
 	@Test
 	public void testFindAllCustomer() {
 		int numberOfCustomer = customerDao.getCustomerCount();
-		Assert.assertEquals(2, numberOfCustomer);
+		Assert.assertEquals(4, numberOfCustomer);
 	}
-	
-	@Test
-	public void testIsCustomerInDatabase() {
-		Assert.assertEquals(true, accountDao.accountExists(555555));
-		Assert.assertEquals(false, accountDao.accountExists(888888));
-		
-	}
+	 
 }
