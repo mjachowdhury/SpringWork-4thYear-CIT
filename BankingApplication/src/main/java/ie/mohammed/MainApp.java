@@ -26,24 +26,20 @@ public class MainApp {
 		InputValidation inputValidation = new InputValidation();
 
 		Scanner scanner = new Scanner(System.in);
-		// boolean user = false;
-		boolean accountRedo = false;
-		int choice;
-		String employeeLastName;
-		int employeeId;
 
-		int user;	
+		int user;
 		int loginOption;
-		String userLastName;
+		String password;
 
 		mainMenu();
 		do {
 			loginOption = 0;
 			user = 0;
-			userLastName = null;
+			// userLastName = null;
+			password = null;
 
 			while (loginOption < 1 || loginOption > 3) {
-				loginOption = inputValidation.getIntegerInput("Option: ");
+				loginOption = inputValidation.getIntegerInput("\nOPTION: ");
 
 			}
 
@@ -51,21 +47,20 @@ public class MainApp {
 			case 1: // Admin choice
 				System.out.println();
 				while (user < 1) {
-					user = inputValidation.getIntegerInput("Bank Employee/Admin ID: ");
+					user = inputValidation.getIntegerInput("BANK EMPLOYEE/ADMIN ID: ");
 				}
-				while (userLastName == null) {
-					userLastName = InputValidation.getPasswordInput("Last Name: ");
+				while (password == null) {
+					password = InputValidation.getPasswordInput("PASSWORD : ");
 				}
 				System.out.println("");
 
 				Employee emp = employeeService.findById(user);
-				if (emp == null)
-					System.out.println("ERROR - ??????????????????/");
-				if (emp.getLastName().equals(userLastName)) {
-					System.out.println("Valid Login");
+
+				if (emp.getPassword().equals(password)) {
+					System.out.println("VALID LOGIN...");
 
 					System.out.println();
-					System.out.println("Hello, " + emp.getFirstName() + " " + emp.getLastName());
+					System.out.println("Hello.., " + emp.getFirstName() + " " + emp.getLastName());
 
 					adminMenu();
 
@@ -73,29 +68,34 @@ public class MainApp {
 					do {
 						int userOption = 0;
 						while (userOption < 1 || userOption > 12) {
-							userOption = inputValidation.getIntegerInput("Option: ");
+							userOption = inputValidation.getIntegerInput("\nOPTION: ");
 						}
 
 						switch (userOption) {
 						case 1: // Create Bank Employee account
+							System.out.println(".. CREATE BANK EMPLYOEE.. ");
+							System.out.println("-------------------------\n");
 							String firstName = null;
 							String lastName = null;
-							String password = null;
+							String choosePassword = null;
 
 							while (firstName == null) {
-								firstName = InputValidation.getStringInput("Please enter the first name: ");
+								firstName = InputValidation.getStringInput("PLEASE ENTER THE FIRST NAME: ");
 							}
 							while (lastName == null) {
-								lastName = InputValidation.getStringInput("Please enter the last name: ");
+								lastName = InputValidation.getStringInput("PLEASE ENTER THE LAST NAME: ");
 							}
-							while (password == null) {
-								password = InputValidation.getPasswordInput("Please enter a password: ");
+							while (choosePassword == null) {
+								choosePassword = InputValidation.getPasswordInput("PLESAE ENTER THE PASSWORD: ");
 							}
 
-							employeeService.saveANewEmployee(firstName, lastName, password);
+							employeeService.saveANewEmployee(firstName, lastName, choosePassword);
+							System.out.println("\nNEW BANK EMPLOYEE HAS BEEN CREATED.");
 							break;
 
 						case 2: // Create Customer account/register with the bank
+							System.out.println("..REGISTER WITH THE BANK..");
+							System.out.println("--------------------------\n");
 							String title = null;
 							int titleNum = 0; // Used to select the user title
 							String firstNameC = null;
@@ -104,6 +104,7 @@ public class MainApp {
 							String city = null;
 							String contactNumber = null;
 							String email = null;
+							String cusPassword = null;
 
 							System.out.println("[1] Mr");
 							System.out.println("[2] Mrs");
@@ -111,7 +112,7 @@ public class MainApp {
 							System.out.println("[4] Miss");
 
 							while (titleNum < 1 || titleNum > 4) {
-								titleNum = inputValidation.getIntegerInput("Title: ");
+								titleNum = inputValidation.getIntegerInput("SELECT TITLE : ");
 							}
 
 							if (titleNum == 1) {
@@ -128,86 +129,108 @@ public class MainApp {
 							}
 
 							while (firstNameC == null) {
-								firstNameC = InputValidation.getStringInput("Please enter the customers first name: ");
+								firstNameC = InputValidation.getStringInput("PLEASE ENTER CUSTOMER FIRST NAME: ");
 							}
 							while (lastNameC == null) {
-								lastNameC = InputValidation.getStringInput("Please enter the customers last name: ");
+								lastNameC = InputValidation.getStringInput("PLEASE ENTER CUSTOMER LAST NAME: ");
 							}
 							while (address == null) {
-								address = InputValidation.getPasswordInput("Please enter a Address: ");
+								address = InputValidation.getStringInput("PLEASE ENTER ADDRESS: ");
 							}
 							while (city == null) {
-								city = InputValidation.getPasswordInput("Please enter a City: ");
+								city = InputValidation.getStringInput("PLEASE ENTER CITY: ");
 							}
-							while (contactNumber == null) {
-								contactNumber = InputValidation.getPasswordInput("Please enter a Contact Number: ");
-							}
-							while (email == null) {
-								email = InputValidation.getPasswordInput("Please enter a Email: ");
+							System.out.println("PLEASE ENTER CONTACT NUMBER: ");
+							contactNumber = scanner.nextLine();
+
+							System.out.println("PLEASE ENTER EMAIL:");
+							email = scanner.nextLine();
+
+							while (cusPassword == null) {
+								cusPassword = InputValidation.getPasswordInput("PLEASE CHOOSE PASSWORD: ");
 							}
 							customerService.saveACustomer(title, firstNameC, lastNameC, address, city, contactNumber,
-									email);
-
+									email, cusPassword);
+							System.out.println("\nNEW CUSTOMER HAS BEEN REGISTERED WITH THE BANK. ");
 							break;
 
 						case 3: // setting up a customer account
-							 int customerId =0;
+							System.out.println("..SETTING UP CUSTOMOER ACCOUNT..");
+							System.out.println("-------------------------------\n");
+							int customerId = 0;
 							int accountNumber = 0;
 							double overDraft = -1;
 							double amount = -1;
 
 							while (accountNumber < 1) {
-								accountNumber = inputValidation.getIntegerInput("Account Number: ");
+								accountNumber = inputValidation.getIntegerInput("ENTER ACCOUNT NUMBER: ");
 							}
 							while (customerId < 1) {
-								customerId = inputValidation.getIntegerInput("Customer Id: ");
+								customerId = inputValidation.getIntegerInput("ENTER CUSTOMER ID: ");
 							}
 							while (amount < 0) {
 								amount = inputValidation
-										.getDoubleInput("Please set the default balance on the account: ");
+										.getDoubleInput("PLEASE SET THE DEFAULT BALANCE ON THE ACCOUNT: ");
 							}
 							while (overDraft < 0) {
 								overDraft = inputValidation
-										.getDoubleInput("How much of an overdraft is this account going to have? ");
+										.getDoubleInput("HOW MUCH OF AN OVERDRAFT IS THIS ACCOUNT GOING TO HAVE? :  ");
 							}
 
-							accountService.saveAnAccount(accountNumber,customerId, amount, overDraft);
+							accountService.saveAnAccount(accountNumber, customerId, amount, overDraft);
+							System.out.println("\nNEW CUSTOMER ACCOUNT HAS BEEN CREATED");
 							break;
 
-						case 4: // to see list of bank employee
+						case 4: // list of account associate with customer
+							System.out.println("ENTER THE CUSTOMER ID :");
+							int cusId = scanner.nextInt();
+							List<Account> accountWithCustomer = accountService.findAccountWithCustomer(cusId);
+							for (Account acc : accountWithCustomer) {
+								if (acc.getAccountId() == acc.getCustomerId())
+									System.out.println(acc.toString());
+							}
+							// accountService.findAccountWithCustomer(user);
+							break;
+
+						case 5:
+							// account with more than 10000 euro
+							System.out.println("LIST OF ACCOUNT(S) HAS MORE THAN 10K..");
+							System.out.println("--------------------------------------");
+							System.out.println(accountService.findAccountsGreaterThan10000());
+							break;
+						
+						case 6:
+							// to see list of bank employee
 							// employeeService.
-							System.out.println("Employee Details\n");
+							System.out.println("..ALL THE EMPLOYEES DETAILS..");
+							System.out.println("------------------------------");
 							List<Employee> employee = employeeService.totalEmployees();
 							for (Employee empl : employee)
 								System.out.println(empl);
 							break;
-						case 5: // to see list of customer
-							// customerService
-							System.out.println("Customer Details\n");
+
+						case 7:
+							// to see list of customer							 
+							System.out.println("..ALL THE CUSTOMERS DETAILS..");
+							System.out.println("------------------------------");
 							List<Customer> customer = customerService.findAllCustomer();
 							for (Customer cum : customer)
 								System.out.println(cum);
 							break;
-						case 6: // to see all customer account details
-							// accountService.displayAccountDetails();
-							System.out.println("Customer Details\n");
+
+						case 8:
+
+							// to see all customer account details							 
+							System.out.println("..ALL THE ACCOUNTS DETAILS..");
+							System.out.println("-----------------------------");
 							List<Account> account = accountService.findAllAccount();
 							for (Account acc : account)
 								System.out.println(acc);
 							break;
-						case 7://list of account associate with customer
-							List<Account> accountWithCustomer = accountService.findAccountWithCustomer(user);
-							for(Account acc: accountWithCustomer)
-								System.out.println(acc);
-							//accountService.findAccountWithCustomer(user);
-							break;
-							
-						case 8://account with more than 10000 euro
-							 
-							System.out.println(accountService.findAccountsGreaterThan10000());
-							break;
-							
+
 						case 9:// check customer balance
+							System.out.println("..CUSTOMER ACCOUNT DETAILS..");
+							System.out.println("-----------------------------");
 							int accountNumberCheckBalance = 0;
 							System.out.println("Please enter the customer account number: ");
 							while (accountNumberCheckBalance < 1) {
@@ -216,10 +239,13 @@ public class MainApp {
 							accountService.displayAccountDetails(accountNumberCheckBalance);
 
 							break;
-						case 10://show total amount
-							System.out.println(accountService.totalAmonut());
-							break;
 							
+						case 10:// show total amount
+							System.out.println("..TOTAL AMOUNT CURRENTLY IN THE BANK..");
+							System.out.println("---------------------------------------");
+							System.out.println("TOTAL AMOUNT : " + accountService.totalAmonut());
+							break;
+
 						case 11: // show menu
 							adminMenu();
 							break;
@@ -229,8 +255,9 @@ public class MainApp {
 
 							ext = false;
 							break;
+							
 						default:
-							System.out.println("Invalid Selection");
+							System.out.println("Invalid Selection..");
 							break;
 						}
 					} while (ext);
@@ -238,25 +265,24 @@ public class MainApp {
 				else {
 					System.out.println("Invalid");
 				}
-
 				break;
+				
 			case 2:// Account holder
 
 				System.out.println("");
 				while (user < 1) {
-					user = inputValidation.getIntegerInput("Customer  ID:  ");
+					user = inputValidation.getIntegerInput("ENTER CUSTOMER  ID:  ");
 				}
-				while (userLastName == null) {
-					userLastName = InputValidation.getPasswordInput("Last Name: ");
+				while (password == null) {
+					password = InputValidation.getPasswordInput("PASSWORD: ");
 				}
 
 				System.out.println("");
 
 				Customer cus = customerService.findById(user);
-				if (cus == null)
-					System.out.println("ERROR - ??????????????????/");
-				if (cus.getLastName().equals(userLastName)) {
-					System.out.println("Valid Login");
+
+				if (cus.getPassword().equals(password)) {
+					System.out.println("VALID LOGIN...");
 
 					System.out.println();
 					System.out.println("Hello, " + cus.getFirstName() + " " + cus.getLastName());
@@ -268,102 +294,135 @@ public class MainApp {
 					do {
 						int userOption = 0;
 						while (userOption < 1 || userOption > 8) {
-							userOption = inputValidation.getIntegerInput("Option: ");
+							userOption = inputValidation.getIntegerInput("\nOPTION: ");
 						} // end of while
 
 						switch (userOption) {
-						case 1: // check balance
-
-							System.out.println("Enter the account ID : ");
-							Account account = accountService.findByAccountID(user);
-							while (user < 0) {
-								user = inputValidation.getIntegerInput("Account ID : ");
-							}
-							if (user == account.getAccountId()) {
-								accountService.displayAccountDetailsById(user);
-							}
-
-							break;
-
-						case 2: // deposit
+						
+						case 1: // deposit
+							System.out.println("DEPOSIT SERVICE ...");
 							double amount = 0;
 							int accountNumber = 0;
-							System.out.println("Enter account number:");
+							System.out.println("ENTER ACCOUNT NUMBER :");
 							accountNumber = scanner.nextInt();
-							System.out.println("Enter amount: ");
+							System.out.println("ENTER AMOUNT : ");
 							amount = scanner.nextDouble();
-							//System.out.println("Enter overDraft:");
 							accountService.depositMoney(accountNumber, amount);
-							 
-
+							System.out.println("YOUR ACCOUNT HAS BEEN UPDATED AND TOTAL AMOUNT NOW:"
+									+ accountService.findByAccountNumber(accountNumber));
 							break;
 
-						case 3: // withdraw
+						case 2: // withdraw
+							System.out.println("WITHDRAW SERVICE...");
 							double amountSubstract = 0;
 							int accountNum = 0;
-							System.out.println("Enter account number:");
+							System.out.println("ENTER ACCOUNT NUMBER :");
 							accountNum = scanner.nextInt();
-							System.out.println("Enter amount: ");
+							System.out.println("ENTER AMOUNT: ");
 							amountSubstract = scanner.nextDouble();
-							//System.out.println("Enter overDraft:");
-							accountService.depositMoney(accountNum, amountSubstract);
-							 
- 
+							// System.out.println("Enter overDraft:");
+							accountService.withdrawMoney(accountNum, amountSubstract);
+							System.out.println("YOUR ACCOUNT HAS BEEN UPDATED AND TOTAL AMOUNT NOW:"
+									+ accountService.findByAccountNumber(accountNum));
+
 							break;
-						
-						case 4:
-							System.out.println("Enter the account ID :");
+
+						case 3: // transfer money to another account
+							System.out.println("MONEY TRANSFER SERVICE ....");
+							System.out.println("ENTER OWN ACCOUNT ID :");
 							int ownAccountID = scanner.nextInt();
-							System.out.println("Enter the transfer Account ID :");
+							System.out.println("ENTER TRANSFER ACCOUNT ID :");
 							int transferAccountId = scanner.nextInt();
-							System.out.println("Enter the amount");
+							System.out.println("HOW MUCH YOU WANT TO TRANSFER: ");
 							double totalAmount = scanner.nextDouble();
 							accountService.TranferMoneyToAnotherAccount(ownAccountID, transferAccountId, totalAmount);
-							
+							System.out.println("YOUR ACCOUNT HAS BEEN UPDATED AND TOTAL AMOUNT NOW:"
+									+ accountService.findByAccountID(ownAccountID));
+
 							break;
-							
-						case 5:// close and account
-							accountService.closeAnAccount(user);
-						case 6: // Show menu
+
+						case 4:	// close and account
+							System.out.println("ENTER THE ACCOUNT ID : ");
+							int accountID = scanner.nextInt();
+
+							if (user == accountID) {
+								accountService.closeAnAccount(user);
+								System.out.println("YOUR ACCOUNT IS NO LONGER AVAILABLE..");
+								System.out.println("GOOD BYE..........");
+								System.out.println("YOU ARE RE-DIRECTED TO MAIN MENU....");
+								mainMenu();
+								ext = false;
+								break;
+							} else {
+								System.out.println("Account ID DID NOT MATCH...TRY AGAIN");
+								customerMenu();
+							}
+
+							break;
+
+						case 5:// check balance
+
+							System.out.println("ENTER ACCOUNT ID : ");
+							int checkBal = scanner.nextInt();
+							if (user != checkBal) {
+								System.out.println("WRONG ACCOUNT ID ..");
+							} else {
+								accountService.displayAccountDetailsById(user);
+							}
+							break;
+
+						case 6:	// Show menu
 							customerMenu();
 							break;
-						case 7: // Login out
+						
+						case 7:
+							System.out.println("Under implementation...");
+							/*
+							 * System.out.println("..ADD A CUSTOMER TO AN ACCOUNT(JOIN ACCOUNT) ..");
+							 * System.out.println("-----------------------------------------------\n");
+							 * System.out.println("ENTER CUSTOMER ID :"); int cusIdToJoin =
+							 * scanner.nextInt(); System.out.println("ENTER ACCOUNT ID : "); int accIdToJoin
+							 * = scanner.nextInt();
+							 * 
+							 * accountService.addAPersonToAccount(cusIdToJoin, accIdToJoin);
+							 * System.out.println("ACCOUNT IS JOIN NOW..");
+							 */
+							break;
+							
+						case 8:	// Login out
 							mainMenu(); // Prints the main menu
 
 							ext = false;
 							break;
+
 						default:
-							System.err.println("Invalid selection");
+							
+							System.err.println("INVALID SELECTION...");
 							break;
+							
 						} // end of switch
 					} while (ext);// end of customer do
 
 				} // end of if
 
-				/*
-				 * else{ System.out.
-				 * println("Sorry, to use this part of the system you need an account assiosated with you."
-				 * ); System.out.println("Please conact a bank manager for more assistance.");
-				 * mainMenu(); //Prints the main menu
-				 */ // }//end of else
-				// }//end of if
 				else {
 					System.err.println("Invalid");
 				}
 				break;
+				
 			case 3:
 				String response = "";
 				while (!response.toLowerCase().equals("n") && !response.toLowerCase().equals("y")) {
-					response = InputValidation.getPasswordInput("Are you sure you want to exit? (Y/N)");
+					response = InputValidation.getPasswordInput("ARE YOU YOU WANT TO EXIT? (Y/N)");
 				}
-
 				if (response.toLowerCase().equals("n")) {
-					System.out.println("Thanks for staying :)");
+					System.out.println("THANKS FOR STAYING.. :)");
 				}
 				if (response.toLowerCase().equals("y")) {
 					System.exit(0);
 				}
 				break;
+				
 			default:
 				System.err.println("Invalid selection");
 				break;
@@ -371,140 +430,64 @@ public class MainApp {
 
 		} while (loginOption != 4);// end of first do loop
 
-
+		context.close();
 	}
 
+	//Main Menu
 	public static void mainMenu() {
 		System.out.println("");
-		System.out.println("======================================");
-		System.out.println("|     Please select and option:      |");
-		System.out.println("======================================");
-		System.out.println("| Options:                           |");
-		System.out.println("|        [1] Bank Employee              |");
-		System.out.println("|        [2] Account Holder          |");
-		System.out.println("|        [3] Exit                    |");
-		System.out.println("======================================");
+		System.out.println("============================================");
+		System.out.println("|  WEL COME TO SPRING BANK APPLICATION     |");
+		System.out.println("|        PLEASE SELECT AN OPTION           |");
+		System.out.println("============================================");
+		System.out.println("| OPTION :                                 |");
+		System.out.println("|         [1] BANK EMPLOYEE LOGIN          |");
+		System.out.println("|         [2] CUSTOMER LOGIN               |");
+		System.out.println("|         [3] EXIT                         |");
+		System.out.println("===========================================|");
 	}
-
+	
+	//Admin Menu
 	public static void adminMenu() {
 		System.out.println("");
-		System.out.println("=================================================================");
-		System.out.println("|     Please select and option:               					 |");
-		System.out.println("=================================================================");
-		System.out.println("| Options:                                    					 |");
-		System.out.println("|        [1] Create new Employee Account              		     |");
-		System.out.println("|        [2] Create new Customer              					 |");
-		System.out.println("|        [3] Set up an Account for a customer 					 |");
-		System.out.println("|        [4] Details of Employee           	   		    		 |");
-		System.out.println("|        [5] Details of Customer             					 |");
-		System.out.println("|        [6] Details of Account              					 |");
-		System.out.println("|        [7] List of Account Associate with Customer   		   	 |");
-		System.out.println("|        [8] Accounts with greater than 10000 euros 			 |");
-		System.out.println("|        [9] Print transaction details        			 		 |");
-		System.out.println("|        [10] Show Total amount		        	 				 |");
-		System.out.println("|        [11] Show menu                        			 		 |");
-		System.out.println("|        [12] Logout                           			 		 |");
-		System.out.println("=================================================================");
+		System.out.println("====================================================================");
+		System.out.println("|                 PLEASE SELECT AN OPTION                          |");
+		System.out.println("====================================================================");
+		System.out.println("| OPTION :                                                         |");
+		System.out.println("|         [1] CREATE NEW BANK EMPLOYEE                             |");
+		System.out.println("|         [2] CREATE NEW BANK CUSTOMER                             |");
+		System.out.println("|         [3] SET UP AN ACCOUNT FOR A CUSTOMER                     |");
+		System.out.println("|         [4] LIST OF ACCOUNT ASSOCIATED WITH CUSTOMER             |");
+		System.out.println("|         [5] ACCOUNT WITH GREATER THAN 10,000 EUROS               |");
+		System.out.println("|                                                                  |");
+		System.out.println("|         [6] DETAILS OF EMPLOYEE                                  |");
+		System.out.println("|         [7] DETAILS OF CUSTOMER                                  |");
+		System.out.println("|         [8] DETAILS OF ACCOUNT                                   |");
+		System.out.println("|                                                                  |");
+		System.out.println("|         [9] PRINT TRANSACTION DETAILS                            |");
+		System.out.println("|         [10]SHOW TOTAL AMOUNT                                    |");
+		System.out.println("|         [11]SHOW MENU                                            |");
+		System.out.println("|         [12]LOGOUT                                               |");
+		System.out.println("====================================================================");
 	}
-
+	
+	//Customer Menu
 	public static void customerMenu() {
-		System.out.println("========================================");
-		System.out.println("|     Please select and option:        |");
-		System.out.println("========================================");
-		System.out.println("| Options:                             |");
-		System.out.println("|        [1] Check balence             |");
-		System.out.println("|        [2] Deposit                   |");
-		System.out.println("|        [3] Withdraw                  |");
-		System.out.println("|		 [4] Transfer Money To Another Account |");
-		System.out.println("|        [5] Print transaction History |");
-		System.out.println("|        [6] Close account             |");
-		System.out.println("|        [7] Show menu                 |");
-		System.out.println("|        [8] Logout                    |");
-		System.out.println("========================================");
+		System.out.println("=====================================================");
+		System.out.println("|          PLEASE SELECT AN OPTION                  |");
+		System.out.println("=====================================================");
+		System.out.println("| OPTION :                                          |");
+		System.out.println("|         [1] DEPOSIT                               |");
+		System.out.println("|         [2] WITHDRAW                              |");
+		System.out.println("|         [3] TRANSFER MONEY TO ANOTHER ACCOUNT     |");
+		System.out.println("|         [4] CLOSE ACCOUNT                         |");
+		System.out.println("|                                                   |");
+		System.out.println("|         [5] CHECK BALANCE                         |");
+		System.out.println("|         [6] SHOW CUSTOMER MENU                    |");
+		System.out.println("|         [7] ADD PERSON TO AN ACCOUNT              |");
+		System.out.println("|         [8] LOGOUT                                |");
+		System.out.println("|===================================================|");
+
 	}
 
 }
-
-/*
- * System.out.println("There are " +
- * customerService.CountTotalCustomer()+" total number of customers");
- * System.out.println("Customer Details\n"); List<Customer> customers =
- * customerService.findAllCustomer(); for(Customer customer: customers)
- * System.out.println(customer);
- * 
- * System.out.println("There are " + employeeService.totalEmployeesCount() +
- * " total number of employees."); System.out.println("Employee Details\n");
- * List<Employee> employee = employeeService.totalEmployees(); for(Employee emp:
- * employee) System.out.println(emp);
- * 
- * System.out.println("There are " + accountService.totalNumberOfAccount() +
- * "total number of accounts"); System.out.println("Customer Details\n");
- * List<Account> account = accountService.findAllAccount(); for(Account acc:
- * account) System.out.println(acc);
- * 
- * System.out.println("Account Details are- \n");
- * accountService.displayAccountDetails();
- * 
- * mainMenu(); adminMenu(); customerMenu();
- */
-
-
-//===========================================		
-
-		/*
-		 * while (true) { System.out.println("\n-------------------");
-		 * System.out.println("BANK    OF     SPRING");
-		 * System.out.println("-------------------\n");
-		 * //System.out.println("1. Register account.");
-		 * System.out.println("1. Login."); //System.out.println("3. Update accounts.");
-		 * System.out.println("2. Exit."); System.out.print("\nEnter your choice : ");
-		 * choice = scanner.nextInt(); scanner.nextLine();
-		 * 
-		 * switch (choice) { case 1:
-		 * 
-		 * System.out.println("Enter employee id : "); employeeId = scanner.nextInt();
-		 * scanner.nextLine(); System.out.println("Enter last name : ");
-		 * employeeLastName = scanner.nextLine(); Employee emp =
-		 * employeeService.findById(employeeId); if (emp==null)
-		 * System.out.println("ERROR - ??????????????????/"); else if
-		 * (emp.getLastName().equals(employeeLastName)) { while (true) {
-		 * System.out.println("\n-------------------");
-		 * System.out.println("W  E  L  C  O  M  E");
-		 * System.out.println("-------------------\n");
-		 * System.out.println("1. Register and Create and account.");
-		 * System.out.println("2. Deposit."); System.out.println("3. Transfer.");
-		 * System.out.println("4. Last 5 transactions.");
-		 * System.out.println("5. User information.");
-		 * System.out.println("6. Log out.");
-		 * System.out.print("\nEnter your choice : "); choice = scanner.nextInt();
-		 * scanner.nextLine();
-		 * 
-		 * switch (choice) { case 1: System.out.println("Enter Title:"); String title =
-		 * scanner.nextLine(); System.out.println("Enter first name:"); String firstName
-		 * = scanner.nextLine(); System.out.println("Enter last name:"); String lastName
-		 * = scanner.nextLine(); System.out.println("Enter address :"); String address =
-		 * scanner.nextLine(); System.out.println("Enter city name:"); String city =
-		 * scanner.nextLine(); System.out.println("Enter contact number :"); String
-		 * contactNumber = scanner.nextLine(); System.out.println("Enter email :");
-		 * String email = scanner.nextLine();
-		 * 
-		 * customerService.saveACustomer(title,firstName, lastName, address, city,
-		 * contactNumber, email);
-		 * 
-		 * break;
-		 * 
-		 * default: System.out.println("Wrong choice!"); } } } else {
-		 * System.out.println("Wrong choice!"); } case 2:
-		 * 
-		 * System.out.println("\nThank you for choosing Bank Of Java."); System.exit(1);
-		 * break; default: System.out.println("Wrong choice !");
-		 * 
-		 * String response = ""; while(!response.toLowerCase().equals("n") &&
-		 * !response.toLowerCase().equals("y")){ response =
-		 * InputValidation.getPasswordInput("Are you sure you want to exit? (Y/N)"); }
-		 * 
-		 * if(response.toLowerCase().equals("n")){
-		 * System.out.println("Thanks for staying :)"); }
-		 * if(response.toLowerCase().equals("y")){ System.exit(0); } break; default:
-		 * System.err.println("Invalid selection"); break; } }
-		 */

@@ -1,11 +1,7 @@
 package ie.mohammed.dao;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import ie.mohammed.model.Account;
-import ie.mohammed.model.Customer;
 
 public interface AccountDao {
 
@@ -29,8 +25,6 @@ public interface AccountDao {
 
 	void createAnAccount(int accountNumber, int customerId, double amount, double overDraft);
 
-	void transferMoney();
-
 	void closeAnAccount(int accountId);
 
 	void displayAccountDetails();
@@ -40,10 +34,10 @@ public interface AccountDao {
 	public void displayAccountDetailsById(int accountId);
 
 	public boolean accountExists(int accountNumber);
-	
+
 	public double totalAmonut();
 
 	void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount);
 
-	void addAPersonToAccount(int custId, int accountId);
+	void addAPersonToAccount(int accountId, int custId);
 }

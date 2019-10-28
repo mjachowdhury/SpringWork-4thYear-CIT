@@ -1,8 +1,8 @@
-INSERT INTO customer(title, firstName, lastName, address, city, contactNumber, email) VALUES
-('Mr', 'Mohammed', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
-('Mrs', 'Opi', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
-('Miss', 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie'),
-('Miss', 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie');
+INSERT INTO customer(title, firstName, lastName, address, city, contactNumber, email, password) VALUES
+('Mr', 'Mohammed', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie', '123456'),
+('Mrs', 'Opi', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie', 'abcdef'),
+('Miss', 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie', 'ghijkl'),
+('Miss', 'Maimoona', 'Alom', 'WesternRd', 'Cork', '0123456789', 'mohammed@mycit.ie', 'mnopqr');
 
 
 

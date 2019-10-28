@@ -54,27 +54,27 @@ public class CustomerDaoImpl implements CustomerDao {
 	}
 
 	public void insertCustomer(String title, String firstName, String lastName, String address, String city,
-			String contactNumber, String email) {
-		String sql = "INSERT INTO customer(title, firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,? )";
-		jdbcTemplate.update(sql, title, firstName, lastName, address, city, contactNumber, email);
+			String contactNumber, String email, String password) {
+		String sql = "INSERT INTO customer(title, firstName,lastName,address,city,contactNumber,email, password) VALUES (?,?,?,?,?,?,?,? )";
+		jdbcTemplate.update(sql, title, firstName, lastName, address, city, contactNumber, email, password);
 
 	}
 
 	public void addACustomer(String title, String firstName, String lastName, String address, String city,
-			String contactNumber, String email) {
-		String sql = "INSERT INTO customer(title,firstName,lastName,address,city,contactNumber,email) VALUES (?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sql, new Object[] { title, firstName, lastName, address, city, contactNumber, email });
+			String contactNumber, String email, String password) {
+		String sql = "INSERT INTO customer(title,firstName,lastName,address,city,contactNumber,email, password) VALUES (?,?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, new Object[] { title, firstName, lastName, address, city, contactNumber, email, password });
 
 	}
 
 	public int changeCustomerName(String oldTitle, String newTitle, String oldFirstName, String newFirstName,
 			String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity,
-			String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail) {
+			String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail, String oldPassword, String newPassword) {
 		return jdbcTemplate.update(
-				"UPDATE customer SET title=? firstName=? lastName=? address=? city=? contactNumber=? email=? "
-						+ "	where title=? firstName=? lastName=? address=? city=? contactNumber=? email=?",
+				"UPDATE customer SET title=? firstName=? lastName=? address=? city=? contactNumber=? email=? password=? "
+						+ "	where title=? firstName=? lastName=? address=? city=? contactNumber=? email=?, password=?",
 				new Object[] { newTitle, oldTitle, newFirstName, oldFirstName, oldLastName, newLastName, newAddress,
-						oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail });
+						oldAddress, newCity, oldCity, newContactNumber, oldContactNumber, newEmail, oldEmail, newPassword, oldPassword });
 
 	}
 

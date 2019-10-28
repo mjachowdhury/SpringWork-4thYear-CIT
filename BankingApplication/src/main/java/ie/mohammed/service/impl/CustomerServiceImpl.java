@@ -40,19 +40,19 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	public void saveACustomer(String title, String firstName, String lastName, String address, String city,
-			String contactNumber, String email) {
+			String contactNumber, String email, String password) {
 		if (customerDao.getCustomerByName(lastName) == 0) {
-			customerDao.insertCustomer(title, firstName, lastName, address, city, contactNumber, email);
+			customerDao.insertCustomer(title, firstName, lastName, address, city, contactNumber, email, password);
 		}
 	}
 
 	public int changeCustomerName(String oldTitle, String newTitle, String oldFirstName, String newFirstName,
 			String oldLastName, String newLastName, String oldAddress, String newAddress, String oldCity,
-			String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail) {
+			String newCity, String oldContactNumber, String newContactNumber, String oldEmail, String newEmail, String oldPassword, String newPassword) {
 		if (customerDao.getCustomerByName(oldLastName) == 1) {
 			return customerDao.changeCustomerName(oldTitle, newTitle, oldFirstName, newFirstName, oldLastName,
 					newLastName, oldAddress, newAddress, oldCity, newCity, oldContactNumber, newContactNumber, oldEmail,
-					newEmail);
+					newEmail, oldPassword, newPassword);
 		}
 		return 0;
 	}

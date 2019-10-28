@@ -23,11 +23,6 @@ public class AccountServiceImpl implements AccountService {
 		accountDao.depositMoney(accountNumber, amount);
 	}
 
-	public void depositMoneyById(int Id, int accountNumber, double amount) {
-		accountDao.depositMoneyById(Id, accountNumber, amount);
-
-	}
-
 	public void withdrawMoney(int accountNumber, double amount) {
 		accountDao.withdrawMoney(accountNumber, amount);
 	}
@@ -48,31 +43,8 @@ public class AccountServiceImpl implements AccountService {
 		accountDao.createAnAccount(accountNumber, customerId, amount, overDraft);
 	}
 
-	public void transferMoney() {
-		// TODO Auto-generated method stub
-
-	}
-
 	public void closeAnAccount(int accountId) {
 		accountDao.closeAnAccount(accountId);
-	}
-
-	public void displayAccountDetails() {
-		accountDao.displayAccountDetails();
-
-	}
-
-	public void displayAccountDetails(int accountNumber) {
-		accountDao.displayAccountDetails(accountNumber);
-	}
-
-	public void displayAccountDetailsById(int accountId) {
-		accountDao.displayAccountDetailsById(accountId);
-
-	}
-
-	public boolean accountExists(int accountNumber) {
-		return accountDao.accountExists(accountNumber);
 	}
 
 	public List<Account> findAccountWithCustomer(int customerId) {
@@ -86,14 +58,44 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public double totalAmonut() {
-
 		return accountDao.totalAmonut();
 	}
 
 	@Override
 	public void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount) {
-		 accountDao.TranferMoneyToAnotherAccount(accountId, transferAccountId, amount);
-		
+		accountDao.TranferMoneyToAnotherAccount(accountId, transferAccountId, amount);
+
+	}
+
+	public void displayAccountDetails() {
+		accountDao.displayAccountDetails();
+
+	}
+
+	//===============BELOW METHODS DID NOT USE ========================
+	
+	public void displayAccountDetails(int accountNumber) {
+		accountDao.displayAccountDetails(accountNumber);
+	}
+
+	public void displayAccountDetailsById(int accountId) {
+		accountDao.displayAccountDetailsById(accountId);
+
+	}
+
+	public boolean accountExists(int accountNumber) {
+		return accountDao.accountExists(accountNumber);
+	}
+
+	public void depositMoneyById(int Id, int accountNumber, double amount) {
+		accountDao.depositMoneyById(Id, accountNumber, amount);
+
+	}
+
+	@Override
+	public void addAPersonToAccount(int accountId, int custId) {
+		accountDao.addAPersonToAccount(accountId, custId);
+
 	}
 
 }

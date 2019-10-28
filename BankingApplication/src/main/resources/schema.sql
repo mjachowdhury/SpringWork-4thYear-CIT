@@ -7,9 +7,9 @@ CREATE TABLE customer (
 	city varchar (30) NOT NULL,
 	contactNumber varchar (30) NOT NULL,
 	email varchar (30) NOT NULL,
+	password varchar (30) NOT NULL,
 	PRIMARY KEY (customerId)
 );
-
 
 CREATE TABLE employee( 
 	employeeId int (11) NOT NULL AUTO_INCREMENT,
@@ -18,7 +18,6 @@ CREATE TABLE employee(
 	password varchar (30) NOT NULL,
 	PRIMARY KEY (employeeId)
 );
-
 
 CREATE TABLE account( 
 	accountId int (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,

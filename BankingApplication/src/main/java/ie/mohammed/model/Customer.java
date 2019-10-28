@@ -30,6 +30,7 @@ public class Customer {
 	private String city;
 	private String contactNumber;
 	private String email;
+	private String password;
 
 	private int savingAccount;
 

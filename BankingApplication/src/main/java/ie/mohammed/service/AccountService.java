@@ -28,8 +28,6 @@ public interface AccountService {
 
 	void saveAnAccount(int accountNumber, int customerId, double amount, double overDraft);
 
-	void transferMoney();
-
 	void closeAnAccount(int accountId);
 
 	void displayAccountDetails();
@@ -37,8 +35,10 @@ public interface AccountService {
 	void displayAccountDetails(int accountNumber);
 
 	public void displayAccountDetailsById(int accountId);
-	
+
 	public double totalAmonut();
-	
+
 	void TranferMoneyToAnotherAccount(int accountId, int transferAccountId, double amount);
+
+	void addAPersonToAccount(int accountId, int custId);
 }
