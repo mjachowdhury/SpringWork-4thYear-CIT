@@ -35,7 +35,6 @@ public class MainApp {
 		do {
 			loginOption = 0;
 			user = 0;
-			// userLastName = null;
 			password = null;
 
 			while (loginOption < 1 || loginOption > 3) {
@@ -199,9 +198,7 @@ public class MainApp {
 							System.out.println(accountService.findAccountsGreaterThan10000());
 							break;
 						
-						case 6:
-							// to see list of bank employee
-							// employeeService.
+						case 6:	// to see list of bank employee
 							System.out.println("..ALL THE EMPLOYEES DETAILS..");
 							System.out.println("------------------------------");
 							List<Employee> employee = employeeService.totalEmployees();
@@ -209,8 +206,7 @@ public class MainApp {
 								System.out.println(empl);
 							break;
 
-						case 7:
-							// to see list of customer							 
+						case 7: // to see list of customer							 
 							System.out.println("..ALL THE CUSTOMERS DETAILS..");
 							System.out.println("------------------------------");
 							List<Customer> customer = customerService.findAllCustomer();
@@ -218,9 +214,7 @@ public class MainApp {
 								System.out.println(cum);
 							break;
 
-						case 8:
-
-							// to see all customer account details							 
+						case 8: // to see all customer account details							 
 							System.out.println("..ALL THE ACCOUNTS DETAILS..");
 							System.out.println("-----------------------------");
 							List<Account> account = accountService.findAllAccount();
@@ -228,7 +222,7 @@ public class MainApp {
 								System.out.println(acc);
 							break;
 
-						case 9:// check customer balance
+						case 9: // check customer balance
 							System.out.println("..CUSTOMER ACCOUNT DETAILS..");
 							System.out.println("-----------------------------");
 							int accountNumberCheckBalance = 0;
@@ -287,7 +281,7 @@ public class MainApp {
 					System.out.println();
 					System.out.println("Hello, " + cus.getFirstName() + " " + cus.getLastName());
 
-					customerMenu();// custoemr menu
+					customerMenu();// customer menu
 
 					boolean ext = true;
 
@@ -320,7 +314,6 @@ public class MainApp {
 							accountNum = scanner.nextInt();
 							System.out.println("ENTER AMOUNT: ");
 							amountSubstract = scanner.nextDouble();
-							// System.out.println("Enter overDraft:");
 							accountService.withdrawMoney(accountNum, amountSubstract);
 							System.out.println("YOUR ACCOUNT HAS BEEN UPDATED AND TOTAL AMOUNT NOW:"
 									+ accountService.findByAccountNumber(accountNum));
