@@ -28,7 +28,7 @@ public interface BidService {
      * @param id
      * @return list of found bets
      */
-    List<Bid> findByAuctionId(Long id);
+    List<Bid> findByAuctionId(int id);
 
     /**
      * Find bets by username

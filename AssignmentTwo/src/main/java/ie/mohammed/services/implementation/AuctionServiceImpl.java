@@ -15,12 +15,13 @@ import ie.mohammed.services.AuctionService;
 /**
  * Implementing the AuctionService interface
  */
-@Service
+@Service("auctionService")
 @Transactional
-public class AuctionServiceImpl implements AuctionService{
+public class AuctionServiceImpl implements AuctionService {
 
 	@Autowired
 	private AuctionDao auctionDao;
+
 	@Override
 	public List<Auction> findAll() {
 		 
@@ -29,50 +30,50 @@ public class AuctionServiceImpl implements AuctionService{
 
 	@Override
 	public Optional<Auction> findById(int id) {
-		 
+
 		return auctionDao.findById(id);
 	}
 
 	@Override
 	public List<Auction> findFinished(Boolean finished) {
-		 
+
 		return auctionDao.findByFinished(finished);
 	}
 
 	@Override
 	public List<Auction> findByCategoryName(String categoryName) {
-		 
+
 		return auctionDao.findByJobCategoryName(categoryName);
 	}
 
 	@Override
 	public List<Auction> findByProductNameContains(String searchTag) {
-		 
+
 		return auctionDao.findByJobNameContains(searchTag);
 	}
 
 	@Override
 	public List<Auction> findByUserName(String userName) {
-		 
+
 		return auctionDao.findByOwnerUserName(userName);
 	}
 
 	@Override
 	public List<Auction> findByEndTimeLessThan(Date date) {
-		 
+
 		return auctionDao.findByEndTimeIsLessThan(date);
 	}
 
 	@Override
 	public Auction save(Auction auction) {
-		 
+
 		return auctionDao.save(auction);
 	}
 
 	@Override
 	public void deleteById(int id) {
-		 auctionDao.deleteById(id);
-		
+		auctionDao.deleteById(id);
+
 	}
 
 }

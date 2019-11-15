@@ -72,7 +72,7 @@ public class Auction {
 	private Date endTime;
 
 	@Column(name = "description", nullable = false)
-	private String descripton;
+	private String description;
 
 	@Column(name = "finished", nullable = false)
 	private Boolean finished;

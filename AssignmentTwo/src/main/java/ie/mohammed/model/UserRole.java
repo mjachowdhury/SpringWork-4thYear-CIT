@@ -40,5 +40,9 @@ public class UserRole {
 
 	@Column(name = "role", nullable = false, length = 50)
 	private String role;
+	
+	public UserRole(String role) {
+		this.role = role;
+	}
 
 }
