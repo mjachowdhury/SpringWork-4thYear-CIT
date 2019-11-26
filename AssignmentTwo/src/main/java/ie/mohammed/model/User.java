@@ -30,6 +30,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "users")
 public class User {
+
 	/*
 	 * @Id
 	 * 
@@ -57,4 +58,9 @@ public class User {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private Set<UserRole> roles;
 
+	public User(String userName, String password, boolean enabled) {
+		 this.userName = userName;		 
+		 this.password = password;
+		 this.enabled = enabled;
+	}
 }

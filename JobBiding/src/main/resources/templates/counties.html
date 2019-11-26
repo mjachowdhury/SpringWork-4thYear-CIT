@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{counties.welcome}">The Counties</span> <span th:text="${name}"></span></h1>
+	</header>
+	<main>
+	<table>
+		<tr>
+			<th th:text="#{county.id}">ID</th>
+			<th th:text="#{county.county}">County</th>
+		</tr>
+
+		<tr th:each="county,iterationCount : ${counties}" th:class="${iterationCount.odd}? 'odd'" th:object="${county}"	>			
+			<td th:text="*{countyId}">1</td>
+			<td><a th:text="*{countyName}" th:href="@{county/} + *{countyId}">County</a></td>
+		</tr>
+	</table>
+	</main>
+	
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>

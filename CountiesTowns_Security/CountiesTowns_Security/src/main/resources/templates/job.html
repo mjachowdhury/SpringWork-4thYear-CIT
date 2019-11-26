@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="${job.jobName}">job</span></h1>
+		<h3><span th:text="#{job.createdBy}"> </span><span th:text="${job.addedBy.firstname} + ' ' + ${job.addedBy.lastname}"></span></h3>
+	</header>
+	<main>
+		<div th:if="${not #lists.isEmpty(job.bids)}">
+			<table>
+				<tr>
+					<th th:text="#{bid.id}">ID</th>
+					<th th:text="#{bid.bid}">Name</th>
+				</tr>
+			    <tr th:each="bid : ${job.bids}" th:object="${bid}">			
+					<td th:text="*{bidId}">bidId</td>
+					<td th:text="*{bidName}">bidName</td>
+				</tr>
+			</table>
+		</div>
+		<div th:if="${#lists.isEmpty(job.bids)}">
+	 		<h2><span th:text="#{job.nobids}"></span><span th:text="${job.jobName}"></span></h2>
+		</div>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>
+
+

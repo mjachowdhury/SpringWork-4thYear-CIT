@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header><div th:insert="fragments.html :: menu"></div></header>
+	<main>
+		<h1>
+			<span th:text="#{notfound.error}">OOPS</span> - <span th:text="${id}">1234</span>
+			<span th:text="#{notfound.notfound}">OOPS</span>
+		</h1>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header><div th:insert="fragments.html :: menu"></div>		<h1><span th:text="#{index.welcome}">WELCOME</span></h1></h1>
+	</header>
+	<main>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+</body>
+</html>

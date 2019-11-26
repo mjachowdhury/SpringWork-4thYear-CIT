@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1>
+			Towns in <span th:text="${county.countyName}">WHERE</span>
+		</h1>
+	</header>
+
+<main>
+	<table>
+		<tr>
+			<th th:text="#{townsincounty.id}">ID</th>
+			<th th:text="#{townsincounty.town}">Town</th>
+		</tr>
+
+		<tr th:each="town,iterationCount : ${county.towns}"
+			th:class="${iterationCount.even}? 'even'" th:object="${town}">
+			<td th:text="*{townId}">ID</td>
+			<td th:text="*{townName}">TOWN</td>
+		</tr>
+	</table>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>

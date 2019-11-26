@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="fragments.html :: head"></div>
+
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{town.heading}">A Town</span></h1>
+	</header>
+	<main>
+	<table>
+		<tr>
+			<th th:text="#{town.id}">ID</th>
+			<th th:text="#{town.town}">Town</th>
+			<th th:text="#{town.county}">County</th>
+		</tr>
+		<tr th:object="${town}">
+			<td th:text="*{townId}">ID</td>
+			<td th:text="*{townName}">COUNTY</td>
+			<td th:text="*{county.countyName}">COUNTY</td>
+		</tr>
+	</table>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>
+

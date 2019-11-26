@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  	<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/styles.css}" />
+  	<link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/flag-icon.css}" />
+<head>
+<title>Access Denied</title>
+</head>
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+	</header>
+    <main>
+    		<h1 th:text="#{403.message}">You do not have permission to access this page!</h1>
+    </main>
+    
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>

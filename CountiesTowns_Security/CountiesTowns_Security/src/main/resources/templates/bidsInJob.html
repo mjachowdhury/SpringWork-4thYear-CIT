@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1>
+			bids in <span th:text="${job.jobName}">WHERE</span>
+		</h1>
+	</header>
+
+<main>
+	<table>
+		<tr>
+			<th th:text="#{bidsinjob.id}">ID</th>
+			<th th:text="#{bidsinjob.bid}">bid</th>
+		</tr>
+
+		<tr th:each="bid,iterationCount : ${job.bids}"
+			th:class="${iterationCount.even}? 'even'" th:object="${bid}">
+			<td th:text="*{bidId}">ID</td>
+			<td th:text="*{bidAmoount}">bid</td>
+		</tr>
+	</table>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{newtown.heading}">Add a Town</span></h1>
+	</header>
+
+<!--     This form receives a "blank" object called townForm through the Model. 
+		 A programmer must bind parts of the form to fields in a form.
+		 
+	     I use 
+			th:object="${townForm}"
+		 to short my code so that elements within the form can now be bound to the form's fields
+		 by using *{}
+		 
+	     th:field binds data from the form to the object's fields
+	     	th:field=*{countyName}
+	     	th:field=*{countyId}
+	     which could be rewritten in full as 
+	     	th:field="${townForm.townName}" 
+	     	th:field="${townForm.countyId}"
+	     but I decided to take advantage of th:object to shorten the code. 
+	     	     
+		 The user provides the data in the form by typing into the text field and
+		 selecting from the drop down list which the application attempts to 
+		 assign to the townName field using the form's setter methods
+		 but only if it satisfies the annotated limitation e.g. @Size(min=4, max=30)
+		 
+		 It also assigns the county's ID from the drop down list. 
+		   
+		 The object is then returned to the Post handler method.   
+		 -->
+<main>
+	<h3 class="error" th:if="${duplicate}" th:text="#{newtown.duplicate}">Error</h3>
+	<form method="post" th:action="@{/newtown}" th:object="${townForm}">
+		<label for="townName" th:text="#{newtown.townName}" ></label>
+			<input id="townName" type="text" th:field="*{townName}"/>
+			    <!--  This span only appears if there is a problem with the townName. The application looks at the issues
+			          and displays the associated text from messages.properties or messages_FR.properties e.g Size.townName is
+			          the message that appears if binding has failed because the limitations applied to the size of the town's
+			          name have been broken.   
+			    -->
+		        <span th:if="${#fields.hasErrors('townName')}" th:errors="*{townName}" >Error</span>
+		<br>
+		<label for="county" th:text="#{newtown.chooseCounty}"></label>
+		<select th:field="*{countyId}">
+			<option  th:each="county: ${counties}" th:text="${county.countyName}" th:value="${county.countyId}"/>
+		</select>
+		<br>
+		<input type="submit" th:value="#{newtown.addTown}"/>
+	</form>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>
+

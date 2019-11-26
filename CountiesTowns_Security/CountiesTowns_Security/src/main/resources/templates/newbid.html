@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{newbid.heading}">Add a Town</span></h1>
+	</header>
+
+<!--     This form receives a "blank" object called bidForm through the Model. 
+		 A programmer must bind parts of the form to fields in a form.
+		 
+	     I use 
+			th:object="${bidForm}"
+		 to short my code so that elements within the form can now be bound to the form's fields
+		 by using *{}
+		 
+	     th:field binds data from the form to the object's fields
+	     	th:field=*{jobName}
+	     	th:field=*{jobId}
+	     which could be rewritten in full as 
+	     	th:field="${bidForm.bidAmount}" 
+	     	th:field="${bidForm.jobId}"
+	     but I decided to take advantage of th:object to shorten the code. 
+	     	     
+		 The user provides the data in the form by typing into the text field and
+		 selecting from the drop down list which the application attempts to 
+		 assign to the bidAmount field using the form's setter methods
+		 but only if it satisfies the annotated limitation e.g. @Size(min=4, max=30)
+		 
+		 It also assigns the job's ID from the drop down list. 
+		   
+		 The object is then returned to the Post handler method.   
+		 -->
+<main>
+	<h3 class="error" th:if="${duplicate}" th:text="#{newbid.duplicate}">Error</h3>
+	<form method="post" th:action="@{/newbid}" th:object="${bidForm}">
+		<label for="bidAmount" th:text="#{newbid.bidAmount}" ></label>
+			<input id="bidAmount" type="text" th:field="*{bidAmount}"/>
+			    <!--  This span only appears if there is a problem with the bidAmount. The application looks at the issues
+			          and displays the associated text from messages.properties or messages_FR.properties e.g Size.bidAmount is
+			          the message that appears if binding has failed because the limitations applied to the size of the town's
+			          name have been broken.   
+			    -->
+		        <span th:if="${#fields.hasErrors('bidAmount')}" th:errors="*{bidAmount}" >Error</span>
+		<br>
+		<label for="job" th:text="#{newbid.choosejob}"></label>
+		<select th:field="*{jobId}">
+			<option  th:each="job: ${jobs}" th:text="${job.jobName}" th:value="${job.jobId}"/>
+		</select>
+		<br>
+		<input type="submit" th:value="#{newbid.addbid}"/>
+	</form>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>
+

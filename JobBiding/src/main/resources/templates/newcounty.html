@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{newcounty.heading}">County</span></h1>
+	</header>
+
+	<!-- This form receives a "blank" object called countyForm through the Model. 
+		 A programmer must bind parts of the form to fields in a form.
+		 
+	     I use 
+			th:object="${countyForm}"
+		 to short my code so that elements within the form can now be bound to the form's fields
+		 by using *{}
+		 
+	     th:field binds data from the form to the object's fields
+	     	th:field=*{countyName}
+	     which could be rewritten in full as 
+	     	th:field="${countyForm.countyName}" 
+	     but I decided to take advantage of th:object to shorten the code. 
+	     	     
+		 The user provides the data in the form by typing into the text field which the 
+		 application attempts to assign to the countyName field using the form's setter methods
+		 but only if it satisfies the annotated limitation e.g. @Size(min=4, max=30)
+		  
+		 The object is then returned to the Post handler method.   
+		 -->
+		 <main>
+	<form id="newCountyForm" method="post" th:action="@{/newcounty}" th:object="${aCountyForm}">
+		<label for="countyName" th:text="#{newcounty.countyName}" ></label>
+			                                         <!-- The span is connected to the countyName field through th:errors. It appears if there was a binding problem and  -->
+			                                         <!--  displays the Size.countyName message from messages.properties --> 
+		<input type="text" th:field="*{countyName}"/><span th:if="${#fields.hasErrors('countyName')}" th:errors="*{countyName}" >Error</span> 
+		
+		<br>
+		<input type="submit" th:value="#{newcounty.addCounty}"/>
+	</form>
+	<!-- This message is shown if the ${duplicate} variable was created. -->
+	<h3 class="error" th:if="${duplicate}" th:text="#{newcounty.duplicate}">Error</h3>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+</body>
+</html>
+

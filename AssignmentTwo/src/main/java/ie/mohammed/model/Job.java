@@ -58,6 +58,13 @@ public class Job {
 		return category_name;
 	}
 
+	public Job(String description, String name, double price, Category category) {
+		 this.description = description;
+		 this.name = name;
+		 this.price = price;
+		 this.category = category;
+	}
+
 	@Column(name = "price", nullable = false)
 	private Double price;
 

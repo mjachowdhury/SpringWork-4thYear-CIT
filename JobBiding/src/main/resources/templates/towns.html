@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+
+<body>
+<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{towns.heading}">All the towns</span></h1>
+	</header>
+	<main>
+	<table>
+		<tr>
+			<th th:text="#{towns.id}">ID</th>
+			<th th:text="#{towns.town}">Town</th>
+			<th th:text="#{towns.county}">County</th>
+		</tr>
+		<tr th:each="town,iterationCount : ${towns}" th:class="${iterationCount.even}? 'even'" th:object="${town}"	>			
+			<td th:text="*{townId}">ID</td>
+			<td th:text="*{townName}">TOWN</td>
+			<td th:text="*{county.countyName}">County</td>
+		</tr>
+	</table>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+
+</body>
+</html>
+
+
+<!--   -->
