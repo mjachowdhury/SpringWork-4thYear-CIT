@@ -19,6 +19,7 @@
 			<span sec:authorize="!isAuthenticated()">
 				<a th:href="@{/login}" id="loginbutton" th:text="#{navigation.login}">Login Default</a>
 			</span>
+			<a th:href="@{/newregisteruser}" th:text="#{navigation.register}">Register a new User</a>
 			<span sec:authorize="isAuthenticated()">
 				<span sec:authentication="name">No Name</span>
 				<a th:href="@{/logout}" id="logoutbutton" th:text="#{navigation.logout}">Logout Default</a>

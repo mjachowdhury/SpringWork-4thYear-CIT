@@ -45,7 +45,7 @@ public class WebSecurityConfig_API_DB {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http.authorizeRequests()
-				.antMatchers("/css/**", "/","/index", "/jobs/**", "/bids/**", "/job/**", "/bid/**", "/h2/**").permitAll()
+				.antMatchers("/css/**", "/","/index", "/jobs/**", "/bids/**","/newregisteruser/**", "/job/**", "/bid/**", "/h2/**").permitAll()
 				.antMatchers("/newjob").hasRole("ADMIN")
 				.antMatchers("/actuator/**").hasRole("ADMIN")
 				.antMatchers("/newbid").hasAnyRole("ADMIN", "USER") 

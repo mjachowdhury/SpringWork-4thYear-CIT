@@ -9,15 +9,15 @@ import ie.mohammed.dao.BidDao;
 import ie.mohammed.entities.Bid;
 
 @Service
-public class BidServiceImplementation implements BidService{
+public class BidServiceImplementation implements BidService {
 
 	@Autowired
 	private BidDao bidDao;
-	
-	/*
-	 * @Override public List<Bid> findBidsAlphabticalOrder() { return
-	 * bidDao.findAllByOrderByBidNameAsc(); }
-	 */
+
+	@Override
+	public List<Bid> findBidsAlphabticalOrder() {
+		return bidDao.findAllByOrderByBidAmountAsc();
+	}
 
 	/*
 	 * @Override public List<Bid> getBidsWithSameName(String bidName) { return
@@ -35,12 +35,18 @@ public class BidServiceImplementation implements BidService{
 	public Bid save(Bid bid) {
 		if (bidDao.existsByBidAmountAndJob_JobId(bid.getBidAmount(), bid.getJob().getJobId()))
 			return null;
-		return bidDao.save(bid);	
+		return bidDao.save(bid);
 	}
 
-	/*
-	 * @Override public List<Bid> findBidByBidName(String bidName) { return
-	 * bidDao.findBidByBidName(bidName); }
-	 */
-	
+	@Override
+	public List<Bid> findBidByBidAmount(Double bidAmount) {
+		return bidDao.findBidByBidAmount(bidAmount);
+	}
+
+	@Override
+	public Bid findBid(int bidId) {
+		 
+		return bidDao.findById(bidId).get();
+	}
+
 }

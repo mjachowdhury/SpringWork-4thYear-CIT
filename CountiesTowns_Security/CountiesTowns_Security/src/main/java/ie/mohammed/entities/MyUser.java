@@ -24,7 +24,12 @@ public class MyUser {
 	@GeneratedValue
 	int userId;
 
+	@Column
+	@NotNull
 	private String firstname;
+	
+	@Column
+	@NotNull
 	private String lastname;
 
 	@Column

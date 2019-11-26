@@ -14497,3 +14497,268 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2019-11-25 21:26:55,408 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
 2019-11-25 21:26:55,497 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-25 21:26:55,497 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:42:43,893 [Worker-74: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:42:43,915 [Worker-74: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:42:43,947 [Worker-74: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:42:44,004 [Worker-74: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:42:44,004 [Worker-74: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:44:08,919 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:44:08,947 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:44:09,020 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:44:09,116 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:44:09,116 [Worker-78: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:47:45,319 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:47:45,339 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:47:45,360 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:47:45,446 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:47:45,446 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:49:49,192 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:49:49,208 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:49:49,231 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:49:49,282 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:49:49,283 [Worker-79: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:53:31,182 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:53:31,204 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:53:31,228 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:53:31,307 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:53:31,308 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:54:34,718 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:54:34,741 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:54:34,768 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:54:34,840 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:54:34,840 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:55:47,214 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:55:47,231 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:55:47,252 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:55:47,302 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:55:47,303 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:58:16,444 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:58:16,466 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:58:16,494 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:58:16,559 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:58:16,559 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 21:59:09,368 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:59:09,388 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 21:59:09,540 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 21:59:09,698 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 21:59:09,698 [Worker-80: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:00:51,108 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:00:51,128 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:00:51,156 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:00:51,221 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:00:51,221 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:04:08,320 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:04:08,340 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:04:08,368 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:04:08,423 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:04:08,423 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:06:45,566 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:06:45,592 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:06:45,624 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:06:45,682 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:06:45,682 [Worker-83: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:08:19,710 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:19,731 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:08:19,755 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:08:19,807 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:19,807 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:08:40,220 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:40,243 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:08:40,280 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:08:40,347 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:40,348 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:08:51,917 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:51,934 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:08:51,954 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:08:52,011 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:08:52,011 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:09:55,650 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:09:55,667 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:09:55,688 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:09:55,741 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:09:55,741 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:10:10,760 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:10:10,780 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:10:10,805 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:10:10,867 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:10:10,867 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:11:31,985 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:32,005 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:11:32,042 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:11:32,103 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:32,104 [Worker-86: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:11:36,464 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:36,480 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:11:36,500 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:11:36,558 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:36,558 [Worker-82: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:11:51,329 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:51,349 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:11:51,391 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:11:51,456 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:11:51,456 [Worker-85: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:17:18,144 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:17:18,171 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:17:18,202 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:17:18,268 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:17:18,268 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:18:15,071 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:18:15,093 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:18:15,117 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:18:15,172 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:18:15,173 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:19:31,929 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:19:31,946 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:19:31,967 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:19:32,019 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:19:32,020 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:20:22,483 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:20:22,502 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:20:22,522 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:20:22,575 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:20:22,575 [Worker-90: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:21:06,256 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:21:06,272 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:21:06,292 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:21:06,348 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:21:06,348 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:22:15,136 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:22:15,157 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:22:15,185 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:22:15,250 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:22:15,250 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:22:44,180 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:22:44,200 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:22:44,225 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:22:44,282 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:22:44,282 [Worker-84: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-25 22:23:26,985 [Worker-89: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:23:27,002 [Worker-89: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-25 22:23:27,022 [Worker-89: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-25 22:23:27,092 [Worker-89: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-25 22:23:27,092 [Worker-89: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:31:22,095 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:31:22,135 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:31:22,186 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:31:22,261 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:31:22,261 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:33:09,556 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:33:09,583 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:33:09,615 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:33:09,693 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:33:09,693 [Worker-95: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:33:32,340 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:33:32,366 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:33:32,396 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:33:32,473 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:33:32,473 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:34:00,545 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:34:00,574 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:34:00,608 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:34:00,695 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:34:00,695 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:35:12,649 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:35:12,677 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:35:12,705 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:35:12,777 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:35:12,777 [Worker-97: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:35:19,443 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:35:19,470 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:35:19,523 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:35:19,613 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:35:19,614 [Worker-88: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:36:11,395 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:36:11,447 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:36:11,493 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:36:11,583 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:36:11,583 [Worker-96: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:40:32,689 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:40:32,714 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:40:32,743 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:40:32,892 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:40:32,893 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:40:37,438 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:40:37,466 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:40:37,495 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:40:37,567 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:40:37,567 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:41:39,758 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:41:39,787 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:41:39,885 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:41:39,980 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:41:39,981 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:44:18,996 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:44:19,025 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:44:19,061 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:44:19,150 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:44:19,150 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:47:09,437 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:47:09,460 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:47:09,488 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:47:09,570 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:47:09,570 [Worker-91: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:50:27,672 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:50:27,695 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:50:27,723 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 00:50:27,796 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:50:27,796 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:53:06,165 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:06,166 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:53:06,167 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:53:06,179 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:06,179 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:53:09,013 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:09,013 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:53:09,014 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:53:09,056 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:09,056 [Worker-99: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:53:32,918 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:32,918 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:53:32,919 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:53:32,927 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:53:32,927 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:55:11,698 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:55:11,699 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:55:11,699 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:55:11,713 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:55:11,713 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:56:08,074 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:56:08,074 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:56:08,075 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:56:08,082 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:56:08,082 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 00:57:05,181 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:57:05,181 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-26 00:57:05,182 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 00:57:05,193 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 00:57:05,193 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:01:33,072 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:01:33,101 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:01:33,132 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:01:33,214 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:01:33,214 [Worker-100: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:01:57,242 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:01:57,270 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:01:57,304 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:01:57,391 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:01:57,391 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:02:17,340 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:02:17,367 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:02:17,395 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:02:17,467 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:02:17,467 [Worker-94: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:03:19,940 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:03:19,982 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:03:20,024 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:03:20,115 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:03:20,116 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:04:05,873 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:04:05,901 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:04:05,946 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:04:06,098 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:04:06,101 [Worker-101: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-26 01:05:22,618 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:05:22,647 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-26 01:05:22,695 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 529 resources
+2019-11-26 01:05:22,773 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-26 01:05:22,773 [Worker-98: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources

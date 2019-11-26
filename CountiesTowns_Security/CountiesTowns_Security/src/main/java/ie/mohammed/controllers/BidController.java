@@ -30,11 +30,11 @@ public class BidController {
 	@Autowired 
 	JobService jobService;
 	
-	/*
-	 * @GetMapping("/bids") public String showBids(Model model, Locale locale) {
-	 * List<Bid> bids = bidService.findBidsAlphabticalOrder();
-	 * model.addAttribute("bids", bids); return "bids"; }
-	 */
+	
+	  @GetMapping("/bids") public String showBids(Model model, Locale locale) {
+	  List<Bid> bids = bidService.findBidsAlphabticalOrder();
+	  model.addAttribute("bids", bids); return "bids"; }
+	 
 	
 	
 	@GetMapping("/bid")

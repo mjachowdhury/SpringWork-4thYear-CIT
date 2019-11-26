@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+
+<body>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{newregisteruser.heading}">Register</span></h1>
+	</header>
+
+	 
+	<main>
+	<form id="newRegisterUserForm" method="post" th:action="@{/newregisteruser}" th:object="${aRegisterUserForm}">
+		<label for="registerUserFirstName" th:text="#{newregisteruser.firstName}" ></label>	                                          
+		<input type="text" th:field="*{registerUserFirstName}"/><span th:if="${#fields.hasErrors('registerUserFirstName')}" th:errors="*{registerUserFirstName}" >Error</span> 
+		
+		<br>
+		
+		<label for="registerUserLastName" th:text="#{newregisteruser.lastName}" ></label>			                                          
+		<input type="text" th:field="*{registerUserLastName}"/><span th:if="${#fields.hasErrors('registerUserLastName')}" th:errors="*{registerUserLastName}" >Error</span> 
+		<br>
+		
+		<label for="registerUserEmail" th:text="#{newregisteruser.email}" ></label>			                                          
+		<input type="text" th:field="*{registerUserEmail}"/><span th:if="${#fields.hasErrors('registerUserEmail')}" th:errors="*{registerUserEmail}" >Error</span> 
+		<br>
+		
+		<label for="registerUserPassword" th:text="#{newregisteruser.password}" ></label>		                                          
+		<input type="text" th:field="*{registerUserPassword}"/><span th:if="${#fields.hasErrors('registerUserPassword')}" th:errors="*{registerUserPassword}" >Error</span> 
+		<br>
+		
+		<input type="submit" th:value="#{newregisteruser.addRegisterUser}"/>
+	</form>
+	<!-- This message is shown if the ${duplicate} variable was created. -->
+	<h3 class="error" th:if="${duplicate}" th:text="#{newregisteruser.duplicate}">Error</h3>
+	</main>
+	<footer th:insert="fragments.html :: footer"></footer>
+</body>
+</html>
+

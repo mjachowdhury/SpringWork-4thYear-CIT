@@ -13,12 +13,14 @@
 		<tr>
 			<th th:text="#{bids.id}">ID</th>
 			<th th:text="#{bids.bid}">bid</th>
-			<th th:text="#{bids.job}">job</th>
+			<th th:text="#{bids.job}">Job Name</th>
+			<th th:text="#{bids.userEmail}">Email</th>
 		</tr>
 		<tr th:each="bid,iterationCount : ${bids}" th:class="${iterationCount.even}? 'even'" th:object="${bid}"	>			
 			<td th:text="*{bidId}">ID</td>
-			<td th:text="*{bidAmount}">bid</td>
-			<td th:text="*{job.jobName}">job</td>
+			<td th:text="*{bidAmount}">Bid Amount</td>
+			<td th:text="*{job.jobName}">Job Name</td>
+			<td th:text="*{userEmail}">Email</td>
 		</tr>
 	</table>
 	</main>
