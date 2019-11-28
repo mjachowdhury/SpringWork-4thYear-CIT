@@ -17,4 +17,6 @@ public interface JobService {
 	
 	List<Job> listInAlphabeticalOrder();
 	List<Job> listAllJobs();
+	
+	//List<Job> findIsActive(boolean isActive);
 }

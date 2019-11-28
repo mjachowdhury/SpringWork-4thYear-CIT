@@ -23,10 +23,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class BidForm {
 	
-	@Size(min=4, max=20)
+	//@Size(min=4, max=20)
 	//private String bidName;
 	
-	private Double bidAmount;
+	private double bidAmount;
 	
 	private int jobId;
 }

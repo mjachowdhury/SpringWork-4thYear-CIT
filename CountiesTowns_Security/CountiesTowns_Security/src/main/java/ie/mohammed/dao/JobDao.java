@@ -6,11 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import ie.mohammed.entities.Job;
+ 
 
 public interface JobDao extends JpaRepository<Job, Integer> {
 	Job findByJobName(String jobName);
 	boolean existsByJobName(String jobName);
 	List<Job> findAllByOrderByJobNameAsc();
+	
+	//List<Job> findByIsActive(boolean isActive);
 	
 	@Query("SELECT c.jobName FROM Job c where c.jobId = :id") 
 	String findNameOfJobById(@Param("id") int id);

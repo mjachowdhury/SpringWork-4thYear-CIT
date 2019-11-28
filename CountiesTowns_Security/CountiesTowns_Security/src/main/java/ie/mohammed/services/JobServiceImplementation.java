@@ -82,4 +82,13 @@ public class JobServiceImplementation implements JobService {
 	public boolean existsByJobId(int jobId) {
 		return jobDao.existsById(jobId);
 	}
+
+	/*
+	 * @Override public List<Job> findIsActive(boolean isActive) { return
+	 * jobDao.findByIsActive(isActive); }
+	 */
+
+	 
+		
+	
 }

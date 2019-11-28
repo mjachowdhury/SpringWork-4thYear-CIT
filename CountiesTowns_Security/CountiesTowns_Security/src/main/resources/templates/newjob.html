@@ -37,6 +37,12 @@
 		<input type="text" th:field="*{JobName}"/><span th:if="${#fields.hasErrors('JobName')}" th:errors="*{JobName}" >Error</span> 
 		
 		<br>
+		
+		<label for="JobDescription" th:text="#{newjob.jobDescription}" ></label>
+			                                         <!-- The span is connected to the JobName field through th:errors. It appears if there was a binding problem and  -->
+			                                         <!--  displays the Size.JobName message from messages.properties --> 
+		<input type="text" th:field="*{JobDescription}"/><span th:if="${#fields.hasErrors('JobDescription')}" th:errors="*{JobDescription}" >Error</span> 
+		<br>
 		<input type="submit" th:value="#{newjob.addjob}"/>
 	</form>
 	<!-- This message is shown if the ${duplicate} variable was created. -->

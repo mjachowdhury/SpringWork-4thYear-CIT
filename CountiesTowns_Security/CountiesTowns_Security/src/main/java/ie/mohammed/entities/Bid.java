@@ -31,7 +31,7 @@ public class Bid {
 	 */
 	
 	@Column(nullable=false)
-	private Double bidAmount;
+	private double bidAmount;
 	
 	@Column(nullable=false)
 	//@ManyToOne
@@ -43,13 +43,13 @@ public class Bid {
     @OnDelete(action = OnDeleteAction.CASCADE)
 	private Job job;
 
-	public Bid(Double bidAmount, Job job, String userEmail) {
+	public Bid(double bidAmount, Job job, String userEmail) {
 		this.bidAmount = bidAmount;
 		this.job = job;
 		this.userEmail = userEmail;
 	}
 
-	public Bid(Double bidAmount, Job job) {
+	public Bid(double bidAmount, Job job) {
 		this.bidAmount = bidAmount;
 		this.job = job;
 	}

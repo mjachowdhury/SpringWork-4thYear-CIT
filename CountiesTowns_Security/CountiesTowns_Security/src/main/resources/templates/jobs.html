@@ -8,18 +8,27 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 <body>
 	<header>
 		<div th:insert="fragments.html :: menu"></div>
-		<h1><span th:text="#{jobs.welcome}">The jobs</span> <span th:text="${name}"></span></h1>
+		<h1><span th:text="#{jobs.welcome}">The Jobs</span> <span th:text="${name}"></span></h1>
 	</header>
 	<main>
 	<table>
 		<tr>
 			<th th:text="#{job.id}">ID</th>
-			<th th:text="#{job.job}">job</th>
+			<th th:text="#{job.job}">Job Name</th>
+			<th th:text="#{job.description}">Job Description</th>
+			<th th:text="#{job.localeDate}">Job Creation Date</th>
+			<th th:text="#{job.isActiveJob}">Job Active</th>
+			<th th:text="#{job.bid}">Bid</th>
 		</tr>
 
 		<tr th:each="job,iterationCount : ${jobs}" th:class="${iterationCount.odd}? 'odd'" th:object="${job}"	>			
 			<td th:text="*{jobId}">1</td>
-			<td><a th:text="*{jobName}" th:href="@{job/} + *{jobId}">job</a></td>
+			<td><a th:text="*{jobName}" th:href="@{job/} + *{jobId}">Job Name</a></td>
+			<td><a th:text="*{jobDescription}">Job Description</a></td>
+			<td><a th:text="*{localeDate}">Job Creation Date</a></td>
+			<td><a th:text="*{isActiveJob}">Job Active</a></td>
+			<!-- <td th:switch="{isActiveJob}"><a th:href="@{newbid/}+*{jobId}"><input th:case=0 class=bidbutton type=button th:href="@{newbid/}+*{jodId}" th:value="#{job.bids}" disable/></a><a th:href="@{newbid/}+*{jobId}"><input th:case=1 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}"/></a></td>td>	-->
+			 <td th:switch="*{isActiveJob}"><a th:href="@{newbid/} + *{jobId}"><input th:case=0 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}" disabled/></a><a th:href="@{newbid/} + *{jobId}"><input th:case=1 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}"/></a></td>
 		</tr>
 	</table>
 	</main>

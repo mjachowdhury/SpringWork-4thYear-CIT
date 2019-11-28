@@ -1,5 +1,7 @@
 package ie.mohammed;
 
+import java.time.LocalDate;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +49,7 @@ public class WebMvcApplication  {
 	
 	@PostConstruct	 // Another new annotation for you...
 	public void loadData() {
+		LocalDate localeDate = null;
 		Role role1 = new Role("user.one@cit.ie", "ROLE_USER");
 		Role role2 = new Role("user.two@cit.ie", "ROLE_USER");
 		Role role3 = new Role("user.three@cit.ie", "ROLE_USER");
@@ -77,11 +80,11 @@ public class WebMvcApplication  {
 		myApiUserService.save(apiUser);
 		myUserService.save(admin);
 		
-		Job painting = new Job("Painting", user1);		
+		Job painting = new Job("Painting", "Have to be perfect",localeDate.now(),1,user1);		
 		jobService.save(painting);
-		Job cookerInstall = new Job("Cooker Install", user1);
+		Job cookerInstall = new Job("Cooker Install", "Have to be perfect",localeDate.now(),0,user1);
 		jobService.save(cookerInstall);
-		Job plumbing = new Job("Plumbing", user1);
+		Job plumbing = new Job("Plumbing", "Have to be perfect",localeDate.now(),1,user1);
 		jobService.save(plumbing);
 		
 		
@@ -90,7 +93,15 @@ public class WebMvcApplication  {
 		bidService.save(new Bid(100.00, plumbing, user1.getUserEmail()));
 		bidService.save(new Bid(200.00, plumbing, user1.getUserEmail()));
 		 
+		bidService.save(new Bid(200.00, cookerInstall, user2.getUserEmail()));
+		bidService.save(new Bid(300.00, cookerInstall, user2.getUserEmail()));
+		bidService.save(new Bid(100.00, cookerInstall, user2.getUserEmail()));
+		bidService.save(new Bid(200.00, cookerInstall, user2.getUserEmail()));
 		
+		bidService.save(new Bid(200.00, painting, user3.getUserEmail()));
+		bidService.save(new Bid(300.00, painting, user3.getUserEmail()));
+		bidService.save(new Bid(100.00, painting, user3.getUserEmail()));
+		bidService.save(new Bid(200.00, painting, user3.getUserEmail()));
 		/*
 		 * bidService.save(new Bid("Blackrock", painting)); bidService.save(new
 		 * Bid("Malahide", painting)); bidService.save(new Bid("Dundrum", painting));

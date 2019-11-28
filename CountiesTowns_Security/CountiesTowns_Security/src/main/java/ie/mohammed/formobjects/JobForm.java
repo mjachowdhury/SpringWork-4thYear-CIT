@@ -1,5 +1,7 @@
 package ie.mohammed.formobjects;
 
+import java.time.LocalDate;
+
 /**
  * This class is created for the form that collects
  * the data for a new county. 
@@ -22,4 +24,11 @@ public class JobForm {
 	
 	@Size(min=4, max=20)
 	private String jobName;	
+	
+	@Size(min=4, max=20)
+	private String jobDescription;
+	
+	private LocalDate todayDate;
+	
+	private int isActive;
 }

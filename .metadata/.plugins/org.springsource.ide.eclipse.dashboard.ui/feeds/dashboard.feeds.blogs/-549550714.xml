@@ -5,7 +5,127 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-11-26T02:42:55Z</updated>
+  <updated>2019-11-27T16:33:17Z</updated>
+  <entry>
+    <title>Spring Integration AWS 2.3 GA and Spring Cloud Stream Kinesis Binder 2.0 GA Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/11/27/spring-integration-aws-2-3-ga-and-spring-cloud-stream-kinesis-binder-2-0-ga-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2019-11-27:3887</id>
+    <updated>2019-11-27T16:33:17Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Today it&amp;#8217;s my pleasure to announce General Availability of Spring Integration for Amazon Web Services extension version &lt;code&gt;2.3.0&lt;/code&gt; and Spring Cloud Stream Binder for AWS Kinesis version &lt;code&gt;2.0.0&lt;/code&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;These releases can be downloaded from Maven Central, JCenter, and our &lt;a href="https://repo.spring.io/release"&gt;release repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-aws:2.3.0.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;If you don&amp;#8217;t use Kinesis Binder.
+Or via Binder dependency:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.cloud:spring-cloud-stream-binder-kinesis:2.0.0.RELEASE"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="release-highlights"&gt;&lt;a class="anchor" href="#release-highlights"&gt;&lt;/a&gt;Release Highlights&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The main theme of both these releases is about an integration testing using a &lt;a href="https://github.com/localstack/localstack"&gt;Local Stack&lt;/a&gt; framework which helped us to spot several bugs and race conditions in both libraries.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;spring-integration-aws&lt;/code&gt; provides a &lt;code&gt;PutRecordsRequest&lt;/code&gt; (batch) support for &lt;code&gt;KplMessageHandler&lt;/code&gt; collecting async results for &lt;code&gt;UserRecords&lt;/code&gt; in that batch using Project Reactor &lt;code&gt;Mono.fromFuture()&lt;/code&gt; functionality.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;code&gt;KinesisShardEndedEvent&lt;/code&gt; is now emitted from the &lt;code&gt;KinesisMessageDrivenChannelAdapter&lt;/code&gt; when the next shard request returns &lt;code&gt;null&lt;/code&gt; with the meaning that shard is closed and no records can be added to that any more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;spring-cloud-stream-binder-kinesis&lt;/code&gt; is based on the recently released Spring Cloud Stream version &lt;code&gt;3.0&lt;/code&gt; and provides a new &lt;code&gt;KinesisBinderHealthIndicator&lt;/code&gt; to check that all the streams involved in binding configurations are available.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;code&gt;ProducerMessageHandlerCustomizer&lt;/code&gt; and &lt;code&gt;ConsumerEndpointCustomizer&lt;/code&gt; can now be specified in the application context as bean and they are going to be injected into the &lt;code&gt;KinesisMessageChannelBinder&lt;/code&gt; for an appropriate endpoints customization.
+This can be useful, for example, in cases when some endpoint properties are not covered by the configuration options.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Many thanks to everyone from the Community for all the feedback and contribution to these projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback is welcome via all the available communication channels!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Integration for AWS resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-aws"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Spring Cloud Stream Binder for AWS Kinesis resources:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-binder-aws-kinesis/blob/master/spring-cloud-stream-binder-kinesis-docs/src/main/asciidoc/contributing.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-cloud-stream"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-cloud-stream"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Open Service Broker 3.1.0 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/11/26/spring-cloud-open-service-broker-3-1-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Roy Clarkson</name>
+    </author>
+    <id>tag:spring.io,2019-11-26:3886</id>
+    <updated>2019-11-26T18:12:07Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce the general availability of Spring Cloud Open Service Broker 3.1.0.RELEASE. Support for &lt;a href="https://www.openservicebrokerapi.org/blog/2019/06/21/announcing-open-service-broker-api-v2-15"&gt;Open Service Broker API v2.15&lt;/a&gt; is now feature complete. Thanks to the community for your feedback and contributions! This release includes all of the fixes and enhancements from the pre-release milestones:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Upgrade to Spring Boot 2.2.1.RELEASE&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;ServiceBrokerMaintenanceInfoConflictException&lt;/code&gt; to handle &lt;code&gt;MaintenanceInfoConflict&lt;/code&gt; error scenarios&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ServiceBrokerInvalidParametersException&lt;/code&gt; now returns an HTTP 400 when a create or update request is malformed or includes invalid parameters. Previously it was, incorrectly, returning an HTTP 422.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;CreateServiceInstanceBindingRequest&lt;/code&gt; now extends &lt;code&gt;AsyncParameterizedServiceInstanceRequest&lt;/code&gt; in order to utilize a common request object and reduce redundancy.&lt;/li&gt;
+  &lt;li&gt;Update reference documentation&lt;/li&gt;
+  &lt;li&gt;Support updating a Service Instance context&lt;/li&gt;
+  &lt;li&gt;Add list of &lt;code&gt;endpoints&lt;/code&gt; to create Service Binding response body&lt;/li&gt;
+  &lt;li&gt;Support &lt;code&gt;X-Broker-API-Request-Identity&lt;/code&gt; request identity header&lt;/li&gt;
+  &lt;li&gt;Restrict &lt;code&gt;Operation&lt;/code&gt; strings to 10,000 characters in the response body&lt;/li&gt;
+  &lt;li&gt;Fix an issue where &lt;code&gt;ServiceInstanceBindingDoesNotExistException&lt;/code&gt; was incorrectly extended from &lt;code&gt;RuntimeException&lt;/code&gt;, instead of &lt;code&gt;ServiceBrokerException&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;maintenance_info&lt;/code&gt; field to Service Plan object&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;maximum_polling_duration&lt;/code&gt; field to Service Plan object&lt;/li&gt;
+  &lt;li&gt;Add &lt;code&gt;plan_updateable&lt;/code&gt; field to Service Plan object&lt;/li&gt;
+  &lt;li&gt;Return HTTP 400 when the required &lt;code&gt;service_id&lt;/code&gt; and/or &lt;code&gt;plan_id&lt;/code&gt; are missing or incorrect&lt;/li&gt;
+  &lt;li&gt;Return HTTP 202 when a service broker operation is in progress and an identical request is sent before the previous request completes&lt;/li&gt;
+  &lt;li&gt;Return JSON arrays instead of JSON objects for certain Service definition metadata&lt;/li&gt;
+  &lt;li&gt;Add support for custom base path of service broker controllers&lt;/li&gt;
+  &lt;li&gt;Improve support for service metadata in configuration properties&lt;/li&gt;
+  &lt;li&gt;Add support for configuring Base64 &lt;code&gt;metadata.imageUrl&lt;/code&gt; data from a class path image file&lt;/li&gt;
+  &lt;li&gt;Improve configuration of event hooks via additional bean and auto-configuration support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
+  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
+  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
+  &amp;lt;version&amp;gt;3.1.0.RELEASE&amp;lt;/version&amp;gt;&#xD;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Spring Cloud Open Service Broker is a framework for building Spring Boot applications that implement the Open Service Broker API. The &lt;a href="https://www.openservicebrokerapi.org"&gt;Open Service Broker API&lt;/a&gt; project allows developers to deliver services to applications running within cloud native platforms such as Cloud Foundry, Kubernetes, and OpenShift.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.1.0.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - November 26th, 2019</title>
     <link rel="alternate" href="https://spring.io/blog/2019/11/26/this-week-in-spring-november-26th-2019" />
@@ -1095,73 +1215,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
   &lt;li&gt;&lt;a href="https://info.michael-simons.eu"&gt;Michael&amp;rsquo;s blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/709390942&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Vault 2.2 goes GA</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/11/07/spring-vault-2-2-goes-ga" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Paluch</name>
-    </author>
-    <id>tag:spring.io,2019-11-07:3866</id>
-    <updated>2019-11-07T09:24:33Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m excited to announce that Spring Vault 2.2 is generally available from &lt;a href="https://repo.spring.io"&gt;repo.spring.io&lt;/a&gt; as well as Maven Central. This release ships with several refinements and new features.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The most notable changes are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Support for PCF-based authentication by using instance identity certificates.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Extensions for a seamless Kotlin 1.3 experience and Kotlin Coroutines support.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Builders for &lt;code&gt;RestTemplate&lt;/code&gt; and &lt;code&gt;WebClient&lt;/code&gt; to customize interceptors, filter functions, and default headers.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Vault namespace support (Vault Enterprise edition only).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A revised &lt;code&gt;@VaultPropertySource&lt;/code&gt; supporting versioned key-value backends.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Added listener and events support to &lt;code&gt;LifecycleAwareSessionManager&lt;/code&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for the Jetty HTTP Client as an alternative reactive HTTP client.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reactive support for AWS IAM authentication.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Vault 2.2 will be picked up by Spring Cloud Vault as part of the &lt;a href="https://github.com/spring-cloud/spring-cloud-release/milestone/78"&gt;Hoxton release train&lt;/a&gt; for your convenience.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.2.0.RELEASE/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.2.1 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/11/07/spring-boot-2-2-1-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Madhura Bhave</name>
-    </author>
-    <id>tag:spring.io,2019-11-07:3865</id>
-    <updated>2019-11-07T00:51:24Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot 2.2.1 has been released and is now available from &lt;a href="https://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.2.1.RELEASE"&gt;110 fixes, improvements, and dependency upgrades&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;For those of you upgrading from Spring Boot 2.2.0 to Spring Boot 2.2.1, if you relied on the &lt;code&gt;@ConfigurationProperties&lt;/code&gt; scanning support, please note that this feature is now disabled by default. Scanning of &lt;code&gt;@ConfigurationProperties&lt;/code&gt; needs to be explicitly opted into by adding the &lt;code&gt;@ConfigurationPropertiesScan&lt;/code&gt; annotation. More details related to this change can be found &lt;a href="https://github.com/spring-projects/spring-boot/issues/18674"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.1.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

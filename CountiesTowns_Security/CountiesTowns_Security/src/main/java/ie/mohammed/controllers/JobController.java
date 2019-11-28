@@ -60,7 +60,7 @@ public class JobController {
 		if (binding.hasErrors())
 			return "newjob";
 		MyUser creator = userService.findByEmail(user.getName());
-		Job job = new Job(jobForm.getJobName(), creator);
+		Job job = new Job(jobForm.getJobName(),jobForm.getJobDescription(),jobForm.getTodayDate().now(),jobForm.getIsActive(), creator);
 		Job newJob = jobService.save(job);
 		if (newJob != null)
 			return "redirect:job/"+newJob.getJobId();
@@ -69,6 +69,7 @@ public class JobController {
 			redirectAttributes.addFlashAttribute("duplicate", true);
 			return "redirect:newjob";	
 	}
+	
 	
 
 }

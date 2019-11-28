@@ -1,6 +1,7 @@
 package ie.mohammed.entities;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.swing.JPopupMenu;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -39,6 +41,15 @@ public class Job {
 	@Column(nullable=false, unique=true)
 	private String jobName;
 	
+	@Column(nullable=false)
+	private String jobDescription;
+	
+	@Column
+	private LocalDate localeDate;
+	
+	@Column(nullable=false)
+	private int isActiveJob;
+	
 	@ManyToOne
 	private MyUser addedBy; 
 	
@@ -46,22 +57,40 @@ public class Job {
 	@JsonIgnore
     private List<Bid> bids = new ArrayList<>();
 	
-	public Job(String name) {
-		this.jobName = name;
+	public Job(String jobName, String jobDescription, LocalDate localeDate, int isActiveJob, MyUser addedBy) {
+		//super();
+		this.jobName = jobName;
+		this.jobDescription = jobDescription;
+		this.localeDate = localeDate;
+		this.isActiveJob = isActiveJob;
+		this.addedBy = addedBy;
 	}
 	
+	/*
+	 * public Job(String name, String jobDescription) { this.jobName = name;
+	 * this.jobDescription = jobDescription; }
+	 */
+	
+	/*
+	 * @Override public String toString() { StringBuilder s = new
+	 * StringBuilder("Job [jobId=" + jobId + ", jobName=" + jobName + "]"); 
+	 * for(Bid bid: this.bids) s.append("\n\t" + bid.getBidAmount()); return s.toString(); }
+	 */
+	
+
+	/*
+	 * public Job(String jobName, MyUser addedBy) { this.jobName = jobName;
+	 * this.addedBy = addedBy; }
+	 */
+
 	@Override
 	public String toString() {
-		StringBuilder s = new StringBuilder("Job [jobId=" + jobId + ", jobName=" + jobName + "]");
-		for(Bid bid: this.bids)
-			s.append("\n\t" + bid.getBidAmount());
+		StringBuilder s = new StringBuilder("Job [jobId=" + jobId + ", jobName=" + jobName + ", jobDescription=" + jobDescription +  "]");
+		for(Bid bid: this.bids) s.append("\n\t" + bid.getBidAmount()); 
 		return s.toString();
 	}
 
-	public Job(String jobName, MyUser addedBy) {
-		this.jobName = jobName;
-		this.addedBy = addedBy;
-	}
+	
 
 	
 }
