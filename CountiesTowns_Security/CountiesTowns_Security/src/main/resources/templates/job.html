@@ -19,7 +19,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 				</tr>
 			    <tr th:each="bid : ${job.bids}" th:object="${bid}">			
 					<td th:text="*{bidId}">bidId</td>
-					<td th:text="*{bidName}">bidName</td>
+					<td th:text="*{bidAmount}">Bid Amount</td>
 				</tr>
 			</table>
 		</div>

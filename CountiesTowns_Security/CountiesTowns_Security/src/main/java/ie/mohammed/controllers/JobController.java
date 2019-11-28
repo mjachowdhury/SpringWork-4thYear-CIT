@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import ie.mohammed.entities.Bid;
 import ie.mohammed.entities.Job;
 import ie.mohammed.entities.MyUser;
 import ie.mohammed.formobjects.JobForm;
+import ie.mohammed.services.BidService;
 import ie.mohammed.services.JobService;
 import ie.mohammed.services.MyUserService;
 
@@ -23,6 +25,8 @@ import ie.mohammed.services.MyUserService;
 public class JobController {
 	@Autowired
 	private JobService jobService;
+	@Autowired
+	private BidService bidService;
 	
 	@Autowired
 	private MyUserService userService;
@@ -35,15 +39,29 @@ public class JobController {
 		return "jobs";
 	}
 	
+	
+	/*
+	 * @GetMapping("/showjob/{id}") public String showACounty(@PathVariable(name =
+	 * "id") int id, Model model) { List<Bid> bids = bidService.findByJob_JobId(id);
+	 * Job county = jobService.findJob(id); if (county == null) {
+	 * model.addAttribute("id", id); return "notfounderror"; }
+	 * model.addAttribute("job", county); model.addAttribute("bids", bids);
+	 * 
+	 * return "job"; }
+	 */
+	 
+	
 	@GetMapping("/job/{id}") 
 	public String showJob(@PathVariable(name="id") int id, Model model)
 	{
+		List<Bid> bids = bidService.findByJob_JobId(id);
 		if (jobService.existsByJobId(id)) {
 			Job job = jobService.findJob(id);
 			model.addAttribute("job", job);
 			return "job";
 		}
 		model.addAttribute("id", id);
+		model.addAttribute("bids", bids);
 		return "notfounderror";
 	}
 	

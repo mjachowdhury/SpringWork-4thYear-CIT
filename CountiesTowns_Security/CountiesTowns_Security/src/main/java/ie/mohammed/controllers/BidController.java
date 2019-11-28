@@ -66,9 +66,9 @@ public class BidController {
 		model.addAttribute("job", job);
 		return "bidsInJob";
 	}
-	
+
 	@GetMapping("/newbid")
-	public String addNewBid( Model model) {
+	public String addNewBid(Model model) {
 		model.addAttribute("bidForm", new BidForm());
 		model.addAttribute("jobs", jobService.listInAlphabeticalOrder());
 		return "newbid";
@@ -85,34 +85,16 @@ public class BidController {
 		return "newbid";
 	}
 
-	/*
-	 * This is called when the user clicks the submit button on the for to create a
-	 * new bid. It is supposed to bring back an object populated with data. However
-	 * there may have been problems binding the user's data to the object. In this
-	 * case, the user is returned to the form's view, along with the form's object
-	 * which is tied to the model already, and error messages are triggered e.g.
-	 * Size.townName in messages.properties might be displayed. There will be no
-	 * issue binding the county's ID to the form's field because the data comes
-	 * through a pre-populated dropdown list.
-	 */
+	 
 	@PostMapping("newbid")
 	public String addNewBid(Model model, @Valid BidForm bidForm, BindingResult binding,
 			RedirectAttributes redirectAttributes, Principal user) {
-		// return to the view with the user's data, and add the list of jobs to the
-		// model
-		// again for the drop down list - the binding to bidForm is retained but not
-		// the list of jobs.
+		  
 		if (binding.hasErrors()) {
 			model.addAttribute("jobs", jobService.listInAlphabeticalOrder());
 			return "newbid";
 		}
-		// Create a Bid object with the new bids's amount and the job's id.
-		// It it already exists, a one-use-only attribute called "duplicate" is created.
-		// This attribute could
-		// have any value - its value is not important, only the fact that it has been
-		// created is relevant.
-		// If the town does not already exist, it is created and a view with that town
-		// is called.
+		 
 		MyUser myUserCreator = myUserService.findByEmail(user.getName());
 		Bid bid = new Bid(bidForm.getBidAmount(), jobService.findJob(jobId), myUserCreator.getUserEmail());
 		if (bidService.save(bid) == null) {
@@ -124,3 +106,22 @@ public class BidController {
 	}
 
 }
+
+/*
+ * @RequestMapping("/users/{username}/bids") public List<Lot>
+ * getAllBids(@PathVariable String username){ return
+ * bidService.getAllBids(username); }
+ * 
+ * @RequestMapping("/users/{username}/bids/{id}") public Lot
+ * getBid(@PathVariable String id){ return bidService.getBid(id); }
+ * 
+ * @RequestMapping(method= RequestMethod.POST, value =
+ * "/users/{username}/bids/{amount}") public void addBids(@RequestBody Lot
+ * lot, @PathVariable String username, @PathVariable double amount){
+ * bidService.addBid(lot,username,amount); }
+ * 
+ * @RequestMapping(method= RequestMethod.PUT, value =
+ * "/users/{username}/bids/{id}/{amount}") public void updateLot(@RequestBody
+ * Lot lot, @PathVariable String username,@PathVariable String id, @PathVariable
+ * double amount){ bidService.updateBid(lot,amount); }
+ */

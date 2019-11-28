@@ -33,10 +33,23 @@ public class BidServiceImplementation implements BidService {
 
 	@Override
 	public Bid save(Bid bid) {
-		if (bidDao.existsByBidAmountAndJob_JobId(bid.getBidAmount(), bid.getJob().getJobId()))
+		if (!bid.getUserEmail().equals(bid.getJob().getAddedBy().getUserEmail())) {
+			if (findLowestAmountByJobId(bid.getJob().getJobId()) == null) {
+				return bidDao.save(bid);
+			}
+			System.out.println(bid.getBidAmount());
+			if (bid.getBidAmount() < bidDao.findLowestAmountByJobId(bid.getJob().getJobId()))
+				return bidDao.save(bid);
+			System.out.println(bid.getBidAmount());
 			return null;
-		return bidDao.save(bid);
+		} else {
+			return null;
+		}
 	}
+	/*
+	 * if (bidDao.existsByBidAmountAndJob_JobId(bid.getBidAmount(),
+	 * bid.getJob().getJobId())) return null; return bidDao.save(bid); }
+	 */
 
 	@Override
 	public List<Bid> findBidByBidAmount(Double bidAmount) {
@@ -47,6 +60,18 @@ public class BidServiceImplementation implements BidService {
 	public Bid findBid(int bidId) {
 		 
 		return bidDao.findById(bidId).get();
+	}
+
+	@Override
+	public List<Bid> findByJob_JobId(int jobId) {
+		 
+		return bidDao.findByJob_JobId(jobId);
+	}
+
+	@Override
+	public Integer findLowestAmountByJobId(int id) {
+		
+		return bidDao.findLowestAmountByJobId(id);
 	}
 
 }

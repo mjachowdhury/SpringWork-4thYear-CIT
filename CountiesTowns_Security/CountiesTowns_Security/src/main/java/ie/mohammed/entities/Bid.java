@@ -23,24 +23,24 @@ import lombok.Setter;
 @Entity
 public class Bid {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int bidId;
 
 	/*
 	 * @Column(nullable=false) private String bidName;
 	 */
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	private double bidAmount;
-	
-	@Column(nullable=false)
-	//@ManyToOne
-	private String userEmail; 
-	
-	//https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
-	@ManyToOne( fetch=FetchType.EAGER)
-    @JoinColumn(nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+
+	@Column(nullable = false)
+	// @ManyToOne
+	private String userEmail;
+
+	// https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "jobid", nullable = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Job job;
 
 	public Bid(double bidAmount, Job job, String userEmail) {
@@ -53,13 +53,10 @@ public class Bid {
 		this.bidAmount = bidAmount;
 		this.job = job;
 	}
+
 	@Override
 	public String toString() {
 		return "Bid [bidAmount=" + bidAmount + ", userEmail=" + userEmail + ", job=" + job + "]";
 	}
-
-	 
-
-
 
 }

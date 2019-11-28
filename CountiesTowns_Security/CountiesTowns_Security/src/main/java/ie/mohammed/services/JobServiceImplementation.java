@@ -47,7 +47,7 @@ public class JobServiceImplementation implements JobService {
 	}
 
 	@Override
-	public List<Job> findJobsWithBidAmount(Double bidAmount) {
+	public List<Job> findJobsWithBidAmount(double bidAmount) {
 		return jobDao.findJobsWithBidAmount(bidAmount);
 	}
 

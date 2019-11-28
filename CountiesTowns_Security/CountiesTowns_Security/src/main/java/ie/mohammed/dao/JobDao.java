@@ -19,5 +19,5 @@ public interface JobDao extends JpaRepository<Job, Integer> {
 	String findNameOfJobById(@Param("id") int id);
 
 	@Query("SELECT c FROM Job c JOIN Bid t ON t.job=c WHERE t.bidAmount=:bidAmount")
-	List<Job> findJobsWithBidAmount(@Param("bidAmount") Double bidAmount);
+	List<Job> findJobsWithBidAmount(@Param("bidAmount") double bidAmount);
 }

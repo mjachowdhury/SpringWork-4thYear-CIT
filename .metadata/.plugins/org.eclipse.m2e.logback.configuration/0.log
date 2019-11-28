@@ -15921,3 +15921,91 @@ java.nio.file.AccessDeniedException: C:\Program Files\Git\mingw64\etc\.probe-f39
 2019-11-27 22:07:42,584 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
 2019-11-27 22:07:42,765 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-27 22:07:42,766 [Worker-66: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:39:13,378 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-11-28 08:39:32,643 [Worker-2: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - C:\Program Files\Git\mingw64\etc\.probe-449899be-2a91-48fc-9203-edb4233721b1
+java.nio.file.AccessDeniedException: C:\Program Files\Git\mingw64\etc\.probe-449899be-2a91-48fc-9203-edb4233721b1
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103) ~[na:na]
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108) ~[na:na]
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235) ~[na:na]
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:373) ~[na:na]
+	at java.base/java.nio.file.Files.createFile(Files.java:650) ~[na:na]
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.<init>(FS.java:234) ~[na:na]
+	at org.eclipse.jgit.util.FS$FileStoreAttributeCache.getFsTimestampResolution(FS.java:211) ~[na:na]
+	at org.eclipse.jgit.util.FS.getFsTimerResolution(FS.java:321) ~[na:na]
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.<init>(FileSnapshot.java:186) ~[na:na]
+	at org.eclipse.jgit.internal.storage.file.FileSnapshot.save(FileSnapshot.java:122) ~[na:na]
+	at org.eclipse.jgit.storage.file.FileBasedConfig.load(FileBasedConfig.java:156) ~[na:na]
+	at org.eclipse.jgit.internal.storage.file.FileRepository.loadSystemConfig(FileRepository.java:245) ~[na:na]
+	at org.eclipse.jgit.internal.storage.file.FileRepository.<init>(FileRepository.java:203) ~[na:na]
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.build(FileRepositoryBuilder.java:88) ~[na:na]
+	at org.eclipse.jgit.storage.file.FileRepositoryBuilder.create(FileRepositoryBuilder.java:108) ~[na:na]
+	at org.eclipse.egit.core.RepositoryCache.lookupRepository(RepositoryCache.java:58) ~[na:na]
+	at org.eclipse.egit.core.project.GitProjectData.map(GitProjectData.java:693) ~[na:na]
+	at org.eclipse.egit.core.project.GitProjectData.remapAll(GitProjectData.java:651) ~[na:na]
+	at org.eclipse.egit.core.project.GitProjectData.load(GitProjectData.java:634) ~[na:na]
+	at org.eclipse.egit.core.project.GitProjectData.get(GitProjectData.java:220) ~[na:na]
+	at org.eclipse.egit.core.project.RepositoryMapping.getProjectData(RepositoryMapping.java:335) ~[na:na]
+	at org.eclipse.egit.core.project.RepositoryMapping.findMapping(RepositoryMapping.java:356) ~[na:na]
+	at org.eclipse.egit.core.project.RepositoryMapping.getMapping(RepositoryMapping.java:296) ~[na:na]
+	at org.eclipse.egit.core.internal.util.ResourceUtil.getRepository(ResourceUtil.java:712) ~[na:na]
+	at org.eclipse.egit.ui.internal.resources.ResourceStateFactory.getIndexDiffDataOrNull(ResourceStateFactory.java:103) ~[na:na]
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorateResource(GitLightweightDecorator.java:224) ~[na:na]
+	at org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator.decorate(GitLightweightDecorator.java:201) ~[na:na]
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:247) ~[na:na]
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105) ~[na:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) ~[org.eclipse.equinox.common_3.10.400.v20190516-1504.jar:na]
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360) ~[na:na]
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346) ~[na:na]
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:333) ~[na:na]
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:300) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.400.v20190506-1457.jar:na]
+2019-11-28 08:40:52,684 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:40:52,703 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:40:52,750 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-11-28 08:40:52,825 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:40:52,826 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\AssignmentTwo\src\test\resources
+2019-11-28 08:41:07,662 [Worker-7: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-11-28 08:41:07,686 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2019-11-28 08:41:07,804 [Worker-7: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-11-28 08:41:07,817 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-28 08:41:17,317 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:17,321 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:41:17,345 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:41:29,241 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:29,241 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:41:33,839 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:33,840 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:41:33,842 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-11-28 08:41:33,847 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:33,848 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\SpringJobBiding\src\test\resources
+2019-11-28 08:41:52,199 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:52,200 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:41:52,237 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 9 resources
+2019-11-28 08:41:52,388 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:41:52,390 [Worker-7: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory H:\4thYear\ApplicationFramework\Lectures\WebMVC_2_DB\src\test\resources
+2019-11-28 08:44:58,185 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:44:58,218 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:44:58,247 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:44:58,321 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:44:58,322 [Worker-3: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:47:43,517 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:47:43,543 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:47:43,627 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:47:43,716 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:47:43,716 [Worker-20: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:49:36,170 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:49:36,198 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:49:36,329 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:49:36,430 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:49:36,431 [Worker-19: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:52:22,129 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:52:22,221 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:52:22,468 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:52:22,637 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:52:22,638 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources
+2019-11-28 08:59:43,293 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:59:43,370 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-11-28 08:59:43,637 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 530 resources
+2019-11-28 08:59:43,798 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-28 08:59:43,799 [Worker-28: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\ApplicationFrameWork\CountiesTowns_Security\CountiesTowns_Security\src\test\resources

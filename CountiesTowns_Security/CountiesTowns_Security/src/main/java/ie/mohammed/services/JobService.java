@@ -12,7 +12,7 @@ public interface JobService {
 	Job findByName(String jobName);
 	boolean existsByJobId(int jobId);
 	String findJobName(int id);
-	List<Job> findJobsWithBidAmount(Double bidAmount);
+	List<Job> findJobsWithBidAmount(double bidAmount);
 	Job save(Job job);
 	
 	List<Job> listInAlphabeticalOrder();
