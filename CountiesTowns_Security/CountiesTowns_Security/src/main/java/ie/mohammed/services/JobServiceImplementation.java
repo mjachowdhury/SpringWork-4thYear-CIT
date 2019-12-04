@@ -1,5 +1,7 @@
 package ie.mohammed.services;
 
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +13,9 @@ import ie.mohammed.entities.Job;
 @Service
 public class JobServiceImplementation implements JobService {
 
-	@Autowired 
+	@Autowired
 	private JobDao jobDao;
-	
+
 	@Override
 	public Job findJob(int id) {
 		if (jobDao.existsById(id))
@@ -23,8 +25,7 @@ public class JobServiceImplementation implements JobService {
 
 	@Override
 	public boolean deleteJob(int id) {
-		if (jobDao.existsById(id))
-		{
+		if (jobDao.existsById(id)) {
 			jobDao.deleteById(id);
 			return true;
 		}
@@ -61,7 +62,7 @@ public class JobServiceImplementation implements JobService {
 	@Override
 	public boolean deleteJob(Job job) {
 		System.out.println(job);
-		if (! jobDao.existsById(job.getJobId()))
+		if (!jobDao.existsById(job.getJobId()))
 			return false;
 		jobDao.delete(job);
 		System.out.println(jobDao.existsByJobName(job.getJobName()));
@@ -72,10 +73,10 @@ public class JobServiceImplementation implements JobService {
 	public List<Job> listAllJobs() {
 		return jobDao.findAll();
 	}
-	
+
 	@Override
 	public List<Job> listInAlphabeticalOrder() {
-		return jobDao.findAllByOrderByJobNameAsc();		
+		return jobDao.findAllByOrderByJobNameAsc();
 	}
 
 	@Override
@@ -83,12 +84,17 @@ public class JobServiceImplementation implements JobService {
 		return jobDao.existsById(jobId);
 	}
 
+	@Override
+	public void closeJob(Job job) {
+		 if(Duration.between(job.getLocaleDate().atStartOfDay(),LocalDate.now().atStartOfDay()).toDays()>20) {
+			 jobDao.closeJobByJodId(job.getJobId());
+		 }
+		
+	}
+
 	/*
 	 * @Override public List<Job> findIsActive(boolean isActive) { return
 	 * jobDao.findByIsActive(isActive); }
 	 */
 
-	 
-		
-	
 }

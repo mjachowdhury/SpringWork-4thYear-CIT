@@ -1,0 +1,66 @@
+* {	
+	font-family:"Arial Rounded MT"; 
+}
+
+h1{
+		color: goldenrod;
+}
+
+th, td{
+	border: solid black 1px;
+}
+
+th{
+	background-color: navy;
+	color: white;		
+}
+
+.odd{
+	background-color: grey;
+	color: white;		
+}
+
+.even{
+	color: white;		
+	background-color: green;
+}
+
+footer{
+	margin-top: 3em;
+	padding-top:1em;
+	border-top: solid navy 2px;
+}
+
+form{
+	border: green solid 2px;
+	padding: 2em;
+}
+
+label{
+	display: inline-block;
+	color: green;
+}
+
+.error{
+	color:red;
+	padding-left:1em;
+}
+
+input[type="submit"]
+{
+	display: inline-block;
+	background: maroon;
+	color: white;
+	padding: 8px;
+	margin-top:16px;
+}
+
+nav a {
+	display:inline-block;
+	background: maroon;
+	color: white;
+	width: 15%;
+	text-decoration:none;
+	padding: 8px;
+	text-align:center;
+}

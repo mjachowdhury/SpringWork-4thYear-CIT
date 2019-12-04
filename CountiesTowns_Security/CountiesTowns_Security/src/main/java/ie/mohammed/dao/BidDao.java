@@ -5,14 +5,16 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import ie.mohammed.entities.Bid;
+import ie.mohammed.entities.Job;
 
 public interface BidDao extends JpaRepository<Bid, Integer> {
+	 
 	List<Bid> findAllByOrderByBidAmountAsc();
 	List<Bid> findByJob_JobName(String jobName);
 	
 	@Query("SELECT c FROM Bid c where c.job.id = :id")
 	List<Bid> findByJob_JobId(@Param("id") int id);
-	
+	 
 	boolean existsByBidAmountAndJob_JobId(double amount, int jobId);
 	List<Bid> findBidByBidAmount(double bidAmount);
 	
@@ -21,6 +23,7 @@ public interface BidDao extends JpaRepository<Bid, Integer> {
 	//@Query(value="SELECT min(bidAmount) from Bid")
 	
 	//@Query(value="SELECT min(c.bidId) from Bid c where c.jobId = :id")
+	
 	@Query("SELECT min(c.bidAmount) FROM Bid c JOIN Job t ON c.job=t WHERE t.jobId=:id")
 	Integer findLowestAmountByJobId(@Param("id") int id);
 	

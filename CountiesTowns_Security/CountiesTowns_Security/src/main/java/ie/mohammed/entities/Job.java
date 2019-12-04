@@ -50,12 +50,14 @@ public class Job {
 	@Column(nullable=false)
 	private int isActiveJob;
 	
+	
 	@ManyToOne
 	private MyUser addedBy; 
 	
 	@OneToMany(mappedBy="job", fetch=FetchType.EAGER, cascade= CascadeType.ALL)
 	@JsonIgnore
     private List<Bid> bids = new ArrayList<>();
+	
 	
 	public Job(String jobName, String jobDescription, LocalDate localeDate, int isActiveJob, MyUser addedBy) {
 		//super();
@@ -64,24 +66,7 @@ public class Job {
 		this.localeDate = localeDate;
 		this.isActiveJob = isActiveJob;
 		this.addedBy = addedBy;
-	}
-	
-	/*
-	 * public Job(String name, String jobDescription) { this.jobName = name;
-	 * this.jobDescription = jobDescription; }
-	 */
-	
-	/*
-	 * @Override public String toString() { StringBuilder s = new
-	 * StringBuilder("Job [jobId=" + jobId + ", jobName=" + jobName + "]"); 
-	 * for(Bid bid: this.bids) s.append("\n\t" + bid.getBidAmount()); return s.toString(); }
-	 */
-	
-
-	/*
-	 * public Job(String jobName, MyUser addedBy) { this.jobName = jobName;
-	 * this.addedBy = addedBy; }
-	 */
+	}	 
 
 	@Override
 	public String toString() {
@@ -89,6 +74,8 @@ public class Job {
 		for(Bid bid: this.bids) s.append("\n\t" + bid.getBidAmount()); 
 		return s.toString();
 	}
+
+	 
 
 	
 

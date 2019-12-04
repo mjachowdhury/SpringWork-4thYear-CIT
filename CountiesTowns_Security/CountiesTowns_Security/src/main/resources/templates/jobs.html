@@ -18,6 +18,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			<th th:text="#{job.description}">Job Description</th>
 			<th th:text="#{job.localeDate}">Job Creation Date</th>
 			<th th:text="#{job.isActiveJob}">Job Active</th>
+			 
 			<th th:text="#{job.bid}">Bid</th>
 		</tr>
 
@@ -27,8 +28,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			<td><a th:text="*{jobDescription}">Job Description</a></td>
 			<td><a th:text="*{localeDate}">Job Creation Date</a></td>
 			<td><a th:text="*{isActiveJob}">Job Active</a></td>
-			<!-- <td th:switch="{isActiveJob}"><a th:href="@{newbid/}+*{jobId}"><input th:case=0 class=bidbutton type=button th:href="@{newbid/}+*{jodId}" th:value="#{job.bids}" disable/></a><a th:href="@{newbid/}+*{jobId}"><input th:case=1 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}"/></a></td>td>	-->
-			 <td th:switch="*{isActiveJob}"><a th:href="@{newbid/} + *{jobId}"><input th:case=0 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}" disabled/></a><a th:href="@{newbid/} + *{jobId}"><input th:case=1 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}"/></a></td>
+			 
+			<td th:switch="*{isActiveJob}"><a th:href="@{newbid/} + *{jobId}"><input th:case=0 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}" disabled/></a><a th:href="@{newbid/} + *{jobId}"><input th:case=1 class=bidbutton type=button th:href="@{newbid/} + *{jobId}" th:value="#{job.bid}"/></a></td>
 		</tr>
 	</table>
 	</main>

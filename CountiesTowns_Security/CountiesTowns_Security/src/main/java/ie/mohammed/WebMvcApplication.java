@@ -70,8 +70,8 @@ public class WebMvcApplication  {
         MyUser user2 = new MyUser("user.two@cit.ie", passwordEncoder.encode("password"), role1,true, "User", "Two");
         MyUser user3 = new MyUser("user.three@cit.ie", passwordEncoder.encode("password"), role1,true, "User", "Three");
         
-		MyApiUser apiUser = new MyApiUser("api.user@cit.ie", passwordEncoder.encode("password"), role2, true);	
-		MyUser admin = new MyUser("admin.user@cit.ie", passwordEncoder.encode("password"), role3, true, "Admin", "User");
+		MyApiUser apiUser = new MyApiUser("api.user@cit.ie", passwordEncoder.encode("password"), role4, true);	
+		MyUser admin = new MyUser("admin.user@cit.ie", passwordEncoder.encode("password"), role5, true, "Admin", "User");
 		
 		myUserService.save(user1);
 		myUserService.save(user2);
@@ -102,14 +102,6 @@ public class WebMvcApplication  {
 		bidService.save(new Bid(300.00, painting, user3.getUserEmail()));
 		bidService.save(new Bid(100.00, painting, user3.getUserEmail()));
 		bidService.save(new Bid(200.00, painting, user3.getUserEmail()));
-		/*
-		 * bidService.save(new Bid("Blackrock", painting)); bidService.save(new
-		 * Bid("Malahide", painting)); bidService.save(new Bid("Dundrum", painting));
-		 * bidService.save(new Bid("Tallaght", painting));
-		 * 
-		 * bidService.save(new Bid("Tralee", cookerInstall)); bidService.save(new
-		 * Bid("Ballyferriter", cookerInstall)); bidService.save(new Bid("Killarney",
-		 * cookerInstall)); bidService.save(new Bid("Dingle", cookerInstall));
-		 */
+		 
 	}
 }

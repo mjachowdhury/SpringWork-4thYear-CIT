@@ -13,6 +13,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -37,6 +39,7 @@ public class MyUser {
 	@Email
 	private String userEmail;
 
+	@JsonIgnore
 	@OneToMany(mappedBy="addedBy")
 	List<Job> jobsCreatedByUser;
 	

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+	<header><div th:insert="fragments.html :: menu"></div></header>
+	<main>
+		<h1>Sorry. You can not bid on your own items.</h1>
+	</main>
+</body>
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</html>

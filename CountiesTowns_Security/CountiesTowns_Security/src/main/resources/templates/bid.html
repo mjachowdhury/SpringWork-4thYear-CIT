@@ -10,18 +10,18 @@
 		<h1><span th:text="#{bid.heading}">A bid</span></h1>
 	</header>
 	<main>
-	<table>
-		<tr>
-			<th th:text="#{bid.id}">ID</th>
-			<th th:text="#{bid.bid}">bid</th>
-			<th th:text="#{bid.job}">job</th>
-		</tr>
-		<tr th:object="${bid}">
-			<td th:text="*{bidId}">ID</td>
-			<td th:text="*{bidAmount}">job</td>
-			<td th:text="*{job.jobName}">job</td>
-		</tr>
-	</table>
+		<table>
+			<tr>
+				<th th:text="#{bid.id}">ID</th>
+				<th th:text="#{bid.bid}">bid</th>
+				<th th:text="#{bid.job}">job</th>
+			</tr>
+			<tr th:object="${bid}">
+				<td th:text="*{bidId}">ID</td>
+				<td th:text="*{bidAmount}">job</td>
+				<td th:text="*{job.jobName}">job</td>
+			</tr>
+		</table>
 	</main>
 	<footer th:insert="fragments.html :: footer"></footer>
 

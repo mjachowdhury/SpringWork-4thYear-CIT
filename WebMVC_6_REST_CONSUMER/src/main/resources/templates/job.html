@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert = "fragments.html :: head"></div>
+<body>
+	<div th:insert="fragments.html :: menu"></div>
+	<table>
+		<tr>
+			<th th:text="#{job.id}">ID</th>
+			<th th:text="#{job.job}">job</th>
+		</tr>
+		<tr th:object="${job}">
+			<td th:text="*{jobId}">1</td>
+			<td th:text="*{jobName}">job</td>
+		</tr>
+	</table>
+	<div th:insert="fragments.html :: footer"></div>
+
+	
+</body>
+</html>
+
+

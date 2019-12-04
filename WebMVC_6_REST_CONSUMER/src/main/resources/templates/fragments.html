@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" />
+	<link rel="stylesheet" th:href="@{/css/flag-icon.css}" type="text/css" />
+	<title>API Consumer</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <header th:fragment="menu">
+		<nav>
+		  <a th:href="@{/}"><span th:text="#{navigation.home}">BLAH</span></a>
+          <a th:href="@{/showallcounties}"><span th:text="#{navigation.counties}">BLAH</span></a>
+          <a th:href="@{/newcounty}"><span th:text="#{navigation.newcounty}">BLAH</span></a>
+        </nav>
+    </header>
+    <!--  An alternative way to create the URL -->
+    <footer th:fragment="footer">
+		<span th:with="currentUrl=(${@currentUrlWithoutParam.apply('lang')})">
+    		<a th:href="@{${currentUrl}(lang=fr)}"><i class="flag-icon flag-icon-fr"></i></a>
+		</span>
+		<!--  adapted from https://stackoverflow.com/questions/27623405/thymeleaf-add-parameter-to-current-url -->
+		<span th:with="currentUrl=(${@currentUrlWithoutParam.apply('lang')})">
+    		<a th:href="@{${currentUrl}(lang=ie)}"><i class="flag-icon flag-icon-ie"></i></a>
+		</span>
+	</footer>
+	
+    
+</body>
+</html>

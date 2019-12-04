@@ -85,26 +85,37 @@ public class BidController {
 		return "newbid";
 	}
 
-	 
 	@PostMapping("newbid")
 	public String addNewBid(Model model, @Valid BidForm bidForm, BindingResult binding,
 			RedirectAttributes redirectAttributes, Principal user) {
-		  
 		if (binding.hasErrors()) {
 			model.addAttribute("jobs", jobService.listInAlphabeticalOrder());
 			return "newbid";
 		}
-		 
 		MyUser myUserCreator = myUserService.findByEmail(user.getName());
 		Bid bid = new Bid(bidForm.getBidAmount(), jobService.findJob(jobId), myUserCreator.getUserEmail());
 		if (bidService.save(bid) == null) {
 			redirectAttributes.addFlashAttribute("duplicate", true);
-			redirectAttributes.addFlashAttribute("bidTooHigh", true);
-			return "redirect:/newbid";
+			if (jobService.findJob(jobId).getAddedBy().getUserEmail().equalsIgnoreCase(myUserCreator.getUserEmail())) {
+				return "redirect:/cannotbidowniteam";
+			} else {
+				return "redirect:/bidamounthigh";
+			}
+
 		}
 		return "redirect:/bid?id=" + bid.getBidId();
 	}
 
+	@GetMapping("/cannotbidowniteam")
+	public String canNotBidOwnItem(Model model) {
+
+		return "cannotbidownitem";
+	}
+
+	@GetMapping("/bidamounthigh")
+	public String bidAmountTooHigh(Model model) {
+		return "bidamounthigh";
+	}
 }
 
 /*
